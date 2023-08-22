@@ -356,7 +356,7 @@ body{
     transition: all ease-in-out .3s;
 }
 .fables-testimonial {
-    background-image: url(../images/big-overlay.jpg);  
+    background-image: url(../images/site/stage1.jpg);  
 }
 .fables-testimonial-no-background{
     background: none;
@@ -1477,7 +1477,7 @@ body{
     font-size: 20px;
 }
 .fables-footer-image {
-    background-image: url(../images/footer-back.jpg);
+    background-image: url(../images/site/industry2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
