@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'technaus';
+  src:  url('../fonts/technaus.eot?gq2yr8');
+  src:  url('../fonts/technaus.eot?gq2yr8#iefix') format('embedded-opentype'),
+    url('../fonts/technaus.ttf?gq2yr8') format('truetype'),
+    url('../fonts/technaus.woff?gq2yr8') format('woff'),
+    url('../fonts/technaus.svg?gq2yr8#technaus') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="technaus-icon"], [class*=" technaus-icon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'technaus' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.technaus-iconmenu-icon:before {
+  content: "\e940";
+}
+.technaus-iconuser-register:before {
+  content: "\e93f";
+}
+.technaus-iconpassword:before {
+  content: "\e93e";
+}
+.technaus-iconuser:before {
+  content: "\e90c";
+}
+.technaus-iconDiagonal-arrow:before {
+  content: "\e93b";
+}
+.technaus-iconsquare-icon:before {
+  content: "\e93c";
+}
+.technaus-iconplay:before {
+  content: "\e93a";
+}
+.technaus-iconscreen:before {
+  content: "\e937";
+}
+.technaus-iconfile:before {
+  content: "\e938";
+}
+.technaus-iconhead-set-light:before {
+  content: "\e939";
+}
+.technaus-iconnews:before {
+  content: "\e934";
+}
+.technaus-iconcalender:before {
+  content: "\e935";
+}
+.technaus-iconarrow-light:before {
+  content: "\e936";
+}
+.technaus-iconbussiness:before {
+  content: "\e930";
+}
+.technaus-iconbussiness2:before {
+  content: "\e931";
+}
+.technaus-iconbussiness3:before {
+  content: "\e932";
+}
+.technaus-iconbussiness4:before {
+  content: "\e933";
+}
+.technaus-iconarrow-down:before {
+  content: "\e900";
+}
+.technaus-iconarrow-left:before {
+  content: "\e901";
+}
+.technaus-iconarrow-next:before {
+  content: "\e902";
+}
+.technaus-iconarrow-right:before {
+  content: "\e903";
+}
+.technaus-iconcart:before {
+  content: "\e904";
+}
+.technaus-iconcart-icon:before {
+  content: "\e905";
+}
+.technaus-iconcomment:before {
+  content: "\e906";
+}
+.technaus-iconcommingSoon:before {
+  content: "\e907";
+}
+.technaus-iconcompare:before {
+  content: "\e908";
+}
+.technaus-icondata:before {
+  content: "\e909";
+}
+.technaus-icondevelopment-icon:before {
+  content: "\e90a";
+}
+.technaus-icondown-arrow:before {
+  content: "\e90b";
+}
+.technaus-iconemail:before {
+  content: "\e93d";
+}
+.technaus-iconeye:before {
+  content: "\e90d";
+}
+.technaus-iconfacebook:before {
+  content: "\e90e";
+}
+.technaus-icongears-icon:before {
+  content: "\e90f";
+}
+.technaus-icongoogle-icon:before {
+  content: "\e910";
+}
+.technaus-icongooglePlus:before {
+  content: "\e911";
+}
+.technaus-icongrid:before {
+  content: "\e912";
+}
+.technaus-iconheadset-icon:before {
+  content: "\e913";
+}
+.technaus-iconheart:before {
+  content: "\e914";
+}
+.technaus-iconinstagram:before {
+  content: "\e915";
+}
+.technaus-iconinstagram-icon:before {
+  content: "\e916";
+}
+.technaus-iconlamp-icon:before {
+  content: "\e917";
+}
+.technaus-iconlink:before {
+  content: "\e918";
+}
+.technaus-iconlinkedIn:before {
+  content: "\e919";
+}
+.technaus-iconlinkedin-icon:before {
+  content: "\e91a";
+}
+.technaus-iconlist:before {
+  content: "\e91b";
+}
+.technaus-iconmap-icon:before {
+  content: "\e91c";
+}
+.technaus-iconmobileApp-icon:before {
+  content: "\e91d";
+}
+.technaus-iconphone:before {
+  content: "\e91e";
+}
+.technaus-iconphone-icon:before {
+  content: "\e91f";
+}
+.technaus-iconpinterest:before {
+  content: "\e920";
+}
+.technaus-iconprice:before {
+  content: "\e921";
+}
+.technaus-iconprint:before {
+  content: "\e922";
+}
+.technaus-iconquote-left-light:before {
+  content: "\e923";
+}
+.technaus-iconquote-right-light:before {
+  content: "\e924";
+}
+.technaus-iconrocket-icon:before {
+  content: "\e925";
+}
+.technaus-iconsearch-icon:before {
+  content: "\e926";
+}
+.technaus-iconshare:before {
+  content: "\e927";
+}
+.technaus-iconshare-icon:before {
+  content: "\e928";
+}
+.technaus-icontags:before {
+  content: "\e929";
+}
+.technaus-icontags-light:before {
+  content: "\e92a";
+}
+.technaus-icontwitter:before {
+  content: "\e92b";
+}
+.technaus-icontwitter-icon:before {
+  content: "\e92c";
+}
+.technaus-iconvision-icon:before {
+  content: "\e92d";
+}
+.technaus-iconwebDesign-icon:before {
+  content: "\e92e";
+}
+.technaus-iconwhatapp-icon:before {
+  content: "\e92f";
+}

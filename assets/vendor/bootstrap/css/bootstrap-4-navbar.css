@@ -17,11 +17,11 @@
 .btco-hover-menu li a:hover,
 .btco-hover-menu li a:focus ,
 .navbar>.show>a,  .navbar>.show>a:focus,  .navbar>.show>a:hover{
-    color: #E54D42;
+    color: #088BC3;
     background: transparent;
     outline: 0;
 }
-.fables-nav .dropdown-toggle::after {
+.technaus-nav .dropdown-toggle::after {
     display: inline-block;
     width: 0;
     height: 0;
@@ -36,20 +36,20 @@
     margin-right: 5px;
     margin-top: 8px;
 }
-.fables-nav .nav-link {
+.technaus-nav .nav-link {
     color: rgb(255, 255, 255);
     font-size: 15px;
     font-weight: 400;
     transition: all 0.3s ease-in-out;
     padding: 10px 15px !important;
 }
-.fables-nav .nav-link:hover {
+.technaus-nav .nav-link:hover {
     color: rgb(229, 77, 66);
 }
 /*submenu style start from here*/
 
 
-.fables-nav .dropdown-menu {
+.technaus-nav .dropdown-menu {
     padding: 0px 0; 
     margin: 0 0 0; 
     border: 0px solid transition !important;
@@ -83,21 +83,21 @@
     }
 }
 @media only screen and (min-width: 991px) {
-    .fables-nav .dropdown-toggle::after {
+    .technaus-nav .dropdown-toggle::after {
     display: inline-block;
     width: 0px;
     height: 0px;
     vertical-align: 0.255em;
     content: "\e90b";
     font-size: 5px;
-    font-family: fables !important;
+    font-family: technaus !important;
     border-top: 0.3em solid;
     border-right: 0px;
     border-bottom: 0px;
     border-left: 0px;
     margin: 0px 7px;
 }
-.fables-nav .dropdown-toggle::after {
+.technaus-nav .dropdown-toggle::after {
     position: absolute;
     right: 3px;
     top: 10px; 
@@ -107,14 +107,14 @@
     vertical-align: 0.255em;
     content: "\e90b";
     font-size: 5px;
-    font-family: fables !important;
+    font-family: technaus !important;
     border-top: 0.3em solid;
     border-right: 0px;
     border-bottom: 0px;
     border-left: 0px;
     margin: 8px 7px; 
 }
-.fables-nav .dropdown-menu:before {
+.technaus-nav .dropdown-menu:before {
     content: '';
     position: absolute;
     bottom: 100%;
@@ -123,7 +123,7 @@
     border-bottom: 5px solid rgba(255,255,255,0.9);
     border-left: 5px solid transparent;
 }
-.fables-nav li li > .dropdown-menu:before {
+.technaus-nav li li > .dropdown-menu:before {
     top: 22px;
     right: 100%;
     bottom: auto;
@@ -148,6 +148,6 @@
     .btco-hover-menu .collapse ul ul ul ul{position:absolute;top:0;left:103% !important;min-width:250px;display:none;z-index:1}
 
 }
-.fables-nav .dropdown-menu .dropdown-toggle::after { 
+.technaus-nav .dropdown-menu .dropdown-toggle::after { 
     right: 14px; 
 }
