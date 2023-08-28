@@ -6,7 +6,7 @@ require_once 'includes/navbar.php';
 
 
 <!-- Start Header -->
-<div class="technaus-header technaus-after-overlay">
+<div class="technaus-header technaus-after-overlay bg-rules">
     <div class="container">
         <h2 class="technaus-page-title technaus-second-border-color">Contact Us</h2>
     </div>

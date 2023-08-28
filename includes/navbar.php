@@ -1,7 +1,7 @@
 <body>
 
     <!-- <div class="search-section">
-        <a class="close-search" href="#"></a>
+        <a class="close-search" href="coming-soon"></a>
         <div class="d-flex justify-content-center align-items-center h-100">
             <form method="post" action="#" class="w-50">
                 <div class="row">
@@ -58,18 +58,18 @@
                                 </a>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="sub-nav1" data-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" href="coming-soon" id="sub-nav1" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         Services
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="sub-nav1">
-                                        <li><a class="dropdown-item" href="#">Residential Solar</a></li>
-                                        <li><a class="dropdown-item" href="#">Commercial Solar</a></li>
-                                        <li><a class="dropdown-item" href="#">Battery Storage</a></li>
-                                        <li><a class="dropdown-item" href="#">EV Charging</a></li>
+                                        <li><a class="dropdown-item" href="coming-soon">Residential Solar</a></li>
+                                        <li><a class="dropdown-item" href="coming-soon">Commercial Solar</a></li>
+                                        <li><a class="dropdown-item" href="coming-soon">Battery Storage</a></li>
+                                        <li><a class="dropdown-item" href="coming-soon">EV Charging</a></li>
                                     </ul>
                                 </li>
-                                <a class="nav-link" href="#" id="projects">
+                                <a class="nav-link" href="coming-soon" id="projects">
                                     Projects
                                 </a>
                                 <a class="nav-link" href="contactus" id="contact">
