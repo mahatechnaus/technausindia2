@@ -827,7 +827,7 @@ body{
 .technaus-single-slider #sync1 .owl-nav [class*=owl-] {
     font-size: 13px;
     margin: 0;
-    background-color: rgba(229,77,66,.6);
+    background-color: #088BC3 !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
