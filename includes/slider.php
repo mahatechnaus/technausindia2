@@ -12,7 +12,7 @@
                                <span class="technaus-main-text-color">Residential & Commercial</span> 
                                 <span class="technaus-second-text-color"> Renewable Energy Solutions in India</span>
                             </h1>
-                            <p class="technaus-forth-text-colo mb-3 light-font technaus-header-slider-details">
+                            <p class=" mb-3 light-font technaus-header-slider-details">
                                 Technaus Renewables is an Indian owned and operated renewable energy company
                                 specialising in
                                 solar power and battery storage technology across India. With a reputation as a

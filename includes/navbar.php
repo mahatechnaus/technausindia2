@@ -38,7 +38,7 @@
                     <nav class="navbar  navbar-expand-md btco-hover-menu py-lg-2 ">
 
                         <a class="navbar-BatteryStorage technaus-logo-BatteryStorage pl-0" href="index">
-                            <img src="assets/custom/images/site/Technaus-India-Logo.png" alt="technaus Template"
+                            <img src="assets/custom/images/site/Technaus-India-Logo.png" alt="technaus Template" style="height:45px;"
                                 class="technaus-logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
