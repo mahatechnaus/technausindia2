@@ -419,6 +419,13 @@ body{
     width: auto !important;
     margin:-120px auto 18px;
 }
+.technaus-prod-carousel-img {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    width: 250px !important;
+    margin:-120px auto 18px;
+}
+
 #technaus-testimonial-carousel  .owl-dot span{ 
     margin: 5px 4px;
     background: transparent; 
@@ -2323,8 +2330,8 @@ body{
     background-color: #088BC3;
 }
 .half-width-testimonial{
-    background-image: url(../images/index-testimonial.jpg); 
-    margin-bottom: 11% !important;
+    background-image: url(../images/site/roof-bg.jpg); 
+    /* margin-bottom: 2% !important; */
 }
 .half-width-testimonial .owl-item{
     padding: 0 !important;
@@ -3475,3 +3482,16 @@ a.toggle-menu{
     border-radius: 0;
 }
 
+.thank-you-message {
+    background-color: #edc3c3;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+    
+}

@@ -33,19 +33,19 @@ require_once 'includes/navbar.php';
             <div class="technaus-single-slider store-single-slider">
                 <div id="sync1" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product1.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential1.jpg" alt="" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/residential2.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential2.jpg" alt="" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/residential3.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential3.jpg" alt="" class="w-100">
                     </div>
 
                 </div>
                 <div id="sync2" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential1.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential1.jpg" alt="" class="w-100">
                     </div>
                     <div class="item">
                         <img src="assets/custom/images/site/product/residential2.jpg" alt="" class="w-100">

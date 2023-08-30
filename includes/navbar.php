@@ -63,8 +63,8 @@
                                         Services
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="sub-nav1">
-                                        <li><a class="dropdown-item" href="product">Residential Solar</a></li>
-                                        <li><a class="dropdown-item" href="coming-soon">Commercial Solar</a></li>
+                                        <li><a class="dropdown-item" href="residential-solar">Residential Solar</a></li>
+                                        <li><a class="dropdown-item" href="commercial-solar">Commercial Solar</a></li>
                                         <li><a class="dropdown-item" href="coming-soon">Battery Storage</a></li>
                                         <li><a class="dropdown-item" href="coming-soon">EV Charging</a></li>
                                     </ul>

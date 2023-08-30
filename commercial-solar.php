@@ -6,7 +6,7 @@ require_once 'includes/navbar.php';
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">
     <div class="container">
-        <h2 class="technaus-page-title technaus-second-border-color">Residential Solar</h2>
+        <h2 class="technaus-page-title technaus-second-border-color">Commercial Solar</h2>
     </div>
 </div>
 <!-- /End Header -->
@@ -17,7 +17,7 @@ require_once 'includes/navbar.php';
         <nav aria-label="breadcrumb">
             <ol class="technaus-breadcrumb breadcrumb px-0 py-3">
                 <li class="breadcrumb-item"><a href="#" class="technaus-second-text-color">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Residential Solar</li>
+                <li class="breadcrumb-item active" aria-current="page">Commercial Solar</li>
             </ol>
         </nav>
     </div>
@@ -26,32 +26,33 @@ require_once 'includes/navbar.php';
 
 <!-- Start page content -->
 <div class="container">
-<h2 class="technaus-second-text-color technaus-light-background-color font-24 bold-font mt-4">RESIDENTIAL SOLAR POWER SYSTEMS</h2>
+    <h2 class="technaus-second-text-color technaus-light-background-color font-24 bold-font mt-4">COMMERCIAL SOLAR POWER
+        SOLUTIONS</h2>
     <div class="row mt-4 mt-md-5">
-  
+
         <div class="col-12 col-lg-4">
             <div class="technaus-single-slider store-single-slider">
                 <div id="sync1" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product1.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry1.png" alt="" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/residential2.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry2.png" alt="" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/residential3.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry3.png" alt="" class="w-100">
                     </div>
 
                 </div>
                 <div id="sync2" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential1.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry1.png" alt="" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential2.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry2.png" alt="" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential3.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry3.png" alt="" class="w-100">
                     </div>
 
                 </div>
@@ -77,31 +78,17 @@ require_once 'includes/navbar.php';
                     <p class="technaus-single-info mt-4 font-15 technaus-fifth-text-color">
 
                     <h2 class="technaus-main-text-color font-20 semi-font">
-                        RESIDENTIAL SOLAR POWER SYSTEMS</h2>
+                        COMMERCIAL SOLAR POWER SOLUTIONS</h2>
                     <div class="technaus-forth-text-color font-15 my-3">
                         <p>
-                            Are you interested in having solar installed on your home but you simply do not know where
-                            to start?
-                            Starting your solar journey can be extremely daunting, filled with confusion and
-                            misinformation
-                            along the way. We offer an informative and FREE in-home energy audit and consultation to
-                            make the
-                            process of switching to solar as simple as it really needs to be.
+                            Technaus Renewables offer a complete package tailored to your specific commercial solar
+                            power and battery
+                            storage requirements. From design, procurement and engineering to project completion, we can
+                            design a solar
+                            power system to reduce energy costs and increase profitability within your business.
+
                         </p>
-                        <p>
-                            We will audit your energy consumption and inform you on the benefits of choosing particular
-                            brands
-                            of components, we will explain the entire process of how the system works and we will show
-                            you how
-                            investing in solar is one of the best investments you can make for your family.
-                        </p>
-                        <p>
-                            With zero up-front cost options, there has never been a better time to invest in a solar
-                            power
-                            system.
-                        </p>
-                        <p>
-                            Interested in our free in-home energy audit? Click below to find out more today! </p>
+
                     </div>
 
 
@@ -166,7 +153,6 @@ require_once 'includes/navbar.php';
     </div>
 
     <?php require_once 'includes/related-product.php'; ?>
-
 </div>
 <!-- /End page content -->
 <?php require_once 'includes/footer.php'; ?>
