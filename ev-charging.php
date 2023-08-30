@@ -6,7 +6,7 @@ require_once 'includes/navbar.php';
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">
     <div class="container">
-        <h2 class="technaus-page-title technaus-second-border-color">Battery Storage</h2>
+        <h2 class="technaus-page-title technaus-second-border-color">EV Charging</h2>
     </div>
 </div>
 <!-- /End Header -->
@@ -17,7 +17,7 @@ require_once 'includes/navbar.php';
         <nav aria-label="breadcrumb">
             <ol class="technaus-breadcrumb breadcrumb px-0 py-3">
                 <li class="breadcrumb-item"><a href="#" class="technaus-second-text-color">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Battery Storage</li>
+                <li class="breadcrumb-item active" aria-current="page">EV Charging</li>
             </ol>
         </nav>
     </div>
@@ -35,22 +35,20 @@ require_once 'includes/navbar.php';
             <div class="col-12 col-md-6">
                 <!-- <p class="white-color font-25 mb-2">See what</p> -->
                 <h2 class="white-color font-35 font-weight-bold">
-                    Solar Battery 
-                        Storage</h2>
+                    
+EV CHARGING SOLUTIONS  
+HOME OR OFFICE</h2>
                 <p class="technaus-third-text-color mt-4 mb-4">
-                    Store the excess power generated from your home solar setup and manage your energy consumption
-                    within peak and
-                    off-peak times. Take maximum advantage of your solar power system electricity generation during the
-                    day and consume
-                    the excess power in high demand evenings. In many cases, we can design a system that provides you
-                    with energy
-                    independence and entirely removes your need to draw energy from the grid.
+                Technaus Renewables provides many options to choose from when selecting the right charging solution for your
+                 vehicle or parking situation. We provide solutions to all residential and commercial charging station design and 
+                 installation projects. Long gone will be the days of filling your car with dirty, expensive fossil fuels and 
+                 long queues at the petrol station. Your vehicle will be charged while you work, or sleep.
                 </p>
                 <div class="owl-carousel owl-theme dots-0 nav-default default-carousel">
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/battery.png" alt="technaus Template"
+                                <img src="assets/custom/images/site/product/evcharging2.jpg" alt="technaus Template"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                     
@@ -58,7 +56,7 @@ require_once 'includes/navbar.php';
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/battery1.png" alt="technaus Template"
+                                <img src="assets/custom/images/site/product/evcharging3.jpg" alt="technaus Template"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                      
@@ -67,7 +65,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-12 col-md-6 mt-5 mt-lg-0">
                 <div class="position-relative image-container zoomIn-effect">
-                    <img src="assets/custom/images/site/product/solar-battery.jpeg" alt="" class="img-fluid" style="height:550px;">
+                    <img src="assets/custom/images/site/product/evcharging.jpg" alt="" class="img-fluid" style="height:550px;">
                     <!-- <div class="demo-gallery-poster technaus-main-gradient">
                         <a data-fancybox href="https://www.youtube.com/watch?v=meBbDqAXago">
                             <img src="assets/custom/images/play-button.png" alt="play button" class="img-fluid">

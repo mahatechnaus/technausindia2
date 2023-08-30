@@ -62,7 +62,7 @@
                                 class="technaus-main-text-color font-16 semi-font technaus-second-hover-color">Battery
                                 Storage</a>
                         </h5>                     
-                        <p class="technaus-product-info"><a href="#"
+                        <p class="technaus-product-info"><a href="battery"
                                 class="btn technaus-second-border-color technaus-second-text-color technaus-btn-rouned technaus-hover-btn-color font-14 p-2 px-4">
                                 <span class="technaus-iconeye"></span>
                                 <span class="technaus-btn-value">VIEW</span></a></p>
@@ -85,7 +85,7 @@
                                 Charging</a>
                         </h5>
                     
-                        <p class="technaus-product-info"><a href="#"
+                        <p class="technaus-product-info"><a href="ev-charging"
                                 class="btn technaus-second-border-color technaus-second-text-color technaus-btn-rouned technaus-hover-btn-color font-14 p-2 px-4">
                                 <span class="technaus-iconeye"></span>
                                 <span class="technaus-btn-value">VIEW</span></a></p>
