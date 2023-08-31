@@ -26,9 +26,10 @@ require_once 'includes/navbar.php';
 
 <!-- Start page content -->
 <div class="container">
-<h2 class="technaus-second-text-color technaus-light-background-color font-24 bold-font mt-4">RESIDENTIAL SOLAR POWER SYSTEMS</h2>
+    <h2 class="technaus-second-text-color technaus-light-background-color font-24 bold-font mt-4">RESIDENTIAL SOLAR
+        POWER SYSTEMS</h2>
     <div class="row mt-4 mt-md-5">
-  
+
         <div class="col-12 col-lg-4">
             <div class="technaus-single-slider store-single-slider">
                 <div id="sync1" class="owl-carousel owl-theme">
@@ -164,7 +165,7 @@ require_once 'includes/navbar.php';
         </div>
 
     </div>
-
+ 
     <?php require_once 'includes/related-product.php'; ?>
 
 </div>

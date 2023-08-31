@@ -223,12 +223,12 @@ require_once 'includes/slider.php';
                         <div class="bg-technaus py-4">
                             <h2
                                 class="white-color font-weight-bold position-relative technaus-third-after font-30 table-title">
-                                On-grid</h2>
+                                On-grid</h2>                              
                             <h2 class="white-color font-weight-bold font-35 position-relative mt-4 d-inline-block">
                                 65,000/-
                                 <span class="table-badge white-color position-absolute">&#8377</span>
                             </h2>
-                            <p class="white-color font-13 mb-4">1 kW</p>
+                            <p class="white-color font-13 mb-4">onwards</p>
                             <span
                                 class="technaus-table-arrow border-2 bg-technaus-light white-color rounded-circle border-white position-absolute"><i
                                     class="fas fa-arrow-down"></i></span>
@@ -257,7 +257,7 @@ require_once 'includes/slider.php';
                                 75,000/-
                                 <span class="table-badge white-color position-absolute">&#8377</span>
                             </h2>
-                            <p class="white-color font-13 mb-4">1 kW</p>
+                            <p class="white-color font-13 mb-4">onwards</p>
                             <span
                                 class="technaus-table-arrow border-2 bg-technaus-light white-color rounded-circle border-white position-absolute"><i
                                     class="fas fa-arrow-down"></i></span>
@@ -286,7 +286,7 @@ require_once 'includes/slider.php';
                                 1,00,000/-
                                 <span class="table-badge white-color position-absolute">&#8377</span>
                             </h2>
-                            <p class="white-color font-13 mb-4">1 kW</p>
+                            <p class="white-color font-13 mb-4">onwards</p>
                             <span
                                 class="technaus-table-arrow border-2 bg-technaus-light white-color rounded-circle border-white position-absolute"><i
                                     class="fas fa-arrow-down"></i></span>
@@ -315,7 +315,7 @@ require_once 'includes/slider.php';
                                 80,000/-
                                 <span class="table-badge white-color position-absolute">&#8377</span>
                             </h2>
-                            <p class="white-color font-13 mb-4">1 kW</p>
+                            <p class="white-color font-13 mb-4">onwards</p>
                             <span
                                 class="technaus-table-arrow border-2 bg-technaus-light white-color rounded-circle border-white position-absolute"><i
                                     class="fas fa-arrow-down"></i></span>
@@ -532,38 +532,45 @@ require_once 'includes/slider.php';
         </div>
         <div class="row mb-4 mb-md-5 overflow-hidden">
             <div class="col-12 col-sm-6 wow fadeInLeft">
-                <form class="technaus-contact-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control rounded-0 p-3" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control rounded-0 p-3" placeholder="Email">
-                    </div>
-                    <div class="form-group">                      
-                        <div class="form-group">                      
-                            <select class="form-control rounded-0 p-3" style="height: auto;">
-                                <option value="" selected disabled>Select Category</option>
-                                <option value="ressolarcat">Residential Solar</option>
-                                <option value="comsolarcat">Commercial Solar</option>
-                                <option value="batterycat">Battery Storage</option>
-                                <option value="evchargingcat">EV Charging</option>                           
-                            </select>                     
-                        </div>
-                                       
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0 p-3" placeholder="Message" rows="3"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="btn technaus-second-background-color rounded-0 text-white btn-block p-3">Send</button>
-                </form>
+           
+            <form class="technaus-contact-form" id="quoteForm" method="POST" action="process_form.php"
+                onsubmit="return validateForm()">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control rounded-0 p-3" placeholder="Name"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control rounded-0 p-3" placeholder="Email"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="mobile" name="mobile" class="form-control rounded-0 p-3" placeholder="Mobile"
+                        required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control rounded-0 p-3" id="category" name="category" style="height: auto;"
+                        required>
+                        <option value="" selected disabled>Select Category</option>
+                        <option value="ressolarcat">Residential Solar</option>
+                        <option value="comsolarcat">Commercial Solar</option>
+                        <option value="batterycat">Battery Storage</option>
+                        <option value="evchargingcat">EV Charging</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control rounded-0 p-3" id="message" name="message" placeholder="Message"
+                        rows="3" required></textarea>
+                </div>
+                <button type="submit"
+                    class="btn technaus-second-background-color rounded-0 text-white btn-block p-3">Get Quote</button>
+            </form>
             </div>
             <div class="col-12 col-sm-6 wow fadeInRight">
                 <div id="map" data-lng="31.248848" data-lat="29.966324" data-icon="assets/custom/images/map-marker.png"
                     data-zom="12" style="width:100%;height:420px">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62451.05164512451!2d79.805857!3d11.961293!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53631bbb3669d7%3A0x5db1e34f9771b647!2sTechnaus%20Renewable%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1692683481484!5m2!1sen!2sin"
-                        width="600" height="415" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="600" height="490" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     
@@ -786,7 +793,7 @@ require_once 'includes/slider.php';
         </div>
         <div class="row my-3 my-lg-5">
 
-            <div class="owl-carousel owl-theme px-6 my-0" id="technaus-partner-carousel">
+            <!-- <div class="owl-carousel owl-theme px-6 my-0" id="technaus-partner-carousel">
                 <div>
                     <img src="assets/custom/images/partner2-1.jpg" alt="technaus Template"
                         class="technaus-partner-carousel-img">
@@ -824,11 +831,40 @@ require_once 'includes/slider.php';
                         class="technaus-partner-carousel-img">
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </div>
 
 
     <!-- /End page content -->
+    <script>
+    function validateForm() {
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
 
+        // Perform your custom validation checks here
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        if (!isValidMobile(mobile)) {
+            alert("Please enter a valid mobile number.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    function isValidMobile(mobile) {
+        const mobilePattern = /^[0-9]{10}$/;
+        return mobilePattern.test(mobile);
+    }
+
+</script>
     <?php require_once 'includes/footer.php'; ?>

@@ -69,8 +69,8 @@
                                         <li><a class="dropdown-item" href="ev-charging">EV Charging</a></li>
                                     </ul>
                                 </li>
-                                <a class="nav-link" href="coming-soon" id="projects">
-                                    Projects
+                                <a class="nav-link" href="gallery" id="gallery">
+                                    Gallery
                                 </a>
                                 <a class="nav-link" href="contactus" id="contact">
                                     Contact Us

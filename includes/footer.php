@@ -134,7 +134,7 @@
 <!-- /End Footer 2 Background Image -->
 
 
-<a href="https://web.whatsapp.com/send?phone=9940933927&text=Hi%20Technaus%20Solar%20I%20would%20want%20more%20information."
+<a href="https://web.whatsapp.com/send?phone=7418650503&text=Hi%20Technaus%20Solar%20I%20would%20want%20more%20information."
     target="_blank" class="whatsapp-icon">
     <img src="assets/custom/images/site/whatsapp-icon.png" alt="WhatsApp Chat" style="width: 60px;">
 </a>

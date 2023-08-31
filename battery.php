@@ -50,7 +50,7 @@ require_once 'includes/navbar.php';
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/battery.png" alt="technaus Template"
+                                <img src="assets/custom/images/site/product/battery.png" alt="technaus"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                     
@@ -58,7 +58,7 @@ require_once 'includes/navbar.php';
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/battery1.png" alt="technaus Template"
+                                <img src="assets/custom/images/site/product/battery2.png" alt="technaus"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                      
