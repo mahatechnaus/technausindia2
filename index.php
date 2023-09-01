@@ -236,7 +236,7 @@ require_once 'includes/slider.php';
                         <div class="bg-white py-4">
                             <ul class="technaus-forth-text-color my-4 px-4 line-height-large font-15">
                                 <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li>
-                                <li><i class="fa fa-check-circle  me-3"></i> 5 years for Complete System Warranty.</li>
+                                <!-- <li><i class="fa fa-check-circle  me-3"></i> 5 years for Complete System Warranty.</li> -->
                                 <li><i class="fa fa-check-circle  me-3"></i> 25 years for Solar Panels Warranty.</li>
                             </ul>
                             <a href="contactus"
@@ -264,7 +264,7 @@ require_once 'includes/slider.php';
                         </div>
                         <div class="bg-white py-4">
                             <ul class="technaus-forth-text-color my-4 px-4 line-height-large font-15">
-                                <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li>
+                                <!-- <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li> -->
                                 <li><i class="fa fa-check-circle  me-3"></i> 5 years for Complete System Warranty.</li>
                                 <li><i class="fa fa-check-circle  me-3"></i> 25 years for Solar Panels Warranty.</li>
                             </ul>
@@ -293,7 +293,7 @@ require_once 'includes/slider.php';
                         </div>
                         <div class="bg-white py-4">
                             <ul class="technaus-forth-text-color my-4 px-4 line-height-large font-15">
-                                <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li>
+                                <!-- <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li> -->
                                 <li><i class="fa fa-check-circle  me-3"></i> 5 years for Complete System Warranty.</li>
                                 <li><i class="fa fa-check-circle  me-3"></i> 25 years for Solar Panels Warranty.</li>
                             </ul>
@@ -322,7 +322,7 @@ require_once 'includes/slider.php';
                         </div>
                         <div class="bg-white py-4">
                             <ul class="technaus-forth-text-color my-4 px-4 line-height-large font-15">
-                                <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li>
+                                <!-- <li><i class="fa fa-check-circle  me-3"></i> 40% Govt. Subsidy on benchmark cost.</li> -->
                                 <li><i class="fa fa-check-circle  me-3"></i> 5 years for Complete System Warranty.</li>
                                 <li><i class="fa fa-check-circle  me-3"></i> 25 years for Solar Panels Warranty.</li>
                             </ul>

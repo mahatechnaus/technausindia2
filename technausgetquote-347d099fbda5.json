@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "technausgetquote",
+  "private_key_id": "347d099fbda59118592b140bbb909c3dd206c474",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCMwVktVhjJnGuw\n2F8MYk8UT4857md8NDNPP0NPxiXovl+rVneloGzuTEDfibxCD/5Tg1EwSGFQCzim\n5nXSFXHs4PH0mJXV44eWkc5dxoq+SzfcMl8K8I5WkZLsvnf6MCN+Wte7uDB4b2lZ\n5wUoNUotj76LYJ91Jw2s63jrZylreD8VU3kJfHJZmohCHwrl6ipf8Ti8E4HU9Oad\nEjZJk6eiwRoj18vTi2WAnOSLEh4aEsTikJofd85sNlfE2ABpqYr7xw5rPqrVl5Zg\nclZduQFsCG5IGtVZiqqNlTUoE+M2INdNlTLPxaQOqLRSN3T+lQuTJOO5qFBRXbcY\n8iPSq6gzAgMBAAECggEALfrBJ1qvKTj0QuZDkleQ7pkYt/tlicDBnBsV4Xrgilma\nBe3uksfHncaCEKO9QDVaRqyoemXCiDPKM1coWNLRjuhikZzAoYi8k5aYu7BuRUBs\nBH3d50RystvGC5kitzM/fPiu7W77QnRejVQ2ro5N53lD7OLI5Cu4P2sCap+d+7Fl\nnLwG7XSh72CSaHyECXQ03LyLF25c3lIrTwOzWJfsEVWwDtVluGGc71koxeIdIT3H\nqwb3H+RhLGgtUFe2mpf+QW1qIgFAcJpEFbu8zRpJI2/pQvZ4clLtMylMasz8DtKS\ndOqdmDFjdOw+18xlS3exDa5ipu1RLHH8V5etvMjPmQKBgQDBBq1cft/b/x+Uf9qH\nJskL4i9PAR+AG/gjWja6ug/gW70P158pwP4DUXgWaNokyR31MjwOF8VVum9bWusH\nO7JHuBWGGJJ+9nR8mbagGfMfHvgCZk4K1Yaan9399XDU4QFms19P/nFiulODHKjm\nhCCm+tn1Y/4VclfF3Ce6MYClSwKBgQC6rRItxFfxygXvYCd8lAY6YjayEpxgOrrR\nzLtAfDewR4PUSi7VPiokM3WdclsL0RkOgXpNWT/wL5yZQ89FSac05eNRgMiQ5LgO\nvsP03bev5uVB0l2VgMC9OI9b7mHydH4jCCZ3WUEgdaIN4RDRhxmrGZmOU8CHuixS\n2sWT45x/uQKBgQCO5aePsyl8jylM4T3hEfiCQKcvQLCWQZ54ZX/gyn+YY7HaOZFN\n8t7ZjAVv6Z2c3/q6m77T3AstxQBNTEh0KWB5MbFVfXluXnusBoupiKxwnJeUBzK9\nWIf2jmVkbcBjCFPmOOJVsRM1uKS8iooLZUNa+phCzwy5ydVq1+ndMGqBcwKBgDHL\nAmNU0QR8l7KvGjk/np2qHt7G2hFM+RIHIxdjStNpb/+LPgzBRSpc042IuEJhpuZY\noQ/Ks6RUftfe34WizMfuXgEaceU8LOA6ADjrfxibZSF2hGHhcwfF829ZGaU7b33W\nqbQCCb4nwm8jToIlIDKkZHIzYtKRVUtQcY0uFEt5AoGAVWtMrhz8ibr9l5b3gTWO\neLx7mSr8IsHbyjN5Rqw5PRdhcEVAJNeIzFitCErDahmRqU0Uz/4P0y7LZKyIY143\nxtXTfdPcbW6sEg0cbXNcuIaoqn4xMpQhahon592000GP04J9ZpIdDidV9TZQa3iH\nCQ50uJa23CEPDuHRlh1Itys=\n-----END PRIVATE KEY-----\n",
+  "client_email": "techanusgsheets@technausgetquote.iam.gserviceaccount.com",
+  "client_id": "107405198908049598556",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/techanusgsheets%40technausgetquote.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -31,6 +31,7 @@ require_once 'includes/navbar.php';
      <div class="row">
           <div class="col-12 col-lg-8 offset-lg-2 text-center my-4 my-lg-5 py-0 py-lg-5">
               <div class="technaus-404-page">
+                
                   <span class="technaus-iconcommingSoon technaus-second-text-color fa-4x"></span>
                   <h3 class="font-40 font-weight-bold technaus-second-text-color my-3">Coming Soon</h3>
                   <!-- <p class="font-18 technaus-fifth-text-color">We are working on website very hard. Estimated remaining time is:</p>

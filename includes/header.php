@@ -1,3 +1,4 @@
+<?php include_once('includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,5 +39,7 @@
     <!-- technaus CUSTOM CSS RESPONSIVE FILE -->
     <link href="assets/custom/css/custom-responsive.css" rel="stylesheet">
    
-
+    <!-- recaptcha  -->
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo Config::GOOGLE_RECAPTCHA_SITE_KEY; ?>"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>

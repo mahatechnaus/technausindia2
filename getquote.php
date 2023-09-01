@@ -3,8 +3,6 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
 
-
-
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">
     <div class="container">
@@ -13,30 +11,15 @@ require_once 'includes/navbar.php';
 </div>
 <!-- /End Header -->
 
-<!-- Start Breadcrumbs -->
-<!-- <div class="technaus-light-background-color">
-    <div class="container"> 
-        <nav aria-label="breadcrumb">
-          <ol class="technaus-breadcrumb breadcrumb px-0 py-3">
-            <li class="breadcrumb-item"><a href="#" class="technaus-second-text-color">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Contact 1</li>
-          </ol>
-        </nav> 
-    </div>
-</div> -->
-<!-- /End Breadcrumbs -->
-
 <!-- Start page content -->
 <br>
 <div class="container">
     <div class="row overflow-hidden">
         <div class="col-12 col-md-10 offset-md-1 mt-2">
+  
+           
 
             <div class="mt-0 mb-5 my-md-5">
-                   <!-- Display thank you message -->
-            <?php if (isset($_GET['submitted']) && $_GET['submitted'] == 'true') { ?>
-                <p class="thank-you-message mb-3">Thank you for submitting your quote request! We'll be in touch soon.</p>
-            <?php } ?>
                 <h3 class="font-35 font-weight-bold technaus-main-text-color text-center">Get Your Free Quote & Start
                     <br>Saving Big on
                     <span class="technaus-second-text-color">Energy Costs</span>
@@ -56,17 +39,13 @@ require_once 'includes/navbar.php';
 
         </div>
     </div>
-
     <!-- onsubmit="return validateForm()"> -->
 
     <div class="row mb-4 mb-md-5 overflow-hidden">
         <div class="col-12 col-sm-6 wow fadeInLeft">
-
-
-         
-
-            <form class="technaus-contact-form" id="quoteForm" method="POST" action="process_form.php"
-                onsubmit="return validateForm()">
+        <div id="respmessage" class="respmessage" style="display: none;"></div>
+            <form action="requestform_ajax.php" method="post" id="getquote" name="getquote"
+                class="technaus-contact-form">
                 <div class="form-group">
                     <input type="text" id="name" name="name" class="form-control rounded-0 p-3" placeholder="Name"
                         required>
@@ -93,20 +72,91 @@ require_once 'includes/navbar.php';
                     <textarea class="form-control rounded-0 p-3" id="message" name="message" placeholder="Message"
                         rows="3" required></textarea>
                 </div>
-                <button type="submit"
-                    class="btn technaus-second-background-color rounded-0 text-white btn-block p-3">Get Quote</button>
+                <div class="form-group">
+                    <input type="hidden" name="g-recaptcha-response" value="" id="g-recaptcha-response">
+                </div>
+                <button type="submit" id="quote_form" name="quote_form"
+                    class="btn technaus-second-background-color rounded-0 text-white btn-block p-3 g-recaptcha">
+                    Get Quote</button>
+                <input type="hidden" name="quoteSubmited" value="quoteSubmited" />
             </form>
-
-
         </div>
         <div class="col-12 col-sm-6 wow fadeInRight ">
             <img src="assets/custom/images/site/getquote2.png" alt="" class="w-75">
-
-
         </div>
     </div>
 </div>
 <!-- /End page content -->
+<?php require_once 'includes/footer.php'; ?>
+
+<script>
+  $(document).ready(function () {  
+      $("#respmessage").html('');    
+  });  
+</script>
+<!-- recaptcha -->
+<script>
+   $(function () {
+        $("#getquote").on('submit', function (e) {
+            e.preventDefault();
+            var partnerForm = $(this);
+            grecaptcha.ready(function () {
+                grecaptcha.execute('AIzaSyBrA1FdQmIqNVUg8nvJcbZtYQwBCvC91dw', {
+                                        
+                    action: 'submit'
+                }).then(function (token) {
+                    $('#g-recaptcha-response').val(token);
+                    $.ajax({
+                        url: partnerForm.attr('action'),
+                        type: 'post',
+                        data: partnerForm.serialize(),
+                        success: function (response) {
+                            console.log(response);
+                            if (response.status == 'success') {
+                                $('#getquote')[0].reset();
+                            }
+                            $("#respmessage").html(response.message).show();
+                        }
+                    });
+                });
+            });
+        });
+    });
+
+
+</script>
+
+<!-- <script>
+    $(document).ready(function () {
+        $("#getquote").on('submit', function (e) {
+            e.preventDefault();
+            var partnerForm = $(this);
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LfKYpIjAAAAAJ8OSkWEy3MCjeD7MT8cOYCfjzDU', {
+                    action: 'submit'
+                }).then(function (token) {
+                    $('#g-recaptcha-response').val(token);
+                    $.ajax({
+                        url: partnerForm.attr('action'),
+                        type: 'post',
+                        data: partnerForm.serialize(),
+                        success: function (response) {
+                            if (response.status == 'success') {
+                                document.getElementById('getquote').reset(); // Reset the form
+                                $("#respmessage").html(response.message); // Display success message
+                            } else {
+                                $("#respmessage").html(response.message); // Display error message
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    });
+</script> -->
+
+<!-- recaptcha end -->
+
 <script>
     function validateForm() {
         const email = document.getElementById("email").value;
@@ -139,4 +189,3 @@ require_once 'includes/navbar.php';
 </script>
 
 
-<?php require_once 'includes/footer.php'; ?>

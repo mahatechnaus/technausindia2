@@ -3490,8 +3490,17 @@ a.toggle-menu{
     text-align: center;
     font-size: 16px;
     color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    
+}
 
 
-    
+.respmessage {
+    background-color: #edc3c3;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    
 }

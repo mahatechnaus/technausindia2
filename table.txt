@@ -1,0 +1,28 @@
+db sfempfpkwk
+define('DB_NAME', "sfempfpkwk");
+/** MySQL database username */
+define('DB_USER', "sfempfpkwk");
+/** MySQL database password */
+define('DB_PASSWORD', "K4WcdDDzY8");
+/** MySQL hostname */
+
+-- Adminer 4.7.8 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `getquote`;
+CREATE TABLE `getquote` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cust_name` varchar(500) NOT NULL,
+  `email` varchar(300) NOT NULL,
+  `mobile` int(20) NOT NULL,
+  `category` varchar(30) NOT NULL,
+  `message` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- 2023-09-01 11:40:16
