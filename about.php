@@ -44,7 +44,7 @@ require_once 'includes/navbar.php';
             <div class="row wow fadeInDown" data-wow-delay=".5s">
                 <div class="col-12 text-center">
                     <h3
-                        class="technaus-about-top-head technaus-forth-text-color font-15 semi-font d-inline-block bg-white position-relative">
+                        class="technaus-about-top-head technaus-second-text-color font-15 semi-font d-inline-block bg-white position-relative">
                         <span class="mx-4">About us</span>
                     </h3>
                     <h2 class="technaus-second-text-color mt-3 font-30 font-weight-bold text-center">Our business

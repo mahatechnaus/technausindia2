@@ -3504,3 +3504,12 @@ a.toggle-menu{
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    
 }
+
+.sticky-top-nav {
+    position: fixed;
+    top: 0;
+ 
+    width: 100%;
+    background-color: #1A2A36; /* Change this to your desired background color */
+    z-index: 1030; /* Adjust the z-index as needed to make sure it appears above other elements */
+}

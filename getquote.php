@@ -15,11 +15,14 @@ require_once 'includes/navbar.php';
 <br>
 <div class="container">
     <div class="row overflow-hidden">
-        <div class="col-12 col-md-10 offset-md-1 mt-2">
+        <div class="col-12 col-md-10 offset-md-1 mt-2 text-center">
 
+            <h3
+                class="technaus-about-top-head technaus-second-text-color font-15 semi-font d-inline-block bg-white position-relative">
+                <span class="mx-4">Get Quote</span>
+            </h3>
 
-
-            <div class="mt-0 mb-5 my-md-5">
+            <div class="mt-0 mb-5 my-md-3">
                 <h3 class="font-35 font-weight-bold technaus-main-text-color text-center">Get Your Free Quote & Start
                     <br>Saving Big on
                     <span class="technaus-second-text-color">Energy Costs</span>
@@ -85,7 +88,10 @@ require_once 'includes/navbar.php';
         <?php require_once 'getquoteform.php'; ?>
 
         <div class="col-12 col-sm-6 wow fadeInRight ">
-            <img src="assets/custom/images/site/getquote2.png" alt="" class="w-75">
+            <div class="image-container circle-effect">
+                <img src="assets/custom/images/site/residential1.jpg" alt="" height="490px"
+                    class="w-100  border border-dark">
+            </div>
         </div>
     </div>
 </div>

@@ -1069,7 +1069,7 @@
 .whatsapp-icon {
     position: fixed;
     bottom: 40px; /* Adjust the distance from the bottom */
-    right: 40px; /* Adjust the distance from the right */
+    left: 40px; /* Adjust the distance from the right */
     z-index: 99; /* Ensure the icon appears above other content */
 }
 

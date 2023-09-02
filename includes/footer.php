@@ -158,8 +158,20 @@
 <script src="assets/vendor/fancybox-master/jquery.fancybox.min.js"></script>
 <script src="assets/custom/js/custom.js"></script>
 
+<script>
+$(document).ready(function () {
+    var $navbar = $(".navbar");
+    var navbarOffset = $navbar.offset().top;
 
-
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > navbarOffset) {
+            $navbar.addClass("sticky-top-nav");
+        } else {
+            $navbar.removeClass("sticky-top-nav");
+        }
+    });
+});
+</script>
 
 </body>
 

@@ -1,3 +1,4 @@
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo Config::GOOGLE_RECAPTCHA_SITE_KEY; ?>"></script>
 <div class="col-12 col-sm-6 wow fadeInLeft">
     <div id="respmessage" class="respmessage" style="display: none;"></div>
     <form action="requestform_ajax.php" method="post" id="getquote" name="getquote" class="technaus-contact-form">
