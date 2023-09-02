@@ -1,7 +1,7 @@
 <?php
 require_once('./vendor/autoload.php');
 define('SHREAD_SHEET_ID', '1_0AN9THJfYQlyrspUvdjIt-g4AgTMEzf1HLeTN4-Zmw'); // Google Sheet Id
-define('SPREAD_SHEET_CREDENTIALS_FILE', 'technausgetquote-347d099fbda5.json');   //PATH TO JSON FILE DOWNLOADED FROM GOOGLE CONSOLE
+define('SPREAD_SHEET_CREDENTIALS_FILE', 'technausgetquote-f2336fffe063.json');   //PATH TO JSON FILE DOWNLOADED FROM GOOGLE CONSOLE
 
 function getClient()
 {

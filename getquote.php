@@ -16,8 +16,8 @@ require_once 'includes/navbar.php';
 <div class="container">
     <div class="row overflow-hidden">
         <div class="col-12 col-md-10 offset-md-1 mt-2">
-  
-           
+
+
 
             <div class="mt-0 mb-5 my-md-5">
                 <h3 class="font-35 font-weight-bold technaus-main-text-color text-center">Get Your Free Quote & Start
@@ -42,8 +42,8 @@ require_once 'includes/navbar.php';
     <!-- onsubmit="return validateForm()"> -->
 
     <div class="row mb-4 mb-md-5 overflow-hidden">
-        <div class="col-12 col-sm-6 wow fadeInLeft">
-        <div id="respmessage" class="respmessage" style="display: none;"></div>
+        <!-- <div class="col-12 col-sm-6 wow fadeInLeft">
+            <div id="respmessage" class="respmessage" style="display: none;"></div>
             <form action="requestform_ajax.php" method="post" id="getquote" name="getquote"
                 class="technaus-contact-form">
                 <div class="form-group">
@@ -80,7 +80,10 @@ require_once 'includes/navbar.php';
                     Get Quote</button>
                 <input type="hidden" name="quoteSubmited" value="quoteSubmited" />
             </form>
-        </div>
+        </div> -->
+
+        <?php require_once 'getquoteform.php'; ?>
+
         <div class="col-12 col-sm-6 wow fadeInRight ">
             <img src="assets/custom/images/site/getquote2.png" alt="" class="w-75">
         </div>
@@ -90,19 +93,19 @@ require_once 'includes/navbar.php';
 <?php require_once 'includes/footer.php'; ?>
 
 <script>
-  $(document).ready(function () {  
-      $("#respmessage").html('');    
-  });  
+    $(document).ready(function () {
+        $("#respmessage").html('');
+    });  
 </script>
 <!-- recaptcha -->
 <script>
-   $(function () {
+    $(function () {
         $("#getquote").on('submit', function (e) {
             e.preventDefault();
             var partnerForm = $(this);
             grecaptcha.ready(function () {
-                grecaptcha.execute('AIzaSyBrA1FdQmIqNVUg8nvJcbZtYQwBCvC91dw', {
-                                        
+                grecaptcha.execute('6LfKYpIjAAAAAJ8OSkWEy3MCjeD7MT8cOYCfjzDU', {
+
                     action: 'submit'
                 }).then(function (token) {
                     $('#g-recaptcha-response').val(token);
@@ -125,67 +128,4 @@ require_once 'includes/navbar.php';
 
 
 </script>
-
-<!-- <script>
-    $(document).ready(function () {
-        $("#getquote").on('submit', function (e) {
-            e.preventDefault();
-            var partnerForm = $(this);
-            grecaptcha.ready(function () {
-                grecaptcha.execute('6LfKYpIjAAAAAJ8OSkWEy3MCjeD7MT8cOYCfjzDU', {
-                    action: 'submit'
-                }).then(function (token) {
-                    $('#g-recaptcha-response').val(token);
-                    $.ajax({
-                        url: partnerForm.attr('action'),
-                        type: 'post',
-                        data: partnerForm.serialize(),
-                        success: function (response) {
-                            if (response.status == 'success') {
-                                document.getElementById('getquote').reset(); // Reset the form
-                                $("#respmessage").html(response.message); // Display success message
-                            } else {
-                                $("#respmessage").html(response.message); // Display error message
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    });
-</script> -->
-
 <!-- recaptcha end -->
-
-<script>
-    function validateForm() {
-        const email = document.getElementById("email").value;
-        const mobile = document.getElementById("mobile").value;
-
-        // Perform your custom validation checks here
-        if (!isValidEmail(email)) {
-            alert("Please enter a valid email address.");
-            return false;
-        }
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid mobile number.");
-            return false;
-        }
-
-        return true;
-    }
-
-    function isValidEmail(email) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-    }
-
-    function isValidMobile(mobile) {
-        const mobilePattern = /^[0-9]{10}$/;
-        return mobilePattern.test(mobile);
-    }
-
-</script>
-
-

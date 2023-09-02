@@ -531,7 +531,7 @@ require_once 'includes/slider.php';
             </div>
         </div>
         <div class="row mb-4 mb-md-5 overflow-hidden">
-            <div class="col-12 col-sm-6 wow fadeInLeft">
+            <!-- <div class="col-12 col-sm-6 wow fadeInLeft">
            
             <form class="technaus-contact-form" id="quoteForm" method="POST" action="process_form.php"
                 onsubmit="return validateForm()">
@@ -564,7 +564,11 @@ require_once 'includes/slider.php';
                 <button type="submit"
                     class="btn technaus-second-background-color rounded-0 text-white btn-block p-3">Get Quote</button>
             </form>
-            </div>
+            </div> -->
+
+
+            <?php require_once 'getquoteform.php'; ?>
+
             <div class="col-12 col-sm-6 wow fadeInRight">
                 <div id="map" data-lng="31.248848" data-lat="29.966324" data-icon="assets/custom/images/map-marker.png"
                     data-zom="12" style="width:100%;height:420px">

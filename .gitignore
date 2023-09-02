@@ -1,0 +1,4 @@
+*.json
+!spec/*.json
+postToGooggleSheet.php
+technausgetquote-f2336fffe063.json

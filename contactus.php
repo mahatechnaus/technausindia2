@@ -81,7 +81,7 @@ require_once 'includes/navbar.php';
 
     
         <div class="row mb-4 mb-md-5 overflow-hidden">
-            <div class="col-12 col-sm-6 wow fadeInLeft">
+            <!-- <div class="col-12 col-sm-6 wow fadeInLeft">
                 <form class="technaus-contact-form">
                     <div class="form-group">
                         <input type="text" class="form-control rounded-0 p-3" placeholder="Name">
@@ -107,7 +107,11 @@ require_once 'includes/navbar.php';
                     <button type="submit"
                         class="btn technaus-second-background-color rounded-0 text-white btn-block p-3">Send</button>
                 </form>
-            </div>
+            </div> -->
+
+            
+        <?php require_once 'getquoteform.php'; ?>
+        
             <div class="col-12 col-sm-6 wow fadeInRight">
                 <div id="map" data-lng="31.248848" data-lat="29.966324" data-icon="assets/custom/images/map-marker.png"
                     data-zom="12" style="width:100%;height:420px">
