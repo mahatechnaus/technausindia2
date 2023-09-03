@@ -1,7 +1,13 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "Commercial Solar Solutions - Technaus Solar in India";
+$page_description = "Elevate your business with our commercial solar solutions in India.
+ Learn about our tailored solar systems, energy efficiency, and cost-saving strategies.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
+
 
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">

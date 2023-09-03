@@ -1,4 +1,9 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "Contact Us - Technaus Solar in India- Get in Touch for Solar Solutions";
+$page_description = "Contact Technaus Solar for inquiries, consultations, and assistance with your solar projects. 
+We're here to help you harness the power of the sun.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
@@ -117,7 +122,7 @@ require_once 'includes/navbar.php';
                     data-zom="12" style="width:100%;height:420px">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62451.05164512451!2d79.805857!3d11.961293!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53631bbb3669d7%3A0x5db1e34f9771b647!2sTechnaus%20Renewable%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1692683481484!5m2!1sen!2sin"
-                        width="600" height="415" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="600" height="495" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     

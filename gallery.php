@@ -1,4 +1,9 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "Gallery - Technaus Solar - Solar Power and Renewable Energy Solutions Specialists";
+$page_description = "Explore our solar installations and projects through our gallery. View the beauty and functionality of 
+solar power in action.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>

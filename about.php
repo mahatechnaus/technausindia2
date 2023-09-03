@@ -1,7 +1,13 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "About Technaus Solar - Our Story and Commitment to Renewable Energy";
+$page_description = "Learn about Technaus Solar Company - a trusted leader in sustainable energy solutions. 
+Discover our journey, commitment to environmental excellence, and dedication to powering a greener future through solar innovation.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
+
 
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">

@@ -1,4 +1,10 @@
 <?php
+// Define unique page-specific SEO information
+
+$page_title = "Get a Quote - Technaus Solar in India - Request Your Solar Solution Estimate";
+$page_description = "Request a customized solar solution estimate from Technaus Solar. Let us help you plan and implement your 
+solar power project for a sustainable future.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>

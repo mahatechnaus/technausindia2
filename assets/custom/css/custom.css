@@ -3513,3 +3513,11 @@ a.toggle-menu{
     background-color: #1A2A36; /* Change this to your desired background color */
     z-index: 1030; /* Adjust the z-index as needed to make sure it appears above other elements */
 }
+
+/* Add your desired styling for the active navigation item here */
+.nav-link.active {
+    font-weight: bold; /* Add any other styles you want */
+    border-bottom: 2px solid #088BC3;
+
+}
+

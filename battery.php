@@ -1,4 +1,9 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "Battery Storage Solutions - Technaus Solar in India";
+$page_description = "Learn about our battery storage solutions for renewable energy. Enhance energy efficiency, reliability, 
+and sustainability with our cutting-edge battery technologies in India.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>

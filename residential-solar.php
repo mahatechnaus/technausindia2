@@ -1,7 +1,13 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "Residential Solar Solutions - Technaus Solar in India";
+$page_description = "Discover our residential solar solutions to power your home sustainably with clean energy. 
+Explore our installation, maintenance, and financing options.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
+
 
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">

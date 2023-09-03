@@ -1,8 +1,12 @@
 <?php
+// Define unique page-specific SEO information
+$page_title = "EV Charging Solutions - Technaus Solar in India";
+$page_description = "Explore our EV charging solutions for homes and businesses. Embrace the future of transportation with our 
+reliable and eco-friendly electric vehicle charging services.";
+
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
-
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">
     <div class="container">

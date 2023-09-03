@@ -5,7 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="technaus">
+
+    <!-- Add common meta tags here -->
+    <title><?php echo $page_title; ?></title>
+    <meta name="description" content="<?php echo $page_description; ?>">
+    <!-- Add any other common meta tags as needed -->
+
+   
     <meta name="author" content="Enterprise evCharging">
     <link rel="shortcut icon" href="assets/custom/images/shortcut.png">
 
