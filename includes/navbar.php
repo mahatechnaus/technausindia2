@@ -1,22 +1,17 @@
 <body>
-
     <!-- Loading Screen -->
-    <!-- <div id="ju-loading-screen">
+    <div id="ju-loading-screen">
         <div class="sk-double-bounce">
             <div class="sk-child sk-double-bounce1"></div>
             <div class="sk-child sk-double-bounce2"></div>
         </div>
-    </div> -->
-
-
+    </div>
     <!-- /End Top Header -->
-
     <div class="technaus-transparent py-3 py-lg-0">
-
-        <nav class="navbar navbar-expand-md btco-hover-menu py-lg-2 ">
+        <nav class="navbar navbar-expand-md btco-hover-menu py-lg-2 custom-bg-color">
             <div class="container">
                 <a class="navbar technaus-logo pl-0" href="index">
-                    <img src="assets/custom/images/site/Technaus-India-Logo.png" alt="technaus Template"
+                    <img src="assets/custom/images/site/Technaus-India-LogoR.png" alt="technaus Template"
                         style="height:45px;" class="technaus-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#technausNavDropdown"
@@ -43,21 +38,20 @@
                         <a class="nav-link" href="contactus" id="contact">Contact Us</a>
                     </ul>
                 </div>
-
             </div>
         </nav>
-
     </div>
     <script>
         // Get the current URL path
         var currentPath = window.location.pathname;
         var pathToMatch = currentPath.split('/').pop(); // Get the last part of the path
 
-        console.log("Current Path:", currentPath); // Check what the current path is
-        console.log("pathtomatch:", pathToMatch); // Check what the current path is
+        // console.log("Current Path:", currentPath); // Check what the current path is
+        // console.log("pathtomatch:", pathToMatch); // Check what the current path is
 
         // Define an object with mappings of URLs to corresponding nav item IDs
         var urlToNavId = {
+            '': 'home',
             'index': 'home',
             'about': 'about',
             'residential-solar': 'sub-nav1',

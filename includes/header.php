@@ -12,11 +12,11 @@
     <!-- Add any other common meta tags as needed -->
 
    
-    <meta name="author" content="Enterprise evCharging">
-    <link rel="shortcut icon" href="assets/custom/images/shortcut.png">
+    <meta name="author" content="Technaus Solar - Solar Power and Renewable Energy Solutions Specialists">
 
-    <title>Technaus Solar - Solar Power and Renewable Energy Solutions Specialists</title>
     <link href="assets/custom/images/site/logo.ico" rel="icon">
+<title>Technaus Solar - Solar Power and Renewable Energy Solutions Specialists</title>
+
     <!-- animate.css-->
     <link href="assets/vendor/animate.css-master/animate.min.css" rel="stylesheet">
     <!-- Load Screen -->

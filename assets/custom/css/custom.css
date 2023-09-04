@@ -2425,7 +2425,7 @@ body{
     left: -1px;
 }
 .technaus-choose-background{
-    background-image: url("../images/choose-us-background.jpg"); 
+    background-image: url("../images/site/abtpg.jpg"); 
 }
 .colored-table .table-badge{
     left: -24px;
@@ -3508,16 +3508,37 @@ a.toggle-menu{
 .sticky-top-nav {
     position: fixed;
     top: 0;
- 
     width: 100%;
-    background-color: #1A2A36; /* Change this to your desired background color */
-    z-index: 1030; /* Adjust the z-index as needed to make sure it appears above other elements */
+    background-color: #1A2A36;
+    z-index: 1000; /* Ensure this is a lower value than the navigation menu */
+}
+
+.sticky-top-nav a img {
+    z-index: 1020; /* Set a lower z-index for the img */
 }
 
 /* Add your desired styling for the active navigation item here */
 .nav-link.active {
     font-weight: bold; /* Add any other styles you want */
     border-bottom: 2px solid #088BC3;
+}
 
+
+/* Custom CSS to change navbar link hover color */
+.navbar-nav .nav-item.dropdown:hover .nav-link,
+.navbar-nav .nav-item.dropdown.show .nav-link,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    color: #088BC3 !important; /* Replace with your desired hover color */
+}
+
+.custom-bg-color {
+    background-color: #1A2A36;
+    color: #fff;
+}
+
+/* Add a z-index to the .navbar class */
+.navbar {
+    z-index: 1000; /* You can adjust this value as needed */
 }
 
