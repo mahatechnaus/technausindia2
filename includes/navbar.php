@@ -36,6 +36,9 @@
                         </li>
                         <a class="nav-link" href="gallery" id="gallery">Gallery</a>
                         <a class="nav-link" href="contactus" id="contact">Contact Us</a>
+                        <a class="nav-link btn technaus-second-background-color technaus-second-border-color white-color rounded-0 mr-4 px-3 px-md-4 py-2 bg-hover-transparent technaus-second-hover-color"
+                            href="survey" id="survey">Survey</a>
+
                     </ul>
                 </div>
             </div>
