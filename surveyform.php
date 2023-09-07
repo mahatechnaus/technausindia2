@@ -1,30 +1,70 @@
 <?php
+// Check if the page is loaded for the first time (no POST data)
+$isFirstLoad = empty($_POST);
+// Delete the user-responses.json file if it's the first load
+if ($isFirstLoad && file_exists('user-responses.json')) {
+    unlink('user-responses.json');
+}
 $surveyJSON = file_get_contents('survey-questions.json');
 $survey = json_decode($surveyJSON, true);
-
 $currentQuestionId = 1;
-$userResponses = array();
- // Initialize an empty string for user responses
-
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$userResponses = [];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $currentQuestionId = $_POST['currentQuestionId'];
-    
-    // Check if a response was submitted
-    if (isset($_POST['response'])) {
-        $response = $_POST['response'];
-        $userResponses["Question $currentQuestionId"] = $response;
+    $response = $_POST['response']; 
+    // Check if the user-responses.json file exists before reading it
+    if (file_exists('user-responses.json')) {
+        $userResponsesJSON = file_get_contents('user-responses.json');
+        $userResponses = json_decode($userResponsesJSON, true);
+    }    
+    $userResponses[$currentQuestionId-1] = $response;
+    // Save the updated JSON object to a file
+    $userResponsesJSON = json_encode($userResponses, JSON_PRETTY_PRINT);
+    if (file_put_contents('user-responses.json', $userResponsesJSON) === false) {
+        echo 'Error saving user responses.';
+    } else {
+        // echo 'User responses saved successfully.';
     }
 }
-
 $currentQuestion = $survey[$currentQuestionId];
+// Load and display user responses
+if (file_exists('user-responses.json')) {
+    $userResponsesJSON = file_get_contents('user-responses.json');
+    $userResponses = json_decode($userResponsesJSON, true);
+}
 ?>
 
+
 <div id="respmessage" class="respmessage" style="display: none;">Please submit your answer</div>
+
+<!-- <?php
+// Display user responses
+if (!empty($userResponses) && $currentQuestionId == 8) {
+    echo '<h2 class="user-responses-heading">User Responses:</h2>';
+    echo '<ul class="user-responses-list">';
+    foreach ($userResponses as $questionId => $response) {
+        echo '<li class="user-response-item">';
+        echo "Question $questionId: $response";
+        echo '</li>';
+    }
+    echo '</ul>';
+}
+?> -->
 
 <form action="#" method="post" id="surveyformid" name="surveyformid" class="technaus-contact-form">
 
     <div id="question<?php echo $currentQuestionId; ?>" class="card-3d">
         <div class="card-body">
+
+        <?php
+// Display user responses
+if (!empty($userResponses) && $currentQuestionId == 8) {
+      // Display the thank you image
+    echo '<img src="assets/custom/images/site/thanks.png" alt="Thank You" style="height:200px">';
+}
+?>
+
+
             <h4 class="card-title text-left" style="margin-left: 50px;">
                 <?php echo $currentQuestion['question']; ?>
             </h4>
@@ -51,15 +91,7 @@ $currentQuestion = $survey[$currentQuestionId];
             echo 'style="display: none;"'; ?>>Back</button>
 </form>
 
-<div id="userResponses">
-    <h3>User Responses:</h3>
-    <ul>
-        <?php foreach ($userResponses as $question => $response): ?>
-            <li><?php echo "$question: $response"; ?></li>
-            <li><?php echo "$userResponses"; ?></li>
-        <?php endforeach; ?>
-    </ul>
-</div>
+
 
 
 
@@ -89,8 +121,14 @@ $currentQuestion = $survey[$currentQuestionId];
                 toggleButtons(); // Update button visibility
             }
         });
+
+        // Show User Responses section when the survey is complete
+        if (currentQuestionId === 8) {
+            $('#userResponses').show();
+        }
     });
 </script>
+
 
 
 

@@ -3542,3 +3542,25 @@ a.toggle-menu{
     z-index: 1000; /* You can adjust this value as needed */
 }
 
+.user-responses-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333; /* Add a border at the bottom */
+    padding-bottom: 5px; /* Add some spacing between the heading and responses */
+}
+
+.user-responses-list {
+    list-style-type: none;
+    padding: 0;
+    background-color: #f7f7f7; /* Add a background color */
+    border: 1px solid #ddd; /* Add a border around the responses */
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px; /* Add some padding inside the responses container */
+}
+
+.user-response-item {
+    margin-bottom: 5px;
+}
+
+
