@@ -3546,7 +3546,6 @@ a.toggle-menu{
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-    border-bottom: 2px solid #333; /* Add a border at the bottom */
     padding-bottom: 5px; /* Add some spacing between the heading and responses */
 }
 
@@ -3557,10 +3556,13 @@ a.toggle-menu{
     border: 1px solid #ddd; /* Add a border around the responses */
     border-radius: 5px; /* Add rounded corners */
     padding: 10px; /* Add some padding inside the responses container */
+    color:  #5C6A77;
+ 
 }
 
 .user-response-item {
     margin-bottom: 5px;
+
 }
 
 
