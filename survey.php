@@ -1,4 +1,8 @@
+
 <?php
+if (!session_id()){
+    session_start();
+}
 // Define unique page-specific SEO information
 $page_title = "Survey - Technaus Solar in India - Get in Touch for Solar Solutions";
 $page_description = "Contact Technaus Solar for inquiries, consultations, and assistance with your solar projects. 

@@ -8,7 +8,7 @@
     </div>
     <!-- /End Top Header -->
     <div class="technaus-transparent py-3 py-lg-0">
-        <nav class="navbar navbar-expand-md btco-hover-menu py-lg-2 custom-bg-color">
+        <nav class="navbar navbar-expand-md btco-hover-menu py-lg-2 custom-bg-color fixed-top">
             <div class="container">
                 <a class="navbar technaus-logo pl-0" href="index">
                     <img src="assets/custom/images/site/Technaus-India-LogoR.png" alt="technaus Template"

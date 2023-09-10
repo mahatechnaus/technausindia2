@@ -3509,7 +3509,7 @@ a.toggle-menu{
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1A2A36;
+    /* background-color: #1A2A36; */
     z-index: 1000; /* Ensure this is a lower value than the navigation menu */
 }
 
