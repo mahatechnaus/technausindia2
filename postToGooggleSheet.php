@@ -1,7 +1,7 @@
 <?php
 require_once('./vendor/autoload.php');
 define('SHREAD_SHEET_ID', '1_0AN9THJfYQlyrspUvdjIt-g4AgTMEzf1HLeTN4-Zmw'); // Google Sheet Id
-define('SPREAD_SHEET_CREDENTIALS_FILE', 'technausgetquote-f2336fffe063.json');   //PATH TO JSON FILE DOWNLOADED FROM GOOGLE CONSOLE
+define('SPREAD_SHEET_CREDENTIALS_FILE', 'technausgetquote-f2336fffe063.json'); //PATH TO JSON FILE DOWNLOADED FROM GOOGLE CONSOLE
 
 function getClient()
 {
@@ -15,13 +15,10 @@ function getClient()
 
 function insertIntoSheets($range = 'Sheet1', array $data = [])
 {
-    
- 
   // Get the API client and construct the service object.
-  $data['createdon'] =  date("F j, Y, g:i a", time());
-                
-    
-                $dataArray = array_values(  $data);
+  $data['createdon'] = date("F j, Y, g:i a", time());
+
+  $dataArray = array_values($data);
   $client = getClient();
   $service = new Google_Service_Sheets($client);
   $valueRange = new Google_Service_Sheets_ValueRange();
@@ -37,7 +34,4 @@ function insertIntoSheets($range = 'Sheet1', array $data = [])
 
   return $response;
 }
-
-              
-                
 

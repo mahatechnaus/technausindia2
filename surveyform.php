@@ -1,48 +1,47 @@
 <?php
-if (!isset($_SESSION['userselected'])){
-    $_SESSION['userselected']=array();
+include_once('includes/config.php');
+if (!isset($_SESSION['userselected'])) {
+    $_SESSION['userselected'] = array();
 }
 $surveyJSON = file_get_contents('survey-questions.json');
 $survey = json_decode($surveyJSON, true);
 $currentQuestionId = 1;
-
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $currentQuestionId = $_POST['currentQuestionId'];
     $response = $_POST['response'];
 
-    $_SESSION['userselected']['question_no'.$currentQuestionId-1] = $response;
-    print_r( $_SESSION['userselected']);
+    $_SESSION['userselected']['question_no' . $currentQuestionId - 1] = $response;
+  
+
 }
 $currentQuestion = $survey[$currentQuestionId];
 
-if ($currentQuestionId == 10) {
+if ($currentQuestionId == 10 || $currentQuestionId == 9) {
+    require_once('postToGooggleSheet.php');
+    foreach ($_SESSION['userselected'] as $question => $response) {
+        $dataArray[$question] = $response;
+    }
+    insertIntoSheets('Survey_sheet', $dataArray);
     unset($_SESSION['userselected']);
 }
-
 ?>
 
-
-
-<div id="respmessage" class="respmessage" style="display: none;">Please submit your answer</div>
-
+<!-- <div id="respmessage" class="respmessage" style="display: none;">Please submit your answer</div> -->
 
 <form action="#" method="post" id="surveyformid" name="surveyformid" class="technaus-contact-form">
-
     <div id="question<?php echo $currentQuestionId; ?>" class="card-3d">
         <div class="card-body">
             <?php
             // Display user responses
-            if (!empty($userResponses) && $currentQuestionId == 10) {
+            if ($currentQuestionId == 10) {
                 // Display the thank you image
                 echo '<img src="assets/custom/images/site/thanks.png" alt="Thank You" style="height:200px">';
             }
             ?>
-
             <h4 class="card-title text-left technaus-second-text-color" style="margin-left: 50px;">
                 <?php echo $currentQuestion['question']; ?>
             </h4>
+    
             <div class="form-group text-left" style="margin-left: 70px;">
                 <div class="form-check mb-2">
                     <?php foreach ($currentQuestion['options'] as $option => $nextQuestionId): ?>
@@ -71,7 +70,7 @@ if ($currentQuestionId == 10) {
     $(function () {
         var currentQuestionId = <?php echo $currentQuestionId; ?>; // Initialize with the current question ID
         function toggleButtons() {
-            if (currentQuestionId === 8 || currentQuestionId === 10) {
+            if (currentQuestionId === 9 || currentQuestionId === 10) {
                 $('#nextButton, #backButton').hide();
             } else if (currentQuestionId === 1) {
                 $('#backButton').hide(); // Hide the Back button on the first question
@@ -99,24 +98,3 @@ if ($currentQuestionId == 10) {
         }
     });
 </script>
-
-
-
-
-<!-- working uk  -->
-<!-- <script>
-    $(function () {     
-         
-        $('#surveyformid').submit(function () {
-            $('#buttontype').val("nextbutton");
-            var selectedResponse = $('input[name="response"]:checked');      
-            if (selectedResponse) {
-                var nextQuestionId = selectedResponse.data('next-question');
-                $('#currentQuestionId').val(nextQuestionId);
-                if (nextQuestionId == 8) {
-                $('#nextButton, #backButton').hide(); // Hide both buttons
-            }
-            }          
-        });   
-    });
-</script> -->
