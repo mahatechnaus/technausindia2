@@ -22,8 +22,9 @@
                     <h4 class="font-16 semi-font"><span
                             class="technaus-iconmap-icon technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
                         Address Information</h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">#27, Puducherry - Tindivanam Main Road,
-                        V.I.P Nagar, Pattanur, Puducherry - 605 101</p>
+                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">
+                        #27, Puducherry - Tindivanam Main Road,
+                        V.I.P Nagar, Pattanur - 605 006</p>
                 </div>
                 <!-- <div class="my-3">
                     <h4 class="font-16 semi-font"><span

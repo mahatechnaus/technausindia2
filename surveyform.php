@@ -15,26 +15,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['userselected']['question_no' . ($currentQuestionId - 1)] = $response;
 
     if ($currentQuestionId == 2) {
-    $mobileNumber = isset($_POST['mobileNumber']) ? trim($_POST['mobileNumber']) : '';
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+        $mobileNumber = isset($_POST['mobileNumber']) ? trim($_POST['mobileNumber']) : '';
+        $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 
-    // // Debugging: Print the values of mobileNumber and email
-    // echo "mobileNumber: " . $mobileNumber . "<br>";
-    // echo "email: " . $email . "<br>";
-    $_SESSION['userselected']['question_no11'] = $mobileNumber;
-    $_SESSION['userselected']['question_no12'] = $email;
+        // // Debugging: Print the values of mobileNumber and email
+        // echo "mobileNumber: " . $mobileNumber . "<br>";
+        // echo "email: " . $email . "<br>";
+        $_SESSION['userselected']['question_no11'] = $mobileNumber;
+        $_SESSION['userselected']['question_no12'] = $email;
 
-    print_r($_SESSION['userselected']);
+        print_r($_SESSION['userselected']);
     }
 }
 
 $currentQuestion = $survey[$currentQuestionId];
 if ($currentQuestionId == 10 || $currentQuestionId == 9) {
+
+      // Determine the sheet name based on the response to question no. 2
+      $question2Response = isset($_SESSION['userselected']['question_no2']) ? trim($_SESSION['userselected']['question_no2']) : '';
+      $sheetName = ($question2Response == 'Own') ? 'Survey_Own' : 'Survey_Rent';
+
+  
     require_once('postToGooggleSheet.php');
     foreach ($_SESSION['userselected'] as $question => $response) {
         $dataArray[$question] = $response;
     }
-    insertIntoSheets('Survey_sheet', $dataArray);
+ 
+    insertIntoSheets($sheetName, $dataArray);
     unset($_SESSION['userselected']);
 }
 ?>
@@ -61,7 +68,7 @@ if ($currentQuestionId == 10 || $currentQuestionId == 9) {
                             <label class="technaus-second-text-color" for="mobileNumber">Mobile Number: <span
                                     style="color: red;">*</span></label>
                             <input class="form-control" type="text" name="mobileNumber" id="mobileNumber" required
-                                placeholder="xxxxx xxxxx">
+                                placeholder="xxxxxxxxxx">
                             <span id="mobileNumberError" style="color: red;"></span>
                         </div>
                         <div class="col-md-6">

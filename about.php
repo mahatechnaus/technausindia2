@@ -98,7 +98,7 @@ require_once 'includes/navbar.php';
 
 
 
-        <div class="row  card-3d">
+        <div class="row  card-3d mb-3">
             <div class="col-6 col-md-3">
                 <div class="technaus-counter">
                     <h2 class="technaus-counter-value font-40 font-weight-bold mb-3 technaus-main-text-color  d-inline-block  mb-4"
