@@ -6,16 +6,29 @@ if (!isset($_SESSION['userselected'])) {
 $surveyJSON = file_get_contents('survey-questions.json');
 $survey = json_decode($surveyJSON, true);
 $currentQuestionId = 1;
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
     $currentQuestionId = $_POST['currentQuestionId'];
     $response = $_POST['response'];
+    // Store user responses in session
+    $_SESSION['userselected']['question_no' . ($currentQuestionId - 1)] = $response;
 
-    $_SESSION['userselected']['question_no' . $currentQuestionId - 1] = $response;
-  
+    if ($currentQuestionId == 2) {
+    $mobileNumber = isset($_POST['mobileNumber']) ? trim($_POST['mobileNumber']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 
+    // // Debugging: Print the values of mobileNumber and email
+    // echo "mobileNumber: " . $mobileNumber . "<br>";
+    // echo "email: " . $email . "<br>";
+    $_SESSION['userselected']['question_no11'] = $mobileNumber;
+    $_SESSION['userselected']['question_no12'] = $email;
+
+    print_r($_SESSION['userselected']);
+    }
 }
-$currentQuestion = $survey[$currentQuestionId];
 
+$currentQuestion = $survey[$currentQuestionId];
 if ($currentQuestionId == 10 || $currentQuestionId == 9) {
     require_once('postToGooggleSheet.php');
     foreach ($_SESSION['userselected'] as $question => $response) {
@@ -38,22 +51,68 @@ if ($currentQuestionId == 10 || $currentQuestionId == 9) {
                 echo '<img src="assets/custom/images/site/thanks.png" alt="Thank You" style="height:200px">';
             }
             ?>
-            <h4 class="card-title text-left technaus-second-text-color" style="margin-left: 50px;">
-                <?php echo $currentQuestion['question']; ?>
-            </h4>
-    
-            <div class="form-group text-left" style="margin-left: 70px;">
-                <div class="form-check mb-2">
-                    <?php foreach ($currentQuestion['options'] as $option => $nextQuestionId): ?>
-                        <input class="form-check-input" type="radio" name="response"
-                            id="<?php echo 'option_' . $nextQuestionId; ?>" value="<?php echo $option; ?>"
-                            data-next-question="<?php echo $nextQuestionId; ?>" required>
-                        <label for="<?php echo 'option_' . $nextQuestionId; ?>">
-                            <?php echo $option; ?>
-                        </label><br>
-                    <?php endforeach; ?>
+            <!-- // for 1st question need to get mobile and email -->
+            <?php
+            if ($currentQuestionId == 1) { ?>
+
+                <div class="form-group text-left" style="margin-left: 70px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="technaus-second-text-color" for="mobileNumber">Mobile Number: <span
+                                    style="color: red;">*</span></label>
+                            <input class="form-control" type="text" name="mobileNumber" id="mobileNumber" required
+                                placeholder="xxxxx xxxxx">
+                            <span id="mobileNumberError" style="color: red;"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="technaus-second-text-color" for="email">Email:</label>
+                            <input class="form-control" type="email" name="email" id="email"
+                                placeholder="youremail@email.com">
+                            <span id="emailError" style="color: red;"></span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <h4 class="card-title text-left technaus-second-text-color" style="margin-left: 50px;">
+                    <?php echo $currentQuestion['question']; ?>
+                </h4>
+
+                <div class="form-group text-left" style="margin-left: 70px;">
+                    <div class="form-check mb-2">
+                        <?php foreach ($currentQuestion['options'] as $option => $nextQuestionId): ?>
+                            <input class="form-check-input" type="radio" name="response"
+                                id="<?php echo 'option_' . $nextQuestionId; ?>" value="<?php echo $option; ?>"
+                                data-next-question="<?php echo $nextQuestionId; ?>" required>
+                            <label for="<?php echo 'option_' . $nextQuestionId; ?>">
+                                <?php echo $option; ?>
+                            </label><br>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+
+            <?php } else { ?>
+
+                <!-- ------- qestion here ----  -->
+                <h4 class="card-title text-left technaus-second-text-color" style="margin-left: 50px;">
+                    <?php echo $currentQuestion['question']; ?>
+                </h4>
+
+                <div class="form-group text-left" style="margin-left: 70px;">
+                    <div class="form-check mb-2">
+                        <?php foreach ($currentQuestion['options'] as $option => $nextQuestionId): ?>
+                            <input class="form-check-input" type="radio" name="response"
+                                id="<?php echo 'option_' . $nextQuestionId; ?>" value="<?php echo $option; ?>"
+                                data-next-question="<?php echo $nextQuestionId; ?>" required>
+                            <label for="<?php echo 'option_' . $nextQuestionId; ?>">
+                                <?php echo $option; ?>
+                            </label><br>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+            <?php } ?>
+
         </div>
     </div>
 

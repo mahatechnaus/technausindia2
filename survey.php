@@ -13,12 +13,6 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 ?>
 
-
-
-
-
-
-
 <!-- Start Header -->
 <div class="technaus-header technaus-after-overlay bg-rules">
     <div class="container">
@@ -26,19 +20,6 @@ require_once 'includes/navbar.php';
     </div>
 </div>
 <!-- /End Header -->
-
-<!-- Start Breadcrumbs -->
-<!-- <div class="technaus-light-background-color">
-    <div class="container"> 
-        <nav aria-label="breadcrumb">
-          <ol class="technaus-breadcrumb breadcrumb px-0 py-3">
-            <li class="breadcrumb-item"><a href="#" class="technaus-second-text-color">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Contact 1</li>
-          </ol>
-        </nav> 
-    </div>
-</div> -->
-<!-- /End Breadcrumbs -->
 
 <!-- Start page content -->
 <br>
@@ -67,10 +48,9 @@ require_once 'includes/navbar.php';
 
         </div>
     </div>
-
-
-
     <div class="row mb-4 mb-md-5 overflow-hidden">
+
+
         <div class="col-12 col-md-12 text-center wow fadeInRight">
 
             <?php require_once 'surveyform.php'; ?>
@@ -78,7 +58,6 @@ require_once 'includes/navbar.php';
         </div>
     </div>
 </div>
-
 
 <!-- /End page content -->
 <?php require_once 'includes/footer.php'; ?>
