@@ -3,15 +3,11 @@
 $page_title = "Technaus Solar - Solar Power and Renewable Energy Solutions Specialists";
 $page_description = "Welcome to Technaus Solar Company, where we harness the power of the sun to provide sustainable energy solutions.
  Explore our solar products, services, and expertise to embark on a greener, more efficient future.";
-
  
 require_once 'includes/header.php';
 require_once 'includes/navbar.php'; 
 require_once 'includes/slider.php'; 
 ?>
-
-
-
     <!-- Start page content -->
     <div class="container">
         <div class="row my-3 my-md-5 overflow-hidden">
