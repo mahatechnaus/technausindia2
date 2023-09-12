@@ -17,7 +17,7 @@ require_once 'includes/slider.php';
         <div class="row my-3 my-md-5 overflow-hidden">
             <div class="col-12 col-sm-6 col-lg-3 text-center mb-4 mb-lg-0 wow fadeInDown" data-wow-delay=".4s"
                 data-wow-duration="1.5s">
-                <span class="technaus-iconbussiness technaus-second-text-color fa-3x"></span>
+                <span class="technaus-second-text-color fa-3x"><i class="fa fa-home" aria-hidden="true"></i></span>
                 <i class="fa fa-solar-panel fa-3x"></i>
                 <h2 class="technaus-main-text-color font-18 my-2">RESIDENTIAL SOLAR</h2>
                 <!-- <p class="technaus-forth-text-color font-15">
@@ -26,7 +26,7 @@ require_once 'includes/slider.php';
             </div>
             <div class="col-12 col-sm-6 col-lg-3 text-center mb-4 mb-lg-0 wow fadeInDown" data-wow-delay=".8s"
                 data-wow-duration="1.5s">
-                <span class="technaus-iconbussiness2 technaus-second-text-color fa-3x"></span>
+                <span class="technaus-second-text-color fa-3x"><i class="fa fa-industry" aria-hidden="true"></i></span>
                 <h2 class="technaus-main-text-color font-18 my-2">COMMERCIAL SOLAR</h2>
                 <!-- <p class="technaus-forth-text-color font-15">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -34,7 +34,7 @@ require_once 'includes/slider.php';
             </div>
             <div class="col-12 col-sm-6 col-lg-3 text-center mb-4 mb-lg-0 wow fadeInDown" data-wow-delay="1.2s"
                 data-wow-duration="1.5s">
-                <span class="technaus-iconbussiness3 technaus-second-text-color fa-3x"></span>
+                <span class="technaus-second-text-color fa-3x"><i class="fa fa-battery-full" aria-hidden="true"></i></span>
                 <h2 class="technaus-main-text-color font-18 my-2">BATTERY STORAGE</h2>
                 <!-- <p class="technaus-forth-text-color font-15">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -42,7 +42,7 @@ require_once 'includes/slider.php';
             </div>
             <div class="col-12 col-sm-6 col-lg-3 text-center mb-4 mb-lg-0 wow fadeInDown" data-wow-delay="1.6s"
                 data-wow-duration="1.5s">
-                <span class="technaus-iconbussiness4 technaus-second-text-color fa-3x"></span>
+                <span class=" technaus-second-text-color fa-3x"><i class="fa-solid fa fa-bolt" aria-hidden="true"></i></span>
                 <h2 class="technaus-main-text-color font-18 my-2">EV CHARGING</h2>
                 <!-- <p class="technaus-forth-text-color font-15">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean

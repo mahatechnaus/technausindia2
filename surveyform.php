@@ -8,11 +8,25 @@ $survey = json_decode($surveyJSON, true);
 $currentQuestionId = 1;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     $currentQuestionId = $_POST['currentQuestionId'];
     $response = $_POST['response'];
-    // Store user responses in session
     $_SESSION['userselected']['question_no' . ($currentQuestionId - 1)] = $response;
+
+    // Check if the user selected "Commercial" for question 1
+    if ($currentQuestionId == 6) {
+        $question1Response = isset($_SESSION['userselected']['question_no1']) ? $_SESSION['userselected']['question_no1'] : '';
+
+        // Check if the user selected "Commercial" for question 1
+        if ($question1Response == 'Commercial') {
+            // Skip question 6 by setting the next question ID to the appropriate value
+            $currentQuestionId = 7; // Change this to the ID of the next relevant question
+        } elseif ($question1Response == 'Rent') {
+            // If "Rent" is selected, you want to show question 6 as well
+            $currentQuestionId = 6; // Change this to the ID of the next relevant question
+        }
+    }
+
+
 
     if ($currentQuestionId == 2) {
         $mobileNumber = isset($_POST['mobileNumber']) ? trim($_POST['mobileNumber']) : '';
@@ -30,30 +44,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $currentQuestion = $survey[$currentQuestionId];
 if ($currentQuestionId == 10 || $currentQuestionId == 9) {
-
-      // Determine the sheet name based on the response to question no. 2
-      $question2Response = isset($_SESSION['userselected']['question_no2']) ? trim($_SESSION['userselected']['question_no2']) : '';
-      $sheetName = ($question2Response == 'Own') ? 'Survey_Own' : 'Survey_Rent';
-
-  
+    // Determine the sheet name based on the response to question no. 2
+    $question2Response = isset($_SESSION['userselected']['question_no2']) ? trim($_SESSION['userselected']['question_no2']) : '';
+    $sheetName = ($question2Response == 'Own') ? 'Survey_Own' : 'Survey_Rent';
     require_once('postToGooggleSheet.php');
     foreach ($_SESSION['userselected'] as $question => $response) {
         $dataArray[$question] = $response;
     }
- 
     insertIntoSheets($sheetName, $dataArray);
     unset($_SESSION['userselected']);
 }
 ?>
 
-<!-- <div id="respmessage" class="respmessage" style="display: none;">Please submit your answer</div> -->
-
 <form action="#" method="post" id="surveyformid" name="surveyformid" class="technaus-contact-form">
     <div id="question<?php echo $currentQuestionId; ?>" class="card-3d">
         <div class="card-body">
             <?php
-            // Display user responses
-            if ($currentQuestionId == 10) {
+            if ($currentQuestionId == 9 || $currentQuestionId == 10) {
                 // Display the thank you image
                 echo '<img src="assets/custom/images/site/thanks.png" alt="Thank You" style="height:200px">';
             }
@@ -95,11 +102,9 @@ if ($currentQuestionId == 10 || $currentQuestionId == 9) {
                             </label><br>
                         <?php endforeach; ?>
                     </div>
-                </div>
-
+                </div>             
 
             <?php } else { ?>
-
                 <!-- ------- qestion here ----  -->
                 <h4 class="card-title text-left technaus-second-text-color" style="margin-left: 50px;">
                     <?php echo $currentQuestion['question']; ?>
@@ -119,7 +124,6 @@ if ($currentQuestionId == 10 || $currentQuestionId == 9) {
                 </div>
 
             <?php } ?>
-
         </div>
     </div>
 

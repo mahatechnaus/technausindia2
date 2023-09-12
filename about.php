@@ -170,7 +170,7 @@ require_once 'includes/navbar.php';
         </div>
     </div>
 </div>
-<div class="bg-rules mb-4 py-3 py-lg-0" style="background-image: url(assets/custom/images/site/abtpg2.jpg)">
+<div class="bg-rules mb-5 py-3 py-lg-0" style="background-image: url(assets/custom/images/site/abtpg2.jpg)">
     <div class="container-fluid">
         <div class="row overflow-hidden">
             <div class="col-12 col-lg-6 p-lg-0">
@@ -197,7 +197,7 @@ require_once 'includes/navbar.php';
     </div>
 </div>
 
-<div class="container"> 
+<!-- <div class="container"> 
 
 
     <div class="technaus-team">
@@ -303,7 +303,7 @@ require_once 'includes/navbar.php';
     </div>
 
     <br>
-</div>
+</div> -->
 
 <!-- /End page content -->
 <?php require_once 'includes/footer.php'; ?>
