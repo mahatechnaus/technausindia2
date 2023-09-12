@@ -135,7 +135,6 @@ if ($currentQuestionId == 10 || $currentQuestionId == 9) {
             echo 'style="display: none;"'; ?>>Back</button>
 </form>
 
-
 <script>
     $(function () {
         var currentQuestionId = <?php echo $currentQuestionId; ?>; // Initialize with the current question ID

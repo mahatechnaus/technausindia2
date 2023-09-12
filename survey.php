@@ -58,6 +58,5 @@ require_once 'includes/navbar.php';
         </div>
     </div>
 </div>
-
 <!-- /End page content -->
 <?php require_once 'includes/footer.php'; ?>
