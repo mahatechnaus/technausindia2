@@ -2,22 +2,8 @@
 <div class="technaus-footer-image technaus-after-overlay white-color py-4 py-lg-5 bg-rules">
     <div class="container">
         <div class="row">
-            <!-- <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-2 mb-5 text-center">
-                    <h2 class="font-30 semi-font mb-5">Newsletter</h2>
-                    <form class="form-inline position-relative">
-                        <div class="form-group technaus-subscribe-formgroup">
-                            <input type="email" class="form-control technaus-subscribe-input technaus-btn-rouned"
-                                placeholder="Your Email">
-                        </div>
-                        <button type="submit"
-                            class="btn technaus-second-background-color technaus-btn-rouned technaus-subscribe-btn">Subscribe</button>
-                    </form>
-
-                </div> -->
             <div class="col-12 col-lg-3 mb-4 mb-lg-0">
-
                 <h2 class="font-20 semi-font technaus-footer-border-color border-bottom pb-3">Sales Office</h2>
-
                 <div class="my-3">
                     <h4 class="font-16 semi-font"><span
                             class="technaus-iconmap-icon technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
@@ -26,18 +12,6 @@
                         #27, Puducherry - Tindivanam Main Road,
                         V.I.P Nagar, Pattanur - 605 006</p>
                 </div>
-                <!-- <div class="my-3">
-                    <h4 class="font-16 semi-font"><span
-                            class="technaus-iconphone technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
-                        Call Now </h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">+91 74186 50503</p>
-                </div>
-                <div class="my-3">
-                    <h4 class="font-16 semi-font"><span
-                            class="technaus-iconemail technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
-                        Mail </h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">solar@technaus.co.in</p>
-                </div> -->
 
             </div>
 
@@ -51,18 +25,6 @@
                         Nagar,
                         Perungudi, Chennai - 600 096</p>
                 </div>
-                <!-- <div class="my-3">
-                    <h4 class="font-16 semi-font"><span
-                            class="technaus-iconphone technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
-                        Call Now </h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">+91 74186 50503</p>
-                </div>
-                <div class="my-3">
-                    <h4 class="font-16 semi-font"><span
-                            class="technaus-iconemail technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
-                        Mail </h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">solar@technaus.co.in</p>
-                </div> -->
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <h2 class="font-20 semi-font technaus-footer-border-color border-bottom pb-3">Branch Office</h2>
@@ -74,19 +36,6 @@
                         #4 Cauvery Avenue,
                         Alagapuram, Salem - 636 004</p>
                 </div>
-                <!-- <div class="my-3">
-                    <h4 class="font-16 semi-font"><span
-                            class="technaus-iconphone technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
-                        Call Now </h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">+91 74186 50503</p>
-                </div>
-                <div class="my-3">
-                    <h4 class="font-16 semi-font"><span
-                            class="technaus-iconemail technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>
-                        Mail </h4>
-                    <p class="font-14 technaus-foot-text-color mt-2 ml-4">solar@technaus.co.in</p>
-                </div> -->
-
             </div>
 
             <div class="col-12 col-sm-6 col-lg-3">
@@ -104,24 +53,32 @@
                             <h4 class="font-16 semi-font"><span
                                     class="technaus-iconemail technaus-footer-text-color pr-2 font-20 mt-1 d-inline-block"></span>Mail
                             </h4>
-                            <p class="font-14 technaus-foot-text-color mt-2">solar@technaus.co.in</p>
+                            <p class="font-14 technaus-footer-text-color mt-2">
+                                <a href="mailto:solar@technaus.co.in" class="technaus-foot-text-color">
+                                    solar@technaus.co.in
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
-                
-                <ul class="nav technaus-footer-social-links just-center">
-                    <li><a href="#" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                </ul>
+
+                <div class="social-icons">
+                    <ul class="nav technaus-footer-social-links just-center">
+                        <li><a href="https://www.facebook.com/technausrenewable" target="_blank"><i
+                                    class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/technausindia/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
-      
 
+        <!-- <li><a href="#" target="_blank"><i class="fab fa-google-plus-square"></i></a></li> -->
+        <!-- <li><a href="#" target="_blank"><i class="fab fa-pinterest-square"></i></a></li> -->
+        <!-- <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li> -->
 
     </div>
 </div>
@@ -160,18 +117,18 @@
 <script src="assets/custom/js/custom.js"></script>
 
 <script>
-$(document).ready(function () {
-    var $navbar = $(".navbar");
-    var navbarOffset = $navbar.offset().top;
+    $(document).ready(function () {
+        var $navbar = $(".navbar");
+        var navbarOffset = $navbar.offset().top;
 
-    // $(window).scroll(function () {
-    //     if ($(window).scrollTop() > navbarOffset) {
-    //         $navbar.addClass("sticky-top-nav");
-    //     } else {
-    //         $navbar.removeClass("sticky-top-nav");
-    //     }
-    // });
-});
+        // $(window).scroll(function () {
+        //     if ($(window).scrollTop() > navbarOffset) {
+        //         $navbar.addClass("sticky-top-nav");
+        //     } else {
+        //         $navbar.removeClass("sticky-top-nav");
+        //     }
+        // });
+    });
 </script>
 
 </body>

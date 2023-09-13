@@ -374,8 +374,9 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/stage1.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color">
+                                <span class="technaus-iconlink"></span>
+                            </a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/stage1.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -386,8 +387,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/stage2.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/stage2.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -399,8 +400,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/residential1.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/residential1.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -411,8 +412,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/battery1.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/battery1.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -423,8 +424,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/residential2.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/residential2.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -436,8 +437,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/industry1.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/industry1.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -449,8 +450,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/residential3.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/residential3.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -461,8 +462,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/residential4.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/residential4.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>
@@ -474,8 +475,8 @@ require_once 'includes/slider.php';
                     <div class="filter-img-block position-relative image-container translate-effect-right">
                         <img src="assets/custom/images/site/industry2.jpg" alt="image" class="w-100">
                         <div class="img-filter-overlay technaus-main-color-transparent row m-0">
-                            <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
-                                    class="technaus-iconlink"></span></a>
+                            <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
+                                    class="technaus-iconlink"></span></a> -->
                             <a data-fancybox="gallery" href="assets/custom/images/site/industry2.jpg"
                                 class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                     class="technaus-iconsearch-icon"></span></a>

@@ -1389,6 +1389,9 @@ body{
 .technaus-contact-social-links{
     justify-content: center;
 }
+
+
+
 .technaus-contact-block-border { 
     min-height: 155px; 
 }
@@ -1441,6 +1444,12 @@ body{
 
 
 /* start technaus footer 4 */
+.social-icons .nav li a:hover {
+    color: #E54D42;
+    /* Add any additional styles you want for the hover state here */
+}
+
+
 .technaus-footer-social-links a{
     color: inherit; 
     display: block;
@@ -2847,7 +2856,7 @@ a:hover , .btn-link:hover{
     background-color: #F6F6F6; 
 }
 .technaus-main-color-transparent {
-     background-color: rgba(44,62,79,.9);
+     /* background-color: rgba(44,62,79,.9); */
 }
 .technaus-second-color-transparent {
      background-color: rgba(229,77,66,.8);
@@ -2947,6 +2956,13 @@ a:hover , .btn-link:hover{
 .technaus-foot-text-color{
     color: #cfdce7;
 }
+
+a.technaus-foot-text-color:hover {
+    color: #E54D42;
+    /* Add any additional styles you want for the hover state here */
+}
+
+
 .technaus-footer-border-color{
     border-color:#cfdce7;
 }
