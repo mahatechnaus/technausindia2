@@ -63,6 +63,7 @@
                 </div>
 
                 <div class="social-icons">
+                <h2 class="font-20 semi-font technaus-footer-border-color border-bottom pb-3 text-center">Social Media</h2>
                     <ul class="nav technaus-footer-social-links just-center">
                         <li><a href="https://www.facebook.com/technausrenewable" target="_blank"><i
                                     class="fab fa-facebook"></i></a></li>

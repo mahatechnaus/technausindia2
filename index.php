@@ -485,7 +485,7 @@ require_once 'includes/slider.php';
                 </div>
             </div>
             <div class="text-center">
-                <a href="#"
+                <a href="gallery"
                     class="btn technaus-main-border-color technaus-main-text-color mt-md-4 px-5 py-2 technaus-btn-rounded technaus-main-hover-background-color white-color-hover">Show
                     All Projects</a>
             </div>
