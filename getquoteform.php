@@ -1,4 +1,6 @@
 <script src="https://www.google.com/recaptcha/api.js?render=<?php echo Config::GOOGLE_RECAPTCHA_SITE_KEY; ?>"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <div class="col-12 col-sm-6 wow fadeInLeft">
     <div id="respmessage" class="respmessage" style="display: none;"></div>
     <form action="requestform_ajax.php" method="post" id="getquote" name="getquote" class="technaus-contact-form">
@@ -26,7 +28,7 @@
                 required></textarea>
         </div>
         <div class="form-group">
-            <input type="hidden" name="g-recaptcha-response" value="" id="g-recaptcha-response">
+            <input type="text" name="g-recaptcha-response" value="" id="g-recaptcha-response">
         </div>
         <button type="submit" id="quote_form" name="quote_form"
             class="btn technaus-second-background-color rounded-0 text-white btn-block p-3 g-recaptcha">

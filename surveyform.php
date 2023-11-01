@@ -1,3 +1,4 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <?php
 include_once('includes/config.php');
 if (!isset($_SESSION['userselected'])) {
@@ -31,14 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($currentQuestionId == 2) {
         $mobileNumber = isset($_POST['mobileNumber']) ? trim($_POST['mobileNumber']) : '';
         $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-
-        // // Debugging: Print the values of mobileNumber and email
-        // echo "mobileNumber: " . $mobileNumber . "<br>";
-        // echo "email: " . $email . "<br>";
+        $custname = isset($_POST['custName']) ? trim($_POST['custName']) : '';
+        $agentid = isset($_POST['agentID']) ? trim($_POST['agentID']) : '';
+      
         $_SESSION['userselected']['question_no11'] = $mobileNumber;
         $_SESSION['userselected']['question_no12'] = $email;
-
-        print_r($_SESSION['userselected']);
+        $_SESSION['userselected']['question_no13'] = $custname;
+        $_SESSION['userselected']['question_no14'] = $agentid;
+        // print_r($_SESSION['userselected']);
     }
 }
 
@@ -70,9 +71,24 @@ if ($currentQuestionId == 10 || $currentQuestionId == 9) {
             if ($currentQuestionId == 1) { ?>
 
                 <div class="form-group text-left" style="margin-left: 70px;">
-                    <div class="row">
+                <div class="row">
                         <div class="col-md-6">
-                            <label class="technaus-second-text-color" for="mobileNumber">Mobile Number: <span
+                            <label class="technaus-second-text-color" for="custName">Customer Name: </label>
+                            <input class="form-control" type="text" name="custName" id="custName" required
+                                placeholder="Customer name">
+                            <span id="mobileNumberError" style="color: red;"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="technaus-second-text-color" for="agentID">Reference name / Agency ID: </label>
+                            <input class="form-control" type="text" name="agentID" id="agentID" required
+                                placeholder="Agency ID">
+                            <span id="emailError" style="color: red;"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <label class="technaus-second-text-color" for="mobileNumber">Custmoer Mobile No.: <span
                                     style="color: red;">*</span></label>
                             <input class="form-control" type="text" name="mobileNumber" id="mobileNumber" required
                                 placeholder="xxxxxxxxxx">

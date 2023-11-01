@@ -1,6 +1,6 @@
 <?php 
 include_once('includes/config.php'); 
-
+// print_r("ajaxpage");
 if (isset($_POST['quoteSubmited'])) {
     require_once('postToGooggleSheet.php');   
     $reCaptchaToken = $_POST['g-recaptcha-response'];
@@ -8,6 +8,7 @@ if (isset($_POST['quoteSubmited'])) {
         'secret' => Config::GOOGLE_RECAPTCHA_SECRET_KEY,
         'response' => $reCaptchaToken
     );
+    // print_r($postArray);
  
     $postJSON = http_build_query($postArray);
     $curl = curl_init();
@@ -28,6 +29,7 @@ if ($curlResponseArray["success"] == true && !empty($curlResponseArray["action"]
         'category' => $_POST['category'],     
         'message' => (isset($_POST['message'])) ?$_POST['message'] :'-'
     );
+    // print_r($dataArray);
     insertIntoSheets('Get_quote', $dataArray);
 
     $arrayResp = array(
