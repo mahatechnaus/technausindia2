@@ -12,7 +12,7 @@ if(isset($_POST['loginbtn'])) {
 
 	if (mysqli_fetch_array($query_run)) {
 		$_SESSION['username'] = $email;
-		header('location: index.php');
+		header('location: quotation.php');
 	} else {
 
         $_SESSION['status'] = 'Invalid Email or Password';

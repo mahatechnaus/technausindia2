@@ -18,7 +18,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
 
-        $query = "SELECT * FROM data WHERE user_id='$user_id' ORDER BY `invoice_number` DESC ";
+        $query = "SELECT * FROM quotation ORDER BY `owner_id` DESC ";
 
         $query_run = mysqli_query($con, $query);
 
@@ -82,7 +82,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
                 </div>
 
-                <div>Invoices
+                <div>Quotation
 
                     <div class="page-title-subheading">Create, Edit, Delete invoices here
 
@@ -106,9 +106,9 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
             ?>
 
-            <a class="btn mr-3 mb-3 btn-primary" href="form.php" style="font-size:14px;"><i class="fa fa-plus"></i>&nbsp;
+            <a class="btn mr-3 mb-3 btn-primary" href="form_quotation.php" style="font-size:14px;"><i class="fa fa-plus"></i>&nbsp;
 
-                                        Create Invoice
+                                        Create Quotation
 
                                     </a>
 
@@ -160,13 +160,13 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
               
 
-              <th>Invoice Number</th>
+              <th>Owner ID</th>
 
-              <th>Date</th>
+              <th>Owner</th>
 
-              <th>Type</th>
+              <th>Mobile</th>
 
-              <th>To </th>
+              <th>Amount </th>
 
               <th>Operations</th>
 
@@ -190,29 +190,20 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
           <tr>
 
-          <td><?php  echo $row['invoice_number']; ?></td>
+          <td><?php  echo $row['owner_id']; ?></td>
 
-            <td><?php  echo $row['date']; ?></td>
+            <td><?php  echo $row['owner']; ?></td>
 
-            <td><?php  echo $row['type']; ?></td>
+            <td><?php  echo $row['mobile']; ?></td>
+            <td><?php  echo $row['grandtotal']; ?></td>
 
-            <td>
+        
 
-            <?php
+            <td style="width:30px;">
+            <div class="row">
+                <form action="preview2.php" target="_blank" method="post">
 
-            $sqla=mysqli_query($con, "SELECT * FROM buyer_details WHERE buyer_id='".$row['client']."'");
-
-            $rowa=mysqli_fetch_assoc($sqla);
-
-            echo $rowa['company_name']; 
-
-            ?>
-
-            </td>
-
-            <td style="width:30px;"><div class="row"><form action="preview.php" target="_blank" method="post">
-
-                    <input type="hidden" name="invoice_id" value="<?php echo $row['data_id']; ?>">
+                    <input type="hidden" name="quot_id" value="<?php echo $row['owner_id']; ?>">
 
                     <button style="background-color:transparent; border:0;" type="submit" name="pdf_btn" class="btn btn-link btn-warning"><i class="fa fa-eye"></i></button>
 
@@ -220,7 +211,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
                         <form action="invoice_edit.php" method="post">
 
-                    <input type="hidden" name="invoice_edit_id" value="<?php echo $row['data_id']; ?>">
+                    <input type="hidden" name="quot_edit_id" value="<?php echo $row['owner_id']; ?>">
 
                     <button style="background-color:transparent; border:0;" type="submit" name="invoice_edit_btn" class="btn btn-link btn-success"><i class="fa fa-pen"></i></button>
 
@@ -228,7 +219,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
 
-                  <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['data_id']; ?>" id="deleteinvoice" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button>
+                  <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['owner_id']; ?>" id="deleteinvoice" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button>
 
                   </div></td>
 

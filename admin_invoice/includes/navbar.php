@@ -42,13 +42,13 @@
                                 </li>
                                 
                                 <li>
-                                    <a href="invoice.php">
+                                    <a href="quotation.php">
                                         <i class="metismenu-icon pe-7s-file"></i>
-                                       Invoices
+                                       Quotation
                                     </a>
                                 </li>
 
-                                <li>
+                                <!-- <li>
                                     <a href="client_display.php">
                                         <i class="metismenu-icon pe-7s-users"></i>
                                        Clients
@@ -60,12 +60,12 @@
                                         <i class="metismenu-icon pe-7s-folder"></i>
                                        Products/Services
                                     </a>
-                                </li>
+                                </li> -->
 
                                 
-                                <li class="app-sidebar__heading">Profile</li>
+                                <!-- <li class="app-sidebar__heading">Profile</li> -->
 
-                                <li>
+                                <!-- <li>
                                     <a href="company_details_display.php" disabled>
                                         <i class="metismenu-icon pe-7s-user"></i>
                                        Company Details
@@ -98,7 +98,7 @@
                                         <i class="metismenu-icon pe-7s-tools"></i>
                                        State Codes
                                     </a>
-                                </li>  
+                                </li>   -->
                                       
                             </ul>
                         </div>

@@ -18,7 +18,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
 
-$query_c = "SELECT * FROM data WHERE user_id ='$user_id'";
+$query_c = "SELECT * FROM quotation";
 
   $query_run_c = mysqli_query($con, $query_c);
 
@@ -128,9 +128,9 @@ $query_c = "SELECT * FROM data WHERE user_id ='$user_id'";
 
             ?>
 
-            <a class="btn mr-3 mb-3 btn-primary" href="form.php" style="font-size:14px;"><i class="fa fa-plus"></i>&nbsp;
+            <a class="btn mr-3 mb-3 btn-primary" href="form_quotation.php" style="font-size:14px;"><i class="fa fa-plus"></i>&nbsp;
 
-                                        Create Invoice
+                                        Create Quotation
 
                                     </a>
 
@@ -164,7 +164,7 @@ $query_c = "SELECT * FROM data WHERE user_id ='$user_id'";
 
                                         <div class="widget-content-left">
 
-                                            <div class="widget-heading">Total Invoices</div>
+                                            <div class="widget-heading">Total Quotation</div>
 
                                             <!-- <div class="widget-subheading">Invoices created till today</div> -->
 
@@ -294,7 +294,7 @@ $query_c = "SELECT * FROM data WHERE user_id ='$user_id'";
 
 
 
-       $query = "SELECT * FROM data WHERE user_id='$user_id' ORDER BY `invoice_number` DESC ";
+       $query = "SELECT * FROM quotation ORDER BY `owner_id` DESC ";
 
        $query_run = mysqli_query($con, $query);
 
@@ -306,95 +306,6 @@ $query_c = "SELECT * FROM data WHERE user_id ='$user_id'";
 
 
 
-<table class="table table-striped table-bordered" id="table" >
-
-        <thead align="center">
-
-          <tr>
-
-              
-
-              <th>Invoice Number</th>
-
-              <th>Date</th>
-
-              <th>Type</th>
-
-              <th>To </th>
-
-              <th>View</th>
-
-                            
-
-              </tr>
-
-        </thead>
-
-        <tbody align="center">
-
-        <?php
-
-      
-
-           while($row = mysqli_fetch_assoc($query_run))
-
-           {
-
-               ?>
-
-          <tr>
-
-          <td><?php  echo $row['invoice_number']; ?></td>
-
-            <td><?php  echo $row['date']; ?></td>
-
-            <td><?php  echo $row['type']; ?></td>
-
-            <td>
-
-            <?php
-
-            $sqla=mysqli_query($con, "SELECT * FROM buyer_details WHERE buyer_id='".$row['client']."'");
-
-            $rowa=mysqli_fetch_assoc($sqla);
-
-            echo $rowa['company_name']; 
-
-            ?>
-
-            </td>
-
-            <td><form action="preview.php" target="_blank" method="post">
-
-                    <input type="hidden" name="invoice_id" value="<?php echo $row['data_id']; ?>">
-
-                    <button  type="submit" name="pdf_btn" class="btn btn-warning"><i class="fa fa-eye"></i></button>
-
-                </form></td>
-
-                    <!--    <td><form action="invoice_edit.php" method="post">
-
-                    <input type="hidden" name="invoice_edit_id" value="<?php echo $row['data_id']; ?>">
-
-                    <button  type="submit" name="invoice_edit_btn" class="btn btn-success"><i class="fa fa-edit"></i></button>
-
-                </form></td> -->
-
-          </tr>
-
-          <?php
-
-      
-
-          } 
-
-        
-
-        ?>
-
-        </tbody>
-
-      </table>
 
 
 
