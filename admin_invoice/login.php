@@ -20,7 +20,7 @@ session_start();
 <body>
     <div class="app-container app-theme-white body-tabs-shadow">
         <div class="app-container">
-            <div class="h-100 bg-plum-plate bg-animation">
+            <div class="h-100  bg-animation">
                 <div class="d-flex h-100 justify-content-center align-items-center">
                     <div class="mx-auto app-login-box col-4">
                     <div align="center">
@@ -63,7 +63,7 @@ session_start();
                                 </div>
                                 <div class="modal-footer clearfix">
                                     <div class="float-left">
-                                        <a href="forgot.php" class="btn-lg btn btn-link">Recover Password</a>
+                                        <!-- <a href="forgot.php" class="btn-lg btn btn-link">Recover Password</a> -->
                                     </div>
                                     <div class="float-right">
                                         <button type="submit" name="loginbtn" class="btn btn-primary btn-lg">Login to Dashboard</button>

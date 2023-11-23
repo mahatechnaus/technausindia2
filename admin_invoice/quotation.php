@@ -209,7 +209,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
                 </form>
 
-                        <form action="invoice_edit.php" method="post">
+                        <!-- <form action="invoice_edit.php" method="post">
 
                     <input type="hidden" name="quot_edit_id" value="<?php echo $row['owner_id']; ?>">
 
@@ -219,7 +219,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
 
-                  <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['owner_id']; ?>" id="deleteinvoice" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button>
+                  <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['owner_id']; ?>" id="deleteinvoice" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button> -->
 
                   </div></td>
 

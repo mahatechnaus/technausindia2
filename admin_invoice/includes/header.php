@@ -87,7 +87,7 @@ $username=$_SESSION['username'];
                                         
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                         <!-- <a type="button" tabindex="0" href="mailsettings.php" class="dropdown-item">Mail Settings</a> -->
-                                        <a type="button" tabindex="0" href="changepassword.php" class="dropdown-item">Change Password</a>
+                                        <!-- <a type="button" tabindex="0" href="changepassword.php" class="dropdown-item">Change Password</a> -->
                                             <button type="button" data-toggle="modal" data-target="#logoutModal" tabindex="0" class="dropdown-item">Logout</button>
                                           </div>
                                     </div>
