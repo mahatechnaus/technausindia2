@@ -44,6 +44,18 @@ $type ="Quotation";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style type="text/css">
+    /* body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('assets/images/Technaus_Solar_logo_round.png');
+        opacity: 0.3;
+        pointer-events: none;
+    } */
+
     @media print {
         .pagebreak {
             page-break-before: always;
@@ -77,9 +89,9 @@ $type ="Quotation";
         border-spacing: 0;
         padding: 10px;
         /* outline: 0.5px solid grey; */
-        margin-left: 0px;
+        margin-left: 25px;
         border-collapse: collapse;
-        min-width: 100%;
+        min-width: 80%;
         max-width: 100%;
         text-align: left;
     }
@@ -193,12 +205,12 @@ $type ="Quotation";
         color: #088BC3;
         text-transform: uppercase;
         text-align: right;
-        margin-right: 150px;
+        margin-right: 20px;
     }
 
     .right-align {
         text-align: right;
-        margin-right: 150px;
+        margin-right: 20px;
     }
 
     body {
@@ -224,8 +236,20 @@ $type ="Quotation";
 
     #rectangle {
         width: 800px;
-        height: 300px;
+        height: 450px;
         background: #F0F0F0;
+    }
+
+
+    .technaus-footer-image {
+        /* background-image: url(assets/images/industry2.jpg); */
+        /* background-color: 	#E0E0E0; */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .technaus-after-overlay {
+        position: relative;
     }
     </style>
 
@@ -276,7 +300,7 @@ $type ="Quotation";
             <!-- logo end  -->
 
             <!-- start address  -->
-            <div class="company">
+            <!-- <div class="company">
                 <?php
 $sql = "SELECT * FROM permanent_details";
 $result = $con->query($sql);
@@ -303,9 +327,9 @@ if (empty($row['whatsapp'])) {
 
 
 
-            </div>
+            </div> -->
 
-
+            <p class="mt-4"></p>
 
             <div class="company">
                 <?php
@@ -386,6 +410,7 @@ if (empty($row['whatsapp'])) {
             <!-- Start of specification -->
             <p class="mt-4"></p>
             <strong style='font-size: 16px;'>Warranty Details:- </strong>
+            <p class="mt-4"></p>
             <table border="1" cellpadding="10">
 
                 <tr>
@@ -460,7 +485,7 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <!-- Warranty   -->
 
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col-6">
                     <table style="margin-top: 10px;">
                         <tr>
@@ -492,7 +517,39 @@ setlocale(LC_NUMERIC, 'en_IN');
             </div>
 
             <!-- end Warranty  -->
-            <br>
+
+            <!-- footer address  -->
+            <br> <br> <br>
+            <hr>
+            <div class="pt-3 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <strong>Sales Office</strong>
+                            <p style="font-size: 14px;">
+                                #27, Puducherry - Tindivanam <br> Main Road,
+                                V.I.P Nagar,<br> Pattanur - 605 006</p>
+                        </div>
+                        <div class="col-4">
+                            <strong>Corporate Office</strong>
+                            <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
+                                Thirumalai Nagar, Perungudi, <br>
+                                Chennai - 600 096</p>
+                        </div>
+                        <div class="col-4">
+                            <strong>Branch Office</strong>
+                            <p style="font-size: 14px;">
+                                #4 Cauvery Avenue,
+                                Alagapuram, <br>
+                                Salem - 636 004</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end footer address  -->
+
+
+
             <br>
             <div class="pagebreak"> </div>
 
@@ -501,16 +558,34 @@ setlocale(LC_NUMERIC, 'en_IN');
             <div class="pt-5"></div>
             <h4 class="m-3">Estimated Time Frame for Delivery:</h4>
             <ul>
-                <li>All time Frames are subjected to stock availability. Please allow approx. 15-20 Business days.</li>
-                <li>Client Understands by Default that EB delays are not the responsibility of the Contractor.</li>
-                <li>EB Approval charges are Client scope. (Process will be supported till Net metering if needed).</li>
+                <li style="font-size: 16px;">All time Frames are subjected to stock availability. Please allow approx.
+                    15-20 Business days.</li>
+                <li style="font-size: 16px;">Client Understands by Default that EB delays are not the responsibility of
+                    the Contractor.</li>
+                <li style="font-size: 16px;">EB Approval charges are Client scope. (Process will be supported till Net
+                    metering if needed).</li>
             </ul>
 
-            <h4 class="mt-5">Payment Details:</h4>
-            <p>All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
-            <p><strong>Bank:</strong> ICICI Bank</p>
-            <p><strong>Account No:</strong> 611905056418</p>
-            <p><strong>IFSC:</strong> ICIC0006119</p>
+            <div class="row mx-5">
+                <div class="col-5">
+                    <h4>Payment Details:</h4>
+                    <p>All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
+                    <p><strong>Bank:</strong> ICICI Bank</p>
+                    <p><strong>Account No:</strong> 611905056418</p>
+                    <p><strong>IFSC:</strong> ICIC0006119</p>
+                </div>
+                <div class="col-3 text-start  mt-3">
+                    <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
+                        alt="Scan to pay"><br>
+                    <p class="mx-4">[Scan to pay]</p>
+                </div>
+
+            </div>
+
+
+
+
+
 
             <hr>
 
@@ -590,12 +665,44 @@ setlocale(LC_NUMERIC, 'en_IN');
 
                     </ol>
                 </li>
-                <br>
-                <div class="pagebreak"> </div>
-                <br>
-                <br>
-                <!-- page 3  -->
-                <div class="pt-5"></div>
+
+            </ol>
+            <br>
+            <!-- footer address  -->
+            <br> <br> <br>
+            <hr>
+            <div class="pt-3 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <strong>Sales Office</strong>
+                            <p style="font-size: 14px;">
+                                #27, Puducherry - Tindivanam <br> Main Road,
+                                V.I.P Nagar,<br> Pattanur - 605 006</p>
+                        </div>
+                        <div class="col-4">
+                            <strong>Corporate Office</strong>
+                            <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
+                                Thirumalai Nagar, Perungudi, <br>
+                                Chennai - 600 096</p>
+                        </div>
+                        <div class="col-4">
+                            <strong>Branch Office</strong>
+                            <p style="font-size: 14px;">
+                                #4 Cauvery Avenue,
+                                Alagapuram, <br>
+                                Salem - 636 004</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end footer address  -->
+            <div class="pagebreak"> </div>
+            <br>
+            <br>
+            <!-- page 3  -->
+            <div class="pt-5"></div>
+            <ol>
                 <li><strong>Site layout:</strong>
                     <br>
                     <br>
@@ -628,11 +735,39 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <p><strong>Signed Date:.......................</strong></p>
 
-
+            <!-- footer address  -->
+            <br> <br> <br>
+            <hr>
+            <div class="pt-3 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <strong>Sales Office</strong>
+                            <p style="font-size: 14px;">
+                                #27, Puducherry - Tindivanam <br> Main Road,
+                                V.I.P Nagar,<br> Pattanur - 605 006</p>
+                        </div>
+                        <div class="col-4">
+                            <strong>Corporate Office</strong>
+                            <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
+                                Thirumalai Nagar, Perungudi, <br>
+                                Chennai - 600 096</p>
+                        </div>
+                        <div class="col-4">
+                            <strong>Branch Office</strong>
+                            <p style="font-size: 14px;">
+                                #4 Cauvery Avenue,
+                                Alagapuram, <br>
+                                Salem - 636 004</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end footer address  -->
             <!-- <div class="pagebreak"> </div> -->
 
             <div class="row">
-                <div class="col-12 text-center" ><img src='<?php echo "upload/ourproject.jpg"; ?>' style="width:100%">
+                <div class="col-12 text-center"><img src='<?php echo "upload/ourproject.jpg"; ?>' style="width:100%">
                 </div>
             </div>
 

@@ -111,7 +111,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             <div class="form-group">
                                                 <label>Email</label><br>
                                                 <input type="text" id="cust_email" name="cust_email"
-                                                    class="form-control" placeholder="Email" required>
+                                                    class="form-control" placeholder="Email" >
                                             </div>
                                         </div>
                                     </div>
