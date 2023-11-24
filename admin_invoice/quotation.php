@@ -18,7 +18,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
 
-        $query = "SELECT * FROM quotation ORDER BY `owner_id` DESC ";
+        $query = "SELECT * FROM quotation where is_deleted='0' ORDER BY `owner_id` DESC ";
 
         $query_run = mysqli_query($con, $query);
 
@@ -210,16 +210,12 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                 </form>
 
                         <!-- <form action="invoice_edit.php" method="post">
-
                     <input type="hidden" name="quot_edit_id" value="<?php echo $row['owner_id']; ?>">
-
                     <button style="background-color:transparent; border:0;" type="submit" name="invoice_edit_btn" class="btn btn-link btn-success"><i class="fa fa-pen"></i></button>
+                </form>-->
 
-                </form>
-
-
-
-                  <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['owner_id']; ?>" id="deleteinvoice" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button> -->
+                  <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['owner_id']; ?>" 
+                  id="deletequotation" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button> 
 
                   </div></td>
 
@@ -285,40 +281,22 @@ include('includes/footer.php');
 
 
 
-$(document).on('click', '#deleteinvoice', function(){  
-
+$(document).on('click', '#deletequotation', function(){  
         var id=$(this).data("id1"); 
-
         if(confirm("Are you sure you want to delete this?"))  
-
            {  
-
                 $.ajax({  
-
-                     url:"deleteinvoice.php",  
-
+                     url:"deletequotation.php",  
                      method:"POST",  
-
                      data:{id:id},  
-
                      dataType:"text",  
-
                      success:function(data){  
-
                           alert(data);  
-
                           location.reload();  
-
                      }  
-
                 });  
-
            }  
-
       });
-
-
-
 </script>
 
 

@@ -238,6 +238,7 @@ $type ="Quotation";
         width: 800px;
         height: 450px;
         background: #F0F0F0;
+        border: 1px solid black;
     }
 
 
@@ -394,7 +395,7 @@ if (empty($row['whatsapp'])) {
             <hr align="center">
 
 
-            <p class="mt-4"></p>
+       
             <strong style='font-size: 16px;'>Property Details:- </strong>
             <table class="table ">
                 <tr>
@@ -408,7 +409,7 @@ if (empty($row['whatsapp'])) {
             </table>
 
             <!-- Start of specification -->
-            <p class="mt-4"></p>
+        
             <strong style='font-size: 16px;'>Warranty Details:- </strong>
             <p class="mt-4"></p>
             <table border="1" cellpadding="10">
@@ -441,12 +442,28 @@ if (empty($row['whatsapp'])) {
                 </tr>
                 <tr>
                     <td><strong>Battery:</strong></td>
-                    <td><?php echo ($rowf['batterycount'] !== null) ? $rowf['batterycount'] . " X " . $rowf['batterycapacity'] : "NA"; ?>
+                    <td>
+                        <?php
+echo ($rowf['batterycount'] !== null && $rowf['batterycount'] !== "0") ? $rowf['batterycount'] . " X " . $rowf['batterycapacity'] : "NA";
+?>
+
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Included:</strong></td>
-                    <td><?php echo $rowf['included']; ?></td>
+                    <!-- <td><?php echo $rowf['included']; ?></td> -->
+                    <td>
+                        <ol>
+                            <li style="font-size:14px;">Structure - 4*3 GI structure (7*9 Ft Extra @ 3000 per kw)</li>
+                            <li style="font-size:14px;">DC wire - Polycab 4Sqmm 50Mtr</li>
+                            <li style="font-size:14px;">AC wire - 2.5-6 Sqmm 50Mtr</li>
+                            <li style="font-size:14px;">Earthing Wire - 6Sqm Copper / 10Sqmm Aluminium 20Mtr</li>
+                            <li style="font-size:14px;">Earthing Rod - 1Mtr - 1No</li>
+                            <li style="font-size:14px;">Lightning Arrestor - Single/Multi Spike 1Mtr & Aluminium conductor (50Sqmm) 20 Mtr</li>
+                            <li style="font-size:14px;">DCDB & ACDB - MCB, SPD, Fuse</li>
+                        </ol>
+
+                    </td>
                 </tr>
                 <tr>
                     <td><strong>Total Outlay:</strong></td>
@@ -460,6 +477,7 @@ setlocale(LC_NUMERIC, 'en_IN');
                         <?php                        
                         $amount = $rowf['totoutlay'];
                         $num = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $amount);
+                        // $num =  number_format($amount, 0, '.', ',');
 
                         
                         echo $num; ?> /-
@@ -485,11 +503,11 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <!-- Warranty   -->
 
-            <div class="row pt-3">
+            <div class="row pt-1">
                 <div class="col-6">
                     <table style="margin-top: 10px;">
                         <tr>
-                            <th style="padding: 5px; text-align: left; width: 20%;">Warranty Type</th>
+                            <th style="padding: 5px; text-align: left; width: 25%;">Warranty Type</th>
                             <th style="padding: 5px; text-align: left; width: 10%;">Duration</th>
                         </tr>
                         <tr>
@@ -519,7 +537,7 @@ setlocale(LC_NUMERIC, 'en_IN');
             <!-- end Warranty  -->
 
             <!-- footer address  -->
-            <br> <br> <br>
+    
             <hr>
             <div class="pt-3 ">
                 <div class="container">
@@ -557,14 +575,27 @@ setlocale(LC_NUMERIC, 'en_IN');
             <br>
             <div class="pt-5"></div>
             <h4 class="m-3">Estimated Time Frame for Delivery:</h4>
-            <ul>
-                <li style="font-size: 16px;">All time Frames are subjected to stock availability. Please allow approx.
-                    15-20 Business days.</li>
-                <li style="font-size: 16px;">Client Understands by Default that EB delays are not the responsibility of
-                    the Contractor.</li>
-                <li style="font-size: 16px;">EB Approval charges are Client scope. (Process will be supported till Net
-                    metering if needed).</li>
+            <ul style="list-style-type: none;">
+                <li style="font-size: 16px;">
+                    <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
+                        All time Frames are subjected to stock availability. Please allow approx.
+                        15-20 Business days.
+                    </i>
+                </li>
+                <li style="font-size: 16px;">
+                    <i class="fa fa-square-o " style="font-size:20px;  padding-right: 10px;">
+                        Client Understands by Default that EB delays are not the responsibility of
+                        the Contractor.
+                    </i>
+                </li>
+                <li style="font-size: 16px;">
+                    <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
+                        EB Approval charges are Client scope. (Process will be supported till Net
+                        metering if needed).
+                    </i>
+                </li>
             </ul>
+
 
             <div class="row mx-5">
                 <div class="col-5">
@@ -577,7 +608,7 @@ setlocale(LC_NUMERIC, 'en_IN');
                 <div class="col-3 text-start  mt-3">
                     <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
                         alt="Scan to pay"><br>
-                    <p class="mx-4">[Scan to pay]</p>
+                    <p class="mx-2">[Scan to pay]</p>
                 </div>
 
             </div>

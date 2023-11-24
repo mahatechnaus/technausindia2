@@ -1,0 +1,1 @@
+ALTER TABLE `quotation` ADD `is_deleted` INT(4) NOT NULL AFTER `grandtotal`;
