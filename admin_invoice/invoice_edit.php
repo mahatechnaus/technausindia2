@@ -9,26 +9,12 @@ include 'includes/navbar.php';
 
 
 $sql= "SELECT * FROM users WHERE email = '$username'";
-
         $sql_run = mysqli_query($con, $sql);
-
         $row_a = mysqli_fetch_assoc($sql_run);
-
         $user_id= $row_a['id'];
-
-
-
         if(isset($_POST['invoice_edit_btn'])){
-
-
-
-
-
-            $data_id=$_POST['invoice_edit_id'];
-
-    
-
-    }
+            $data_id=$_POST['invoice_edit_id']; 
+          }
 
     
 

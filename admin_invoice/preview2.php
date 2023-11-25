@@ -362,8 +362,8 @@ if (empty($row['whatsapp'])) {
 
                 <?php
               
-                echo "<br>I we <strong> " . $rowf['owner'] . "</strong> being the owner(s) / resident(s) of the property situated
-                at <strong>"  . $rowf['address'] . "</strong>";
+                echo "<br>I / we <strong> Mr./Mrs./M/s. " . $rowf['owner'] . "</strong> being the owner(s) / resident(s) of the property situated
+                at <strong>"  . $rowf['address'] . ", "  . $rowf['State'] . "</strong>";
                 ?>
 
             </div>
@@ -378,7 +378,8 @@ if (empty($row['whatsapp'])) {
                 <tr>
                     <td>Consumer No: <strong><?php echo $rowf['meterno'] ?></strong></td>
                     <td>Mobile: <strong><?php echo $rowf['mobile'] ?></strong></td>
-                    <td>Email: <strong><?php echo $rowf['email'] ?></strong></td>
+                    <td>Email: <strong><?php echo !empty($rowf['email']) ? $rowf['email'] : 'NA'; ?></strong></td>
+
                 </tr>
 
 

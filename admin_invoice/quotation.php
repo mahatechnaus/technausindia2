@@ -209,10 +209,10 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
                 </form>
 
-                        <!-- <form action="invoice_edit.php" method="post">
+                        <form action="form_quot_edit.php" method="post">
                     <input type="hidden" name="quot_edit_id" value="<?php echo $row['owner_id']; ?>">
-                    <button style="background-color:transparent; border:0;" type="submit" name="invoice_edit_btn" class="btn btn-link btn-success"><i class="fa fa-pen"></i></button>
-                </form>-->
+                    <button style="background-color:transparent; border:0;" type="submit" name="quot_edit_btn" class="btn btn-link btn-success"><i class="fa fa-pen"></i></button>
+                </form>
 
                   <button style="background-color:transparent; border:0;" type="button" data-id1="<?php echo $row['owner_id']; ?>" 
                   id="deletequotation" class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button> 

@@ -58,11 +58,11 @@ $sqla="INSERT INTO `quotation`
   `panelbrand`, `panelwatts`, `panelcount`,
   `inverterbrand`, `invertertype`, `inverterkw`, `invertercount`,
  `included`, `batterycapacity`, `batterycount`, 
- `paymenttype`, `totoutlay`, `grandtotal`) 
+ `paymenttype`, `totoutlay`, `grandtotal`,`is_deleted`) 
  VALUES ('$date1','$cust_name','$quotation_no', '$cust_mobile', '$cust_email', '$cust_address', '$cust_state', '$cust_meter', '$distributor_name',
   '$roof_type', '$roof_level', '$phase_select', 
   '$panel_brand', '$panel_watts', '$no_panel', '$inverter_brand', '$inverter_type', '$no_inverter_kw', '$no_inverter',
-  '$included_select', '$battery_capacity', '$no_battery', '$payment_type', '$actual_amt', '$actual_amt')";
+  '$included_select', '$battery_capacity', '$no_battery', '$payment_type', '$actual_amt', '$actual_amt','0')";
 
 $result = mysqli_query($con, $sqla);
 
