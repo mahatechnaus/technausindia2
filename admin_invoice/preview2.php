@@ -252,6 +252,12 @@ $type ="Quotation";
     .technaus-after-overlay {
         position: relative;
     }
+
+    .pageborder {
+            border: 1px solid #000; /* Set border properties */
+            padding: 20px; /* Add padding to create space between content and border */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
     </style>
 
 
@@ -265,7 +271,11 @@ $type ="Quotation";
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper" style="margin:50px 30px 20px 40px;">
-        <div class="container-fluid">
+        <div class="container-fluid ">
+            
+
+        <!-- start 1st page  -->
+        <!-- <div class="pageborder"> -->
             <div class="row">
                 <div class="col-6">
                     <div class="logo">
@@ -301,34 +311,7 @@ $type ="Quotation";
             <!-- logo end  -->
 
             <!-- start address  -->
-            <!-- <div class="company">
-                <?php
-$sql = "SELECT * FROM permanent_details";
-$result = $con->query($sql);
-// output data of each row
-$row = mysqli_fetch_assoc($result);
-$x1 = $row['statecode'];
-$query_2 = mysqli_query($con, "SELECT * FROM statecode WHERE state_id='$x1'");
-$row_2 = mysqli_fetch_assoc($query_2);
-$str = $row['gst'];
-echo "<h6>" . $row["company_name"] . "</h6>" . $row["address"] . " " . $row["pincode"] . "<br>";
-if (empty($row['cin'])) {
-} else {
-    echo "CIN: " . $row["cin"] . "<br>";
-}
-echo "Phone: " . $row["ph_number"] . "<br>Email: " . $row["email"] . "<br>";
-if (empty($row['whatsapp'])) {
-    echo "Website: " . $row["website"] . "";
-} else {
-    echo "Whatsapp: " . $row["whatsapp"] . "<br>";
-    echo "Website: " . $row["website"] . "";
-}
 
-?>
-
-
-
-            </div> -->
 
             <p class="mt-4"></p>
 
@@ -362,7 +345,7 @@ if (empty($row['whatsapp'])) {
 
                 <?php
               
-                echo "<br>I / we <strong> Mr./Mrs./M/s. " . $rowf['owner'] . "</strong> being the owner(s) / resident(s) of the property situated
+                echo "<br>I / we <strong>  " . $rowf['owner'] . "</strong> being the owner(s) / resident(s) of the property situated
                 at <strong>"  . $rowf['address'] . ", "  . $rowf['State'] . "</strong>";
                 ?>
 
@@ -397,8 +380,9 @@ if (empty($row['whatsapp'])) {
 
 
        
-            <strong style='font-size: 16px;'>Property Details:- </strong>
-            <table class="table ">
+            <strong style='font-size: 16px; text-decoration: underline;'>Property Details:-</strong>
+
+            <table class="">
                 <tr>
                     <td>Roof Type : <strong><?php echo $rowf['rooftype'] ?></strong></td>
                     <td>Roof Level : <strong><?php echo $rowf['rooflevel'] ?></strong></td>
@@ -410,8 +394,9 @@ if (empty($row['whatsapp'])) {
             </table>
 
             <!-- Start of specification -->
-        
-            <strong style='font-size: 16px;'>Warranty Details:- </strong>
+            <strong style='font-size: 16px; text-decoration: underline;'>System Details:-</strong>
+
+         
             <p class="mt-4"></p>
             <table border="1" cellpadding="10">
 
@@ -506,9 +491,20 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <div class="row pt-1">
                 <div class="col-6">
+
+                <!-- <div class="mx-3" style="margin-top: 10px;">
+    <p style="font-weight: bold; margin-bottom: 0px;">System Details:</p>
+    <p class="mx-5" style="margin-bottom: 0px;">Solar Inverter Product Warranty: <strong>7 Years</strong></p>
+    <p class="mx-5" style="margin-bottom: 0px;">Solar Panels Product Warranty:<strong> 12 Years</strong></p>
+    <p class="mx-5" style="margin-bottom: 0px;">Solar Panels Performance Warranty:<strong> 25 Years</strong></p>
+    <p class="mx-5" style="margin-bottom: 0px;">Battery Warranty:<strong> NA</strong></p>
+    <p class="mx-5" style="margin-bottom: 0px;">Workmanship Warranty:<strong> 05 Years</strong></p>
+</div> -->
+
+
                     <table style="margin-top: 10px;">
                         <tr>
-                            <th style="padding: 5px; text-align: left; width: 25%;">Warranty Type</th>
+                            <th style="padding: 5px; text-align: left; width: 25%;">Warranty Details</th>
                             <th style="padding: 5px; text-align: left; width: 10%;">Duration</th>
                         </tr>
                         <tr>
@@ -539,8 +535,9 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <!-- footer address  -->
     
-            <hr>
-            <div class="pt-3 ">
+            <hr style="border-top: 2px solid #088AC2;">
+
+            <div class="pt-1 ">
                 <div class="container">
                     <div class="row">
                         <div class="col-4">
@@ -567,16 +564,14 @@ setlocale(LC_NUMERIC, 'en_IN');
             </div>
             <!-- end footer address  -->
 
-
-
-            <br>
-            <div class="pagebreak"> </div>
-
-            <br>
-            <br>
-            <div class="pt-5"></div>
-            <h4 class="m-3">Estimated Time Frame for Delivery:</h4>
-            <ul style="list-style-type: none;">
+            <!-- <div class="pagebreak"> </div> -->
+        </div> 
+        <!-- div pageborder -->
+        
+            <div class="pt-5" style="margin-top:50px;"></div>
+            <strong style='font-size: 16px; text-decoration: underline;'>Estimated Time Frame for Deliver:-</strong>
+            <!-- <h4 class="m-3">Estimated Time Frame for Delivery:</h4> -->
+            <ul class="pt-3" style="list-style-type: none;">
                 <li style="font-size: 16px;">
                     <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
                         All time Frames are subjected to stock availability. Please allow approx.
@@ -600,8 +595,9 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <div class="row mx-5">
                 <div class="col-5">
-                    <h4>Payment Details:</h4>
-                    <p>All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
+                <strong style='font-size: 16px; text-decoration: underline;'>Payment Details:-</strong>
+                    <!-- <h4>Payment Details:</h4> -->
+                    <p class="pt-3">All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
                     <p><strong>Bank:</strong> ICICI Bank</p>
                     <p><strong>Account No:</strong> 611905056418</p>
                     <p><strong>IFSC:</strong> ICIC0006119</p>
@@ -622,7 +618,8 @@ setlocale(LC_NUMERIC, 'en_IN');
             <hr>
 
             <!-- terms and condition  -->
-            <h4>Terms and Conditions:</h4>
+            <!-- <h4>Terms and Conditions:</h4> -->
+            <strong style='font-size: 16px; text-decoration: underline;'>Terms and Conditions:-</strong>
 
             <ol>
                 <li><strong>Payment Terms:</strong>
@@ -702,7 +699,7 @@ setlocale(LC_NUMERIC, 'en_IN');
             <br>
             <!-- footer address  -->
             <br> <br> <br>
-            <hr>
+            <hr style="border-top: 2px solid #088AC2;">
             <div class="pt-3 ">
                 <div class="container">
                     <div class="row">
@@ -734,24 +731,23 @@ setlocale(LC_NUMERIC, 'en_IN');
             <br>
             <!-- page 3  -->
             <div class="pt-5"></div>
-            <ol>
-                <li><strong>Site layout:</strong>
+            <strong style='font-size: 16px; text-decoration: underline;'>Site layout:-</strong>
+          
                     <br>
                     <br>
                     <div id="rectangle"></div>
                     <br>
                     <br>
 
-                </li>
-
-                <li><strong>Workout Details:</strong>
+             
+                <strong style='font-size: 16px; text-decoration: underline;'>Workout Details:-</strong>
+              
                     <br>
                     <br>
                     <div id="rectangle"></div>
                     <br>
                     <br>
-                </li>
-            </ol>
+               
 
             <p><strong>Proposal/Quotation acceptance by:</strong></p>
             <div class="row">
@@ -769,7 +765,7 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             <!-- footer address  -->
             <br> <br> <br>
-            <hr>
+            <hr style="border-top: 2px solid #088AC2;">
             <div class="pt-3 ">
                 <div class="container">
                     <div class="row">

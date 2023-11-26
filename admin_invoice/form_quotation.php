@@ -72,7 +72,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                     <?php echo $message; ?>
                 </div>
 
-                <div class="main-card mb-3 card">
+                <div class="main-card mb-3 card ">
                     <div class="card-body">
                         <form action="quotation_save.php" method="POST">
                             <div id="spinner" class="spinner"></div>
@@ -82,14 +82,27 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                 <div class="card-body">
 
                                     <div class="row">
-                                        <div class="col-4">
+                                    <div class="col-2">
+                                            <div class="form-group">
+                                                <label>Title </label> <span style="color:red;"> *</span><br>
+                                                <select name="cust_title" id="cust_title" class="form-control" required>
+                                                    <option value="" hidden>Choose Title</option>
+                                                    <option value="Mr.">Mr.</option>
+                                                    <option value="Mrs.">Mrs.</option>
+                                                    <option value="M/s.">M/s.</option>
+                                                    <option value="Miss.">Miss.</option>                                          
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
                                             <div class="form-group">
                                                 <label>Customer name </label> <span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_name" name="cust_name" class="form-control"
                                                     placeholder="Customer name" required>
                                             </div>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-3">
                                             <div class="form-group">
                                                 <label>Mobile </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_mobile" name="cust_mobile"

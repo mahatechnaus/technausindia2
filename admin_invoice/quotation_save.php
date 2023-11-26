@@ -22,7 +22,8 @@ $quot_no = mysqli_num_rows($query_run_c);
 
 $quotation_no = 200 + $quot_no;
 
-$cust_name=$_POST['cust_name'];
+
+$cust_name=$_POST['cust_title'] ." ". $_POST['cust_name'];
 $cust_mobile=$_POST['cust_mobile'];
 $cust_email=$_POST['cust_email'];
 $cust_address = $_POST['cust_st'] .", ". $_POST['cust_area'];
