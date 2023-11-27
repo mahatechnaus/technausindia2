@@ -23,6 +23,8 @@ $quot_no = mysqli_num_rows($query_run_c);
 $quotation_no = 200 + $quot_no;
 
 
+$emp_id=$_POST['emp_id'];
+
 $cust_name=$_POST['cust_title'] ." ". $_POST['cust_name'];
 $cust_mobile=$_POST['cust_mobile'];
 $cust_email=$_POST['cust_email'];
@@ -54,13 +56,13 @@ date_default_timezone_set("Asia/Manila");
 $date1 = date("Y-m-d H:i:s");
 
 $sqla="INSERT INTO `quotation` 
-(`quotdate`,`owner`, `quotation_no`, `mobile`, `email`, `address`, `State`, `meterno`, `distributor`,
+(`emp_id`,`quotdate`,`owner`, `quotation_no`, `mobile`, `email`, `address`, `State`, `meterno`, `distributor`,
  `rooftype`, `rooflevel`, `phase`,
   `panelbrand`, `panelwatts`, `panelcount`,
   `inverterbrand`, `invertertype`, `inverterkw`, `invertercount`,
  `included`, `batterycapacity`, `batterycount`, 
  `paymenttype`, `totoutlay`, `grandtotal`,`is_deleted`) 
- VALUES ('$date1','$cust_name','$quotation_no', '$cust_mobile', '$cust_email', '$cust_address', '$cust_state', '$cust_meter', '$distributor_name',
+ VALUES ('$emp_id','$date1','$cust_name','$quotation_no', '$cust_mobile', '$cust_email', '$cust_address', '$cust_state', '$cust_meter', '$distributor_name',
   '$roof_type', '$roof_level', '$phase_select', 
   '$panel_brand', '$panel_watts', '$no_panel', '$inverter_brand', '$inverter_type', '$no_inverter_kw', '$no_inverter',
   '$included_select', '$battery_capacity', '$no_battery', '$payment_type', '$actual_amt', '$actual_amt','0')";

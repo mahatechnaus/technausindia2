@@ -78,11 +78,33 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                             <div id="spinner" class="spinner"></div>
                             <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>">
                             <div class="card text-dark bg-light mb-1">
+
+                                <div class="row mx-3">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label>Employee Name </label> <span style="color:red;"> *</span><br>
+                                            <select name="emp_id" id="emp_id" class="form-control" required>
+                                                <option value="" hidden>Choose Employee</option>
+                                                <?php
+                                          $sqlemp = "SELECT * FROM employees";
+                                          $sql_emprun = mysqli_query($con, $sqlemp);
+
+                                             while ($row_emp = mysqli_fetch_assoc($sql_emprun)) {
+                                          echo '<option value="' . $row_emp['emp_id'] . '">' . $row_emp['name'] . '</option>';
+                }
+                ?>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <h5 class="card-header">Customer Details</h5>
                                 <div class="card-body">
 
                                     <div class="row">
-                                    <div class="col-2">
+                                        <div class="col-2">
                                             <div class="form-group">
                                                 <label>Title </label> <span style="color:red;"> *</span><br>
                                                 <select name="cust_title" id="cust_title" class="form-control" required>
@@ -90,7 +112,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     <option value="Mr.">Mr.</option>
                                                     <option value="Mrs.">Mrs.</option>
                                                     <option value="M/s.">M/s.</option>
-                                                    <option value="Miss.">Miss.</option>                                          
+                                                    <option value="Miss.">Miss.</option>
+                                                    <option value="Miss./Mrs.">Miss./Mrs.</option>
                                                     <option value="Others">Others</option>
                                                 </select>
                                             </div>
@@ -168,8 +191,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Consumer / Meter No. </label><span style="color:red;">
                                                     *</span><br>
                                                 <input type="text" id="cust_meter" name="cust_meter"
-                                                    class="form-control" placeholder="Consumer / Meter No."
-                                                    required>
+                                                    class="form-control" placeholder="Consumer / Meter No." required>
                                                 <label style="font-size:12px;">If you don't know the consumer number,
                                                     please enter 'NA'</label>
                                             </div>
@@ -204,6 +226,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     <option value="" hidden>Choose roof type</option>
                                                     <option value="RCC">RCC</option>
                                                     <option value="Flat Roof">Flat Roof</option>
+                                                    <option value="Sheets">Sheets</option>
                                                     <option value="Others">Others</option>
                                                 </select>
                                             </div>
@@ -263,7 +286,10 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Panel Watts </label> <span style="color:#ffffff;"> *</span><br>
-                                                <select name="panel_watts" id="panel_watts" class="form-control"
+                                                <input type="text" id="panel_watts" name="panel_watts"
+                                                    class="form-control" placeholder="Example: '540'"
+                                                    onkeypress="return isNumeric(event)" required>
+                                                <!-- <select name="panel_watts" id="panel_watts" class="form-control"
                                                     required onchange="calculateTotalAmount()">
                                                     <option value="" hidden>Choose watts</option>
                                                     <option value="540"> 540W / 545W</option>
@@ -272,15 +298,15 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     <option value="540">540W</option>
                                                     <option value="545">545W</option>
                                                     <option value="others">others</option>
-                                                </select>
+                                                </select> -->
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>No. of Panel </label> <span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_panel" name="no_panel" class="form-control"
-                                                    placeholder="Panel count" required
-                                                    onchange="calculateTotalAmount()">
+                                                    placeholder="Panel count" onkeypress="return isNumeric(event)"
+                                                    required onchange="calculateTotalAmount()">
                                             </div>
                                         </div>
                                         <div class="col-4"></div>
@@ -330,7 +356,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>No. of Inverter </label><span style="color:#ffffff;">
                                                     *</span><br>
                                                 <input type="text" id="no_inverter" name="no_inverter"
-                                                    class="form-control" placeholder="Inverter count" required>
+                                                    class="form-control" placeholder="Inverter count"
+                                                    onkeypress="return isNumeric(event)" required>
                                             </div>
                                         </div>
 
@@ -351,7 +378,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             <div class="form-group">
                                                 <label>No. of Battery</label><span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_battery" name="no_battery"
-                                                    class="form-control" placeholder="No of Battery" required>
+                                                    class="form-control" placeholder="No of Battery"
+                                                    onkeypress="return isNumeric(event)" required>
 
                                             </div>
                                         </div>
@@ -400,7 +428,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label id="totamt" style="font-size:18px;">Total Outlay </label> <span
                                                     style="color:#ffffff;"> *</span>
                                                 <input type="text" id="actual_amt" name="actual_amt"
-                                                    class="form-control" placeholder="Actual Total Outlay">
+                                                    class="form-control" placeholder="Actual Total Outlay"
+                                                    onkeypress="return isNumeric(event)" required>
                                                 <p> (Inclusive of Tax)</p>
                                             </div>
                                         </div>
@@ -498,4 +527,17 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
             }, 5000); // 5000 milliseconds (5 seconds)
         });
     });
+    </script>
+
+    <script>
+    function isNumeric(event) {
+        var charCode = (event.which) ? event.which : event.keyCode;
+
+        // Allow only numeric characters (0-9)
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            event.preventDefault();
+            return false;
+        }
+        return true;
+    }
     </script>

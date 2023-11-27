@@ -1,3 +1,8 @@
+ALTER TABLE `quotation` ADD `emp_id` INT(10) NOT NULL AFTER `owner_id`;
+INSERT INTO `employees` (`emp_id`, `name`, `age`, `address`, `contact_number`, `position`, `accountno`) VALUES ('2', 'Muthaiyan', '25', 'Kathirkamam', '9150381102', 'Admin', '0');
+
+
+
 ALTER TABLE `quotation` CHANGE `mobile` `mobile` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
 
 

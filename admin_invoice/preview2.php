@@ -7,11 +7,14 @@ $sqlf = "SELECT * FROM `quotation` WHERE owner_id = '$quot_id'";
 $resultf = mysqli_query($con, $sqlf);
 $rowf = mysqli_fetch_assoc($resultf);
 $user_id = $rowf["owner_id"];
+$emp_id = $rowf["emp_id"];
 $quotation_number = $rowf['quotation_no'];
 
 $type ="Quotation";
 
-
+// $sqlemp = "SELECT * FROM employees where emp_id='$emp_id'";
+// $sql_emprun = mysqli_query($con, $sqlemp);
+// $row_emp = mysqli_fetch_assoc($sql_emprun)
 ?>
 
 
@@ -258,6 +261,15 @@ $type ="Quotation";
             padding: 20px; /* Add padding to create space between content and border */
             box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
+
+    .contactbg{
+        background-color: #088AC2;
+        color: white;
+
+    }
+
+
+
     </style>
 
 
@@ -320,17 +332,17 @@ $type ="Quotation";
 
 
 
-                $sql = "SELECT * FROM employees";
+                $sql = "SELECT * FROM employees where emp_id='$emp_id'";
                 $result = $con->query($sql);                
-                $row = mysqli_fetch_assoc($result); ?>
+                $row_emp = mysqli_fetch_assoc($result); ?>
                 <div class="row">
                     <div class="col-8">
                         <?php
-             if (empty($row['name'])) {
+             if (empty($row_emp['name'])) {
             } else {
                 echo "<br><span style='font-size: 16px;'>  
-                Consultant Name: <strong>" . $row["name"] . "</strong>
-                Phone: <strong>" . $row["contact_number"] . "</strong></span>";
+                Consultant Name: <strong>" . $row_emp["name"] . "</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                Phone: <strong>" . $row_emp["contact_number"] . "</strong></span>";
                              
             } ?>
                     </div>
@@ -423,7 +435,7 @@ $type ="Quotation";
                 </tr>
                 <tr>
                     <td><strong>Inverter Model:</strong></td>
-                    <td><?php echo  $rowf['invertercount'] . " X " . $rowf['inverterkw'] . " KW ". $rowf['invertertype']; ?>
+                    <td><?php echo  $rowf['invertercount'] . " X " . $rowf['inverterkw'] . " ". $rowf['invertertype']; ?>
                     </td>
                 </tr>
                 <tr>
@@ -521,7 +533,7 @@ setlocale(LC_NUMERIC, 'en_IN');
                         </tr>
                         <tr>
                             <td>Battery Warranty</td>
-                            <td>NA</td>
+                            <td>03 Years</td>
                         </tr>
                         <tr>
                             <td>Workmanship Warranty</td>
@@ -537,9 +549,10 @@ setlocale(LC_NUMERIC, 'en_IN');
     
             <hr style="border-top: 2px solid #088AC2;">
 
-            <div class="pt-1 ">
+
+            <div class="contactbg pt-1 ">
                 <div class="container">
-                    <div class="row">
+                    <div class="row mx-3">
                         <div class="col-4">
                             <strong>Sales Office</strong>
                             <p style="font-size: 14px;">
@@ -562,6 +575,7 @@ setlocale(LC_NUMERIC, 'en_IN');
                     </div>
                 </div>
             </div>
+   
             <!-- end footer address  -->
 
             <!-- <div class="pagebreak"> </div> -->
@@ -598,14 +612,14 @@ setlocale(LC_NUMERIC, 'en_IN');
                 <strong style='font-size: 16px; text-decoration: underline;'>Payment Details:-</strong>
                     <!-- <h4>Payment Details:</h4> -->
                     <p class="pt-3">All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
-                    <p><strong>Bank:</strong> ICICI Bank</p>
-                    <p><strong>Account No:</strong> 611905056418</p>
-                    <p><strong>IFSC:</strong> ICIC0006119</p>
+                    <p><strong>Bank:</strong> State Bank of India</p>
+                    <p><strong>Account No:</strong> 42339346512</p>
+                    <p><strong>IFSC:</strong> SBIN0010662</p>
                 </div>
                 <div class="col-3 text-start  mt-3">
-                    <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
+                    <!-- <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
                         alt="Scan to pay"><br>
-                    <p class="mx-2">[Scan to pay]</p>
+                    <p class="mx-2">[Scan to pay]</p> -->
                 </div>
 
             </div>
@@ -700,9 +714,9 @@ setlocale(LC_NUMERIC, 'en_IN');
             <!-- footer address  -->
             <br> <br> <br>
             <hr style="border-top: 2px solid #088AC2;">
-            <div class="pt-3 ">
+            <div class=" contactbg pt-3 ">
                 <div class="container">
-                    <div class="row">
+                    <div class="row mx-3">
                         <div class="col-4">
                             <strong>Sales Office</strong>
                             <p style="font-size: 14px;">
@@ -766,9 +780,9 @@ setlocale(LC_NUMERIC, 'en_IN');
             <!-- footer address  -->
             <br> <br> <br>
             <hr style="border-top: 2px solid #088AC2;">
-            <div class="pt-3 ">
+            <div class="contactbg pt-3 ">
                 <div class="container">
-                    <div class="row">
+                    <div class="row mx-3">
                         <div class="col-4">
                             <strong>Sales Office</strong>
                             <p style="font-size: 14px;">

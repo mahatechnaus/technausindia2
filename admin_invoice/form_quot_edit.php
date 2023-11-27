@@ -290,7 +290,10 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                   
                                             <div class="form-group">
                                                 <label>Panel Watts </label> <span style="color:#ffffff;"> *</span><br>
-                                                <select name="panel_watts" id="panel_watts"
+                                                <input type="text" id="panel_watts" name="panel_watts" class="form-control"
+                                                    placeholder="Example: '540'"  onkeypress="return isNumeric(event)"  value="<?php echo $row_all['panelwatts']; ?>" required> 
+
+                                                <!-- <select name="panel_watts" id="panel_watts"
                                                     class="form-control" required>
                                                     <option value="" hidden>Choose panel watts</option>
                                                     <?php
@@ -300,7 +303,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                        echo "<option value=\"$panelWattsOption\" $selected>$panelWattsOption W</option>";
                                                     }
                                                    ?>
-                                                </select>
+                                                </select> -->
 
                                             </div>
                                         </div>
@@ -308,7 +311,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                             <div class="form-group">
                                                 <label>No. of Panel </label> <span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_panel" name="no_panel" class="form-control"
-                                                    placeholder="Panel count" value="<?php echo $row_all['panelcount']; ?>"  required
+                                                    placeholder="Panel count" value="<?php echo $row_all['panelcount']; ?>"   onkeypress="return isNumeric(event)" required
                                                     onchange="calculateTotalAmount()">
                                             </div>
                                         </div>
@@ -365,7 +368,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                 <label>No. of Inverter </label><span style="color:#ffffff;">
                                                     *</span><br>
                                                 <input type="text" id="no_inverter" name="no_inverter"
-                                                    class="form-control" placeholder="Inverter count" value="<?php echo $row_all['invertercount']; ?>" required>
+                                                    class="form-control" placeholder="Inverter count" value="<?php echo $row_all['invertercount']; ?>"  onkeypress="return isNumeric(event)" required>
                                             </div>
                                         </div>
 
@@ -386,7 +389,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                             <div class="form-group">
                                                 <label>No. of Battery</label><span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_battery" name="no_battery"
-                                                    class="form-control" placeholder="No of Battery" value="<?php echo $row_all['batterycount']; ?>" required>
+                                                    class="form-control" placeholder="No of Battery" value="<?php echo $row_all['batterycount']; ?>"  onkeypress="return isNumeric(event)" required>
 
                                             </div>
                                         </div>
@@ -445,7 +448,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                 <label id="totamt" style="font-size:18px;">Total Outlay </label> <span
                                                     style="color:#ffffff;"> *</span>
                                                 <input type="text" id="actual_amt" name="actual_amt"
-                                                    class="form-control" placeholder="Actual Total Outlay" value="<?php echo $row_all['totoutlay']; ?>" required>
+                                                    class="form-control" placeholder="Actual Total Outlay" value="<?php echo $row_all['totoutlay']; ?>"  onkeypress="return isNumeric(event)" required>
                                                 <p> (Inclusive of Tax)</p>
                                             </div>
                                         </div>
@@ -545,3 +548,18 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
         });
     });
     </script>
+
+
+
+<script>
+function isNumeric(event) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+
+    // Allow only numeric characters (0-9)
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
+        return false;
+    }
+    return true;
+}
+</script>
