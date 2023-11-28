@@ -84,7 +84,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
                 <div>Quotation
 
-                    <div class="page-title-subheading">Create, Edit, Delete invoices here
+                    <div class="page-title-subheading">Create, Edit, Delete quotations here
 
                     </div>
 
@@ -161,6 +161,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
               
 
               <th>Owner ID</th>
+              <th>Date</th>
 
               <th>Owner</th>
 
@@ -191,6 +192,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
           <tr>
 
           <td><?php  echo $row['owner_id']; ?></td>
+          <td><?php  echo  date("d/m/Y", strtotime($row["quotdate"])); ?></td>
 
             <td><?php  echo $row['owner']; ?></td>
 

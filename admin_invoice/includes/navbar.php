@@ -47,6 +47,12 @@
                                        Quotation
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="leads_list.php">
+                                        <i class="metismenu-icon pe-7s-file"></i>
+                                       Leads
+                                    </a>
+                                </li>
                                 <!-- <li>
                                     <a href="employee.php">
                                         <i class="metismenu-icon pe-7s-file"></i>

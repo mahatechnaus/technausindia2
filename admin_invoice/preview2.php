@@ -578,7 +578,7 @@ setlocale(LC_NUMERIC, 'en_IN');
    
             <!-- end footer address  -->
 
-            <!-- <div class="pagebreak"> </div> -->
+            <div class="pagebreak"> </div>
         </div> 
         <!-- div pageborder -->
         
@@ -612,9 +612,12 @@ setlocale(LC_NUMERIC, 'en_IN');
                 <strong style='font-size: 16px; text-decoration: underline;'>Payment Details:-</strong>
                     <!-- <h4>Payment Details:</h4> -->
                     <p class="pt-3">All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
-                    <p><strong>Bank:</strong> State Bank of India</p>
+                    <p><strong>Bank:</strong> ICICI Bank</p>
+                    <p><strong>Account No:</strong> 611905056418</p>
+                    <p><strong>IFSC:</strong> ICIC0006119</p>
+                    <!-- <p><strong>Bank:</strong> State Bank of India</p>
                     <p><strong>Account No:</strong> 42339346512</p>
-                    <p><strong>IFSC:</strong> SBIN0010662</p>
+                    <p><strong>IFSC:</strong> SBIN0010662</p> -->
                 </div>
                 <div class="col-3 text-start  mt-3">
                     <!-- <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
@@ -624,13 +627,7 @@ setlocale(LC_NUMERIC, 'en_IN');
 
             </div>
 
-
-
-
-
-
             <hr>
-
             <!-- terms and condition  -->
             <!-- <h4>Terms and Conditions:</h4> -->
             <strong style='font-size: 16px; text-decoration: underline;'>Terms and Conditions:-</strong>
@@ -638,9 +635,20 @@ setlocale(LC_NUMERIC, 'en_IN');
             <ol>
                 <li><strong>Payment Terms:</strong>
                     <ol type="1">
-                        <li>1st Payment on Advance with Agreement - 60%</li>
-                        <li>2nd Payment on Material Delivery - 30%</li>
-                        <li>3rd Payment on Installation - 10%</li>
+                                    <!-- <?php 
+                                    $per60 =  ($amount * 60)/100;
+                                    $per60num = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $per60);
+                                    $per30 =  ($amount * 30)/100;
+                                    $per30num = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $per30);
+                                    $per10 =  ($amount * 10)/100;
+                                    $per10num = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $per10);
+                                    ?> -->
+                        <li>1st Payment on Advance with Agreement - 60% </li>
+                        <li>2nd Payment on Material Delivery - 30% </li>
+                        <li>3rd Payment on Installation - 10% </li>
+                        <!-- <li>1st Payment on Advance with Agreement - 60%  - (Rs.<?php  echo $per60num; ?>/-)</li>
+                        <li>2nd Payment on Material Delivery - 30% - (Rs.<?php  echo $per30num; ?>/-)</li>
+                        <li>3rd Payment on Installation - 10% - (Rs.<?php  echo $per10num; ?>/-)</li> -->
                     </ol>
                 </li>
                 <br>

@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if(!$_SESSION['username'])
 {
   header('location: login.php');
@@ -21,16 +19,7 @@ $username=$_SESSION['username'];
     <meta name="description" content="Build whatever layout you need with our Architect framework.">
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="icon" href="assets/images/logo.ico" type="image/icon">
-    <!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v1.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2019 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
+
 
 <link href="assets/css/dataTables.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">

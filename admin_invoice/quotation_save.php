@@ -15,11 +15,8 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
         
 $query_c = "SELECT * FROM quotation";
-
 $query_run_c = mysqli_query($con, $query_c);
-
 $quot_no = mysqli_num_rows($query_run_c);
-
 $quotation_no = 200 + $quot_no;
 
 
