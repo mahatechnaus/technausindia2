@@ -49,6 +49,26 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                     </div>
                 </div>
             </div>
+       <!-- ............     start search ............. -->
+<!-- 
+            <form action="#" method="post">
+                <div class="row card m-5">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>From Date</label>
+                            <input type="date" id="from_date" name="from_date" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>To Date</label>
+                            <input type="date" id="to_date" name="to_date" class="form-control" required>
+                        </div>
+                        <button type="submit" name="search_btn" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form> -->
+       <!-- ............     End search ............. -->
 
 
             <div class="tab-content">
@@ -74,11 +94,13 @@ $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $recordsPerPage;
 // Modify your SQL query to include LIMIT and OFFSET
 $sql = "SELECT * FROM leads where is_deleted='0' ORDER BY leadid DESC LIMIT $offset, $recordsPerPage";
-$query_run = mysqli_query($con, $sql);
+$query_pg = mysqli_query($con, $sql);
 ?>
                     <div class="main-card mb-3 card">
                         <div class="row m-3">
-                            <?php  while($row = mysqli_fetch_assoc($query_run)) { ?>
+                            <?php  
+                            if (mysqli_num_rows($query_run) > 0) {
+                            while($row = mysqli_fetch_assoc($query_run)) { ?>
                             <div class="col-3 mb-3">
                                 <div class="card-container">
                                     <div class="card">
@@ -89,8 +111,9 @@ $query_run = mysqli_query($con, $sql);
                                             <p><strong> Date: </strong>
                                                 <?php echo date("d/m/Y", strtotime($row["lddate"])); ?>
                                             </p>
-                                            <p><strong> Lead Name:</strong> <?php echo $row['leadname']; ?></p>
+                                            <p><strong> Name: <?php echo $row['leadname']; ?></strong></p>
                                             <p><strong> Mobile: </strong> <?php echo $row['mobile']; ?></p>
+                                            <p><strong> Type: </strong> <?php echo $row['leadtype']; ?></p>
                                             <p><strong> Source: </strong> <?php echo $row['source']; ?></p>
                                             <p><strong> Site visit Dt:
                                                     <?php echo date("d/m/Y", strtotime($row["appointmentdt"]));  ?></strong>
@@ -104,13 +127,21 @@ $query_run = mysqli_query($con, $sql);
                                                 name="pdf_btn" class="btn btn-link btn-warning"><i
                                                     class="fa fa-eye"></i></button>
                                         </form> -->
-                                            <form action="#" method="post">
+                                            <form action="leads_edit.php" method="post">
+                                                <input type="hidden" name="lead_edit_id"
+                                                    value="<?php echo $row['leadid']; ?>">
+                                                <button style="background-color:transparent; border:0;" type="submit"
+                                                    name="lead_edit_btn" class="btn btn-link btn-success"><i
+                                                        class="fa fa-pen"></i> </button>
+                                            </form>
+
+                                            <!-- <form action="#" method="post">
                                                 <input type="hidden" name="lead_edit_id"
                                                     value="<?php echo $row['leadid']; ?>">
                                                 <button style="background-color:transparent; border:0;" type="submit"
                                                     name="quot_edit_btn" class="btn btn-link btn-success"><i
-                                                        class="fa fa-pen"></i> </button>
-                                            </form>
+                                                        class="fa fa-envelope"></i> </button>
+                                            </form> -->
                                             <button style="background-color:transparent; border:0;" type="button"
                                                 data-id1="<?php echo $row['leadid']; ?>" id="lead_delete"
                                                 class="btn btn-link btn-danger"><i class="fa fa-trash"></i> </button>
@@ -118,12 +149,17 @@ $query_run = mysqli_query($con, $sql);
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php } 
+                            
+                        } else {
+                            // No records found, display a message
+                            echo "No records to show.";
+                        }
+                        ?>
                         </div>
 
                         <!-- .......... pagination  -->
-                        <div>
-
+                        <!-- <div>
                             <nav class="mx-5" aria-label="Page navigation example">
                                 <ul class="pagination">
                                     <?php
@@ -142,9 +178,9 @@ $query_run = mysqli_query($con, $sql);
                             </nav>
 
                         </div>
+                    -->
+                        <!-- .......... end pagination  -->
                     </div>
-
-
                 </div>
             </div>
         </div>

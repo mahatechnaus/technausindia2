@@ -12,7 +12,7 @@ $result_count = mysqli_query($con, $query_count);
 $lead_no = mysqli_num_rows($result_count);
 $lead_no = "ENQ000" . $lead_no;
 
-print_r($lead_no);
+// print_r($lead_no);
 
 date_default_timezone_set("Asia/Manila");
 $lead_dt = date("Y-m-d H:i:s");
@@ -42,7 +42,8 @@ $insert_query = "INSERT INTO leads
                 VALUES 
                 ('$lead_no', '$lead_dt', '$lead_source', '$lead_type', '$lead_name', '$mobile', '$email', 
                 '$address', '', '$lead_state', '$eb_amt', '$phase_select', '$est_appoint_dt', '', '$tc_status', 
-                '$tc_notes', '', '', '', '', '', '', '', '', '0')";
+                '$tc_notes', '$est_appoint_dt', '', '', '', '', '$est_appoint_dt', '', '', '0')";
+// print_r($insert_query);
 
 $result = mysqli_query($con, $insert_query);
 

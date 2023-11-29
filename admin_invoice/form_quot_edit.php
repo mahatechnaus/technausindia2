@@ -67,7 +67,7 @@ if(isset($_POST['quot_edit_btn'])){
                     <div class="card-body">
                         <form action="quotation_edit_save.php" method="POST">
                             <div id="spinner" class="spinner"></div>
-                            <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>">
+                            <!-- <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>"> -->
                             <div class="card text-dark bg-light mb-1">
                                 <h5 class="card-header">Customer Details</h5>
                                 <div class="card-body">
