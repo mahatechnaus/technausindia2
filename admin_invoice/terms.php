@@ -1,119 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Conditions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+<?php
+include 'includes/db.php';
+include 'includes/header.php';
+?>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<?php
+include 'includes/navbar.php';
+
+$sql= "SELECT * FROM users WHERE email = '$username'";
+        $sql_run = mysqli_query($con, $sql);
+        $row_a = mysqli_fetch_assoc($sql_run);
+        $user_id= $row_a['id'];
+
+        $query = "SELECT * FROM leads where is_deleted='0' ORDER BY `leadid` DESC ";
+        $query_run = mysqli_query($con, $query);
     
-        }
-        h2 {
-            color: #088BC3;
-            text-transform: uppercase;
-            text-align: left;
-        }
-        ol {
-            margin-top: 10px;
-            margin-bottom: 20px;
-            font-size:10px;
-        }
-        li {
-            /* margin-bottom: 10px; */
-            font-size:12px;
-        }
-        p {
-            margin-bottom: 10px;
-        }
-        #rectangle{
-    width:800px;
-    height:300px;
-    background:#F0F0F0;
+        $sql5= mysqli_query($con, "SELECT * FROM logo WHERE user_id = '$user_id'");
+        $num5=mysqli_num_rows($sql5);
+
+        $sql6= mysqli_query($con, "SELECT * FROM sign WHERE user_id = '$user_id'");
+        $num6=mysqli_num_rows($sql6);
+  
+?>
+<style>
+.card-body p {
+    margin-bottom: 5px;
+    /* Add this line to remove the bottom margin */
 }
-    </style>
+</style>
 </head>
+
 <body>
+    
+        <!-- Button to trigger the modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            Open Modal
+        </button>
 
-    <h2>Terms and Conditions:</h2>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>This is the content of the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="app-main__outer">
+        <div class="app-main__inner">
+            <div class="app-page-title">
+                <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div class="page-title-icon">
+                            <i class="pe-7s-global"></i>
+                        </div>
 
-    <ol>
-        <li><strong>Payment Terms:</strong>
-            <ol type="1">
-                <li>1st Payment on Advance with Agreement - 60%</li>
-                <li>2nd Payment on Material Delivery - 30%</li>
-                <li>3rd Payment on Installation - 10%</li>
-            </ol>
-        </li>
+                        <div>Leads<div class="page-title-subheading">Create, Edit, Delete leads here
+                            </div>
+                        </div>
+                    </div>
 
-        <li><strong>Technaus Renewables (SOW)</strong>
-            <ol type="a">
-                <li>Complete EPC of Solar Power Plant (Technical evaluation, design, engineering, supply, erection, and testing of the grid-connected rooftop solar PV projects.</li>
-                <li>Deployment of Site Execution Team and Supervision of our Technical Service Engineers / Technicians in the client’s premises.</li>
-    <li>To take care of the transportation, accommodation, food, and other incidental expenses of our team members.</li>
-<li>Technical team shall be equipped with all the necessary tools including drilling/cutting tools and lifting equipment as required for carryingout timely Installation & Commissioning.</li>
-<li>Shall supply Skilled/unskilled manpower as required for the execution of the work and supervision of the work carried out.</li>
-<li>Project Manager to periodically update the daily plan and progress to the client.</li>
-<li>Any type of inspection by Government/third-party/client is excluded from this offer, it shall be mutually agreed if required.</li>
-<li>Net metering documentation support (If required). • ACDB to customer MV panel MCCB up to 30 meters Technaus Renewables.</li>
+                    <div class="page-title-actions">
+                        <a class="btn mr-3 mb-3 btn-primary" href="leads_create.php" style="font-size:14px;"><i
+                                class="fa fa-plus"></i>&nbsp;
+                            Create Leads
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-            </ol>
-        </li>
 
-        <li><strong>Customer (SOW) - ON Grid Only</strong>
-            <ol type="a">
-                <li>All financial cost for the Net Metering and related process is in the scope of the customer.</li>
-                <li>To provide the required space and security for the materials used in the project site.</li>
- 
-<li>To provide any clarification, support or approvals during the phase of execution of the Project.</li>
-<li>To extend and fulfill any other reasonable requirement from Technaus Renewables.</li>
-<li>To provide the Civil Foundation Construction for PV panel mounting structure as per the Technaus Renewables Layout drawing.</li>
-<li>To provide a Single Point of Contact (Client-side Project Manager) for coordination/approval.</li>
-<li>EB NOC Clearance and Net-Meter / On-Grid Connection Certificate shall be arranged by Client / Customer, Technaus Renewables shall coordinate for necessary documents support.</li>
+            <div class="tab-content">
+                <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                    <?php           
 
-            </ol>
-        </li>
+        if(isset($_SESSION['SUCCESS']) && $_SESSION['SUCCESS'] !=''){
+            echo '<div class="alert alert-success" role="alert"> '.$_SESSION['SUCCESS']. '</div>';
+            unset($_SESSION['SUCCESS']);
+        }
+        if(isset($_SESSION['Failure']) && $_SESSION['Failure'] !=''){
+            echo '<div class="alert alert-danger" role="alert"> '.$_SESSION['Failure']. '</div>';
+            unset($_SESSION['Failure']);
+        }
+        ?>
 
-        <li><strong>Product and Performance Warranty</strong>
-            <ol type="a">
-                <li>Solar Grid tie inverter shall be warranted for a period of 84 months from the date of supply for any manufacturing defects (As per company warranty terms)</li>
-                <li>SPV module performance warranty for 25 years 80% power output, for the first 12 years 90% output 12 years product warranty.</li>
- 
-<li>The Owner shall make available, prior to coming into force, full “right of access”, “possession” and “right of easement” of the Site to theContractor and all its assigned sub-contractors during the complete tenure of the Contract</li>
-<li>Standard Force Majeure Conditions apply for this offer and resultant Order. Technaus Renewables has no responsibility for delay & damage of Goods due to transportation.</li>
-<li>We shall retain the right on equipment, materials, or parts supplied by us under this quotation until full value thereof as per our invoice has beenfully paid to us.</li>
-<li>The offer is valid for your acceptance for a period of 15 days from the date of this offer</li>
-<li>All the information exchanged between the Parties, either oral or written, in connection with this Offer/ Contract, shall be maintainedstrictly confidential, except to the extent necessary to carry out obligations under it or to comply with applicable Laws.</li>
-<li>We will provide 5 years of free service support for 3 visits/year and on-call basis.</li>
-            
-            </ol>
-        </li>
+                    <div class="row mb-3">
+                        <?php  while($row = mysqli_fetch_assoc($query_run)) { ?>
+                        <div class="col-3 mb-3">
 
-        <li><strong>Site layout:</strong>
-         <br>      
-         <br>  
-         <div id="rectangle"></div>
-         <br>
-         <br>
-       
-        </li>
+                            <div class="card-container">
 
-        <li><strong>Workout Details:</strong>
-        <br>      
-         <br>  
-         <div id="rectangle"></div>
-         <br>
-         <br>
-        </li>
-    </ol>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Lead ID: <?php echo $row['leadno']; ?>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong> Date: </strong>
+                                            <?php echo date("d/m/Y", strtotime($row["lddate"])); ?>
+                                        </p>
+                                        <p><strong> Lead Name:</strong> <?php echo $row['leadname']; ?></p>
+                                        <p><strong> Mobile: </strong> <?php echo $row['mobile']; ?></p>
+                                        <p><strong> Source: </strong> <?php echo $row['source']; ?></p>
+                                        <p><strong> Site visit Dt:
+                                                <?php echo date("d/m/Y", strtotime($row["appointmentdt"]));  ?></strong>
+                                        </p>
+                                        <p><strong> Telecaller Status:</strong> <?php echo $row['statustc']; ?></p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <!-- <form action="#" method="post">
+                                        <input type="hidden" name="lead_id" value="<?php echo $row['leadid']; ?>">
+                                        <button style="background-color:transparent; border:0;" type="submit"
+                                            name="pdf_btn" class="btn btn-link btn-warning"><i
+                                                class="fa fa-eye"></i></button>
+                                    </form> -->
 
-    <p><strong>Proposal/Quotation acceptance by:</strong></p>
-    <p><strong>Consultant Signature:</strong></p>
-    <p><strong>Owner Signature:</strong></p>
-    <p><strong>Signed Date</strong></p>
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="lead_id" value="<?php echo $row['leadid']; ?>">
+                                            <button style="background-color:transparent; border:0;" type="button"
+                                                class="btn btn-link btn-warning" data-toggle="modal"
+                                                data-target="#myModal">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </form>
 
-    <p><strong>Our Recent Projects:</strong></p>
-    <!-- Include information about recent projects -->
 
-</body>
-</html>
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="lead_edit_id"
+                                                value="<?php echo $row['leadid']; ?>">
+                                            <button style="background-color:transparent; border:0;" type="submit"
+                                                name="quot_edit_btn" class="btn btn-link btn-success"><i
+                                                    class="fa fa-pen"></i> </button>
+                                        </form>
+                                        <button style="background-color:transparent; border:0;" type="button"
+                                            data-id1="<?php echo $row['leadid']; ?>" id="deleteleads"
+                                            class="btn btn-link btn-danger"><i class="fa fa-trash"></i> </button>
+                                        <!-- <a href="#" class="btn btn-primary">Edit</a>
+                                     <a href="#" class="btn btn-danger">Delete</a> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <?php } ?>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Bootstrap JS (with Popper.js) -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <?php include('includes/footer.php'); ?>

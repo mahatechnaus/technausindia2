@@ -18,34 +18,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
     $message = "Failed to save quotation";
 }
 ?>
-<style type="text/css">
-.spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #3498db;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -20px;
-    margin-left: -20px;
-    display: none;
-}
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    100% {
-        transform: rotate(360deg);
-    }
-}
-</style>
-
-<div id="spinner" class="spinner"></div>
 <div class="app-main__outer">
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -78,7 +52,6 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                             <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>">
 
                             <!-- ---- start html design form ---  -->
-
                             <div class="row mt-3">
                                 <!-- Lead Information Card -->
                                 <div class="col-4">
@@ -112,7 +85,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             </div>
 
                                             <div class="form-group">
-                                                <label>State </label> <br>
+                                                <label>State </label> <span style="color:red;">*</span> <br>
                                                 <select name="lead_state" id="lead_state" class="form-control" required>
                                                     <option value="" hidden>Choose State</option>
                                                     <option value="Puducherry">Puducherry</option>
@@ -136,7 +109,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label>Lead Type</label> <br>
-                                                <select name="lead_type" id="lead_type" class="form-control" required>
+                                                <select name="lead_type" id="lead_type" class="form-control">
                                                     <option value="" hidden>Choose lead type</option>
                                                     <option value="Residential">Residential</option>
                                                     <option value="Commercial">Commercial</option>
@@ -148,7 +121,6 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Lead Source</label> <br>
                                                 <select name="lead_source" id="lead_source" class="form-control"
                                                     required>
-                                                    <option value="" hidden>Choose source</option>
                                                     <option value="" hidden>Choose source</option>
                                                     <option value="External Source">External Source</option>
                                                     <option value="Website">Website</option>
@@ -169,8 +141,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
                                             <div class="form-group">
                                                 <label>Phase </label> <br>
-                                                <select name="phase_select" id="phase_select" class="form-control"
-                                                    required>
+                                                <select name="phase_select" id="phase_select" class="form-control">
                                                     <option value="" hidden>Choose phase</option>
                                                     <option value="Single phase">Single phase</option>
                                                     <option value="Double phase">Double phase</option>
@@ -180,11 +151,12 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Estimated site visit</label> <span style="color:red;">
-                                                    *</span> <br>
+                                                <label>Estimated site visit</label> <span style="color:red;">*</span>
+                                                <br>
                                                 <input type="date" id="est_appoint_dt" name="est_appoint_dt"
-                                                    class="form-control" value="<?php echo date('Y-m-d'); ?>" required>
-                                                <!-- value="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" -->
+                                                    class="form-control" required>
+                                                <!-- value="<?php echo date('Y-m-d'); ?>" 
+                                                     value="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" -->
                                             </div>
 
                                         </div>
@@ -199,7 +171,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <label>Status by Telecaller</label> <br>
+                                                <label>Status by Telecaller</label> <span style="color:red;">*</span>
+                                                <br>
                                                 <select name="tc_status" id="tc_status" class="form-control" required>
                                                     <option value="" hidden>Choose Status</option>
                                                     <option value="Interested">Interested</option>
@@ -213,8 +186,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             </div>
                                             <div class="form-group">
                                                 <label>Telecaller Notes</label><br>
-                                                <textarea id="tc_notes" name="tc_notes"
-                                                    class="form-control" rows="4"></textarea>
+                                                <textarea id="tc_notes" name="tc_notes" class="form-control"
+                                                    rows="4"></textarea>
                                             </div>
 
 
@@ -247,69 +220,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
     <?php include('includes/footer.php'); ?>
 
-    <script>
-    $(document).on('change', '#invoice_number', function() {
-        var number = document.getElementById('invoice_number').value;
-        var id = document.getElementById('imp').value;
-        $.ajax({
-            url: "check.php",
-            method: "POST",
-            data: {
-                number: number,
-                id: id
-            },
-            dataType: "text",
-            success: function(data) {
-                if (data == "Invoice number already exists") {
-                    document.getElementById("danger").style.display = 'block';
-                    document.getElementById("danger").innerHTML = data;
-                    $(function() {
-                        setTimeout(function() {
-                            $("#danger").fadeOut(1000);
-                        }, 1500)
-                    })
-                    document.getElementById("save").disabled = true;
-                } else {
-                    document.getElementById("success").style.display = 'block';
-                    document.getElementById("success").innerHTML = data;
-                    $(function() {
-                        setTimeout(function() {
-                            $("#success").fadeOut(1000);
-                        }, 1500)
-                    })
-                    document.getElementById("save").disabled = false;
-                }
-            }
-        });
 
-    });
-    </script>
 
-    <script>
-    function calculateTotalAmount() {
-        // Get values from input fields
-        var panelWatts = document.getElementById('panel_watts').value;
-        var noPanel = document.getElementById('no_panel').value;
-
-        // Perform the calculation
-        var sysSize = panelWatts * noPanel;
-        var totAmt = sysSize * 65;
-
-        // Display the result
-        // document.getElementById('totamt').value = totAmt;
-        document.getElementById('totamt').innerHTML = "Total Outlay for ref calculation: " + totAmt;
-    }
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('submitBtn').addEventListener('click', function() {
-            document.getElementById('spinner').style.display = 'block';
-            setTimeout(function() {
-                document.getElementById('spinner').style.display = 'none';
-            }, 5000); // 5000 milliseconds (5 seconds)
-        });
-    });
-    </script>
 
     <script>
     function isNumeric(event) {

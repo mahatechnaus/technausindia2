@@ -29,30 +29,30 @@ $eb_amt=$_POST['eb_amt'];
 $phase_select=$_POST['phase_select'];
 $est_appoint_dt=$_POST['est_appoint_dt'];
 
-print_r(est_appoint_dt);
+// print_r($est_appoint_dt);
 
 $tc_status=$_POST['tc_status'];
 $tc_notes=$_POST['tc_notes'];
 
 
-// $insert_query = "INSERT INTO leads 
-//                 (leadno, lddate, source, leadtype, leadname, mobile, email, address, area, state, ebillamt, 
-//                 phase, appointmentdt, assignto, statustc, notestc, nextcalltcdt, appx_kw, sanction_load, 
-//                 space_solar, statusta, quot_dt, quot_no, quot_price, is_deleted) 
-//                 VALUES 
-//                 ('$lead_no', '$lead_dt', '$lead_source', '$lead_type', '$lead_name', '$mobile', '$email', 
-//                 '$address', '', '$lead_state', '$eb_amt', '$phase_select', '$est_appoint_dt', '', '$tc_status', 
-//                 '$tc_notes', '', '', '', '', '', '', '', '', '0')";
+$insert_query = "INSERT INTO leads 
+                (leadno, lddate, source, leadtype, leadname, mobile, email, address, area, state, ebillamt, 
+                phase, appointmentdt, assignto, statustc, notestc, nextcalltcdt, appx_kw, sanction_load, 
+                space_solar, statusta, quot_dt, quot_no, quot_price, is_deleted) 
+                VALUES 
+                ('$lead_no', '$lead_dt', '$lead_source', '$lead_type', '$lead_name', '$mobile', '$email', 
+                '$address', '', '$lead_state', '$eb_amt', '$phase_select', '$est_appoint_dt', '', '$tc_status', 
+                '$tc_notes', '', '', '', '', '', '', '', '', '0')";
 
-// $result = mysqli_query($con, $insert_query);
+$result = mysqli_query($con, $insert_query);
 
 
-// if ($result) {
-//     // Record saved successfully
-//     header('location: leads_create.php?success=1');
-// } else {
-//     // Record failed to save
-//     header('location: leads_create.php?error=1');
-// }
+if ($result) {
+    // Record saved successfully
+    header('location: leads_create.php?success=1');
+} else {
+    // Record failed to save
+    header('location: leads_create.php?error=1');
+}
 
 ?>
