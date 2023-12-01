@@ -7,7 +7,7 @@ include 'includes/navbar.php';
   $query_run_c = mysqli_query($con, $query_c);
   $number = mysqli_num_rows($query_run_c);
 
-  $query_ld = "SELECT * FROM leads";
+  $query_ld = "SELECT * FROM leads where is_deleted='0'";
   $query_run_ld = mysqli_query($con, $query_ld);
   $number_ld = mysqli_num_rows($query_run_ld);
 

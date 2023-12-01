@@ -8,7 +8,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
         $row_a = mysqli_fetch_assoc($sql_run);
         $user_id= $row_a['id'];
 
-        $query = "SELECT * FROM leads where is_deleted='0' ORDER BY `leadid` DESC ";
+        $query = "SELECT * FROM leads where is_quotation='0' and is_deleted='0' ORDER BY `leadid` DESC ";
         $query_run = mysqli_query($con, $query);
     
         $sql5= mysqli_query($con, "SELECT * FROM logo WHERE user_id = '$user_id'");
@@ -16,6 +16,21 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
         $sql6= mysqli_query($con, "SELECT * FROM sign WHERE user_id = '$user_id'");
         $num6=mysqli_num_rows($sql6);
+
+
+// Display success message
+$message = "";
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+//    $message = "Lead send successfully";
+   $message = isset($_GET['leadname']) ?  htmlspecialchars($_GET['leadname']) ." Lead converted to quotation stage" : "Lead converted to quotation stage";
+
+
+
+}
+// Display error message
+if (isset($_GET['error']) && $_GET['error'] == 1) {
+    $message = "Failed to send";
+}
   
 ?>
 
@@ -49,8 +64,8 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                     </div>
                 </div>
             </div>
-       <!-- ............     start search ............. -->
-<!-- 
+            <!-- ............     start search ............. -->
+            <!-- 
             <form action="#" method="post">
                 <div class="row card m-5">
                     <div class="col-4">
@@ -68,7 +83,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                     </div>
                 </div>
             </form> -->
-       <!-- ............     End search ............. -->
+            <!-- ............     End search ............. -->
 
 
             <div class="tab-content">
@@ -97,7 +112,12 @@ $sql = "SELECT * FROM leads where is_deleted='0' ORDER BY leadid DESC LIMIT $off
 $query_pg = mysqli_query($con, $sql);
 ?>
                     <div class="main-card mb-3 card">
+                    <div class="successmsg p-3"
+                                                style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
+                                                <?php echo $message; ?>
+                                            </div>
                         <div class="row m-3">
+              
                             <?php  
                             if (mysqli_num_rows($query_run) > 0) {
                             while($row = mysqli_fetch_assoc($query_run)) { ?>
@@ -121,12 +141,7 @@ $query_pg = mysqli_query($con, $sql);
                                             <p><strong> Telecaller Status:</strong> <?php echo $row['statustc']; ?></p>
                                         </div>
                                         <div class="card-footer">
-                                            <!-- <form action="#" method="post">
-                                            <input type="hidden" name="lead_id" value="<?php echo $row['leadid']; ?>">
-                                            <button style="background-color:transparent; border:0;" type="submit"
-                                                name="pdf_btn" class="btn btn-link btn-warning"><i
-                                                    class="fa fa-eye"></i></button>
-                                        </form> -->
+
                                             <form action="leads_edit.php" method="post">
                                                 <input type="hidden" name="lead_edit_id"
                                                     value="<?php echo $row['leadid']; ?>">
@@ -135,6 +150,26 @@ $query_pg = mysqli_query($con, $sql);
                                                         class="fa fa-pen"></i> </button>
                                             </form>
 
+                                            <button style="background-color:transparent; border:0;" type="button"
+                                                data-id1="<?php echo $row['leadid']; ?>" id="lead_delete"
+                                                class="btn btn-link btn-danger"><i class="fa fa-trash"></i> </button>
+
+                                            <form action="lead_quot_send.php" method="post">
+                                                <input type="hidden" name="lead_quot_id"
+                                                    value="<?php echo $row['leadid']; ?>">
+                                                <button style="background-color:transparent; border:0;" type="submit"
+                                                    name="lead_edit_btn" class="btn btn-link btn-success">
+                                                    Send to Quotation
+                                                </button>
+                                            </form>
+                                       
+
+                                            <!-- <form action="#" method="post">
+                                            <input type="hidden" name="lead_id" value="<?php echo $row['leadid']; ?>">
+                                            <button style="background-color:transparent; border:0;" type="submit"
+                                                name="pdf_btn" class="btn btn-link btn-warning"><i
+                                                    class="fa fa-eye"></i></button>
+                                        </form> -->
                                             <!-- <form action="#" method="post">
                                                 <input type="hidden" name="lead_edit_id"
                                                     value="<?php echo $row['leadid']; ?>">
@@ -142,9 +177,6 @@ $query_pg = mysqli_query($con, $sql);
                                                     name="quot_edit_btn" class="btn btn-link btn-success"><i
                                                         class="fa fa-envelope"></i> </button>
                                             </form> -->
-                                            <button style="background-color:transparent; border:0;" type="button"
-                                                data-id1="<?php echo $row['leadid']; ?>" id="lead_delete"
-                                                class="btn btn-link btn-danger"><i class="fa fa-trash"></i> </button>
                                         </div>
                                     </div>
                                 </div>

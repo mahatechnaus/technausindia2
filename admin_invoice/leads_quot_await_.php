@@ -9,7 +9,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
         $user_id= $row_a['id'];
 
 
-        $query = "SELECT * FROM quotation where is_deleted='0' and leadid='0' ORDER BY `owner_id` DESC ";
+        $query = "SELECT * FROM quotation where is_deleted='0' and quotation_no='0' ORDER BY `owner_id` DESC ";
         $query_run = mysqli_query($con, $query);
 
 

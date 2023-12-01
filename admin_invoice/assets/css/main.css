@@ -11491,7 +11491,8 @@ button,
 }
 
 .vertical-nav-menu ul>li>a {
-    color: #6c757d;
+    /* color: #6c757d; */
+    color: #ffffff;
     height: 2rem;
     line-height: 2rem;
     padding: 0 1.5rem 0
