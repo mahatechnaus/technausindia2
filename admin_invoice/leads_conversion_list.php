@@ -9,7 +9,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
         $user_id= $row_a['id'];
 
 
-        $query = "SELECT * FROM quotation where is_deleted='0' and quotation_no='0' ORDER BY `owner_id` DESC ";
+        $query = "SELECT * FROM leads where is_deleted='0' ORDER BY `leadid` DESC ";
         $query_run = mysqli_query($con, $query);
 
 
@@ -49,8 +49,8 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                         <i class="pe-7s-global"></i>
                     </div>
 
-                    <div>Quotation
-                        <div class="page-title-subheading">Create, Edit, Delete quotations here
+                    <div>Lead Conversion
+                        <div class="page-title-subheading">Create, Edit, Delete lead conversion here
                         </div>
                     </div>
                 </div>
@@ -58,24 +58,15 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
                 <div class="page-title-actions">
-                    <?php
-            if(($num1==0) OR ($num2==0) OR ($num3==0) OR ($num4==0) OR ($num5==0) OR ($num6==0)){
-               echo '<p class="text-danger">Enter all details to start creating invoices</p>';
-            } else {
-            ?>
-                    <a class="btn mr-3 mb-3 btn-primary" href="form_quotation.php" style="font-size:14px;"><i
-                            class="fa fa-plus"></i>&nbsp;
-                        Create Quotation</a>
-                    <?php } ?>
+            
+                <a class="btn mr-3 mb-3 btn-primary" href="leads_list.php" style="font-size:14px;"><i
+                            class="fa fa-arrow-left"></i>&nbsp;
+                        Back
+                    </a>
+               
                 </div>
             </div>
         </div>
-
-<!-- start search .  -->
-
-<?php include('includes/quotsearchhead.php'); ?>
-
-<!-- end search ...........  -->
 
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
@@ -96,12 +87,15 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                         <table class="table table-striped table-bordered" id="table">
                             <thead align="center">
                                 <tr>
-                                    <th>Owner ID</th>
+                                    <th>Lead ID</th>
                                     <th>Date</th>
-                                    <th>Owner</th>
+                                    <th>Lead Name</th>
                                     <th>Mobile</th>
-                                    <th>Amount </th>
-                                    <th>Operations</th>
+                                    <th>Source</th>
+                                    <th>Estimated Site Visit</th>
+
+                                    <th>Details </th>
+                                    <!-- <th>Operations</th> -->
                                 </tr>
                             </thead>
                             <tbody align="center">
@@ -110,35 +104,25 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
             {
                ?>
                                 <tr>
-                                    <td><?php  echo $row['owner_id']; ?></td>
-                                    <td><?php  echo  date("d/m/Y", strtotime($row["quotdate"])); ?></td>
-                                    <td><?php  echo $row['owner']; ?></td>
+                                    <td><?php  echo $row['leadno']; ?></td>
+                                    <td><?php  echo  date("d/m/Y", strtotime($row["lddate"])); ?></td>
+                                    <td><?php  echo $row['leadname']; ?></td>
                                     <td><?php  echo $row['mobile']; ?></td>
-                                    <td><?php  echo $row['grandtotal']; ?></td>
-                                    <td style="width:30px;">
-                                        <div class="row">
-                                            <form action="preview2.php" target="_blank" method="post">
-                                                <input type="hidden" name="quot_id"
-                                                    value="<?php echo $row['owner_id']; ?>">
-                                                <button style="background-color:transparent; border:0;" type="submit"
-                                                    name="pdf_btn" class="btn btn-link btn-warning"><i
-                                                        class="fa fa-eye"></i></button>
-                                            </form>
+                                    <td><?php  echo $row['source']; ?></td>
+                                    <td><strong><?php  echo  date("d/m/Y", strtotime($row["appointmentdt"])); ?> <strong></td>
 
-                                            <form action="form_quot_edit.php" method="post">
-                                                <input type="hidden" name="quot_edit_id"
-                                                    value="<?php echo $row['owner_id']; ?>">
-                                                <button style="background-color:transparent; border:0;" type="submit"
-                                                    name="quot_edit_btn" class="btn btn-link btn-success"><i
-                                                        class="fa fa-pen"></i></button>
-                                            </form>
 
-                                            <button style="background-color:transparent; border:0;" type="button"
-                                                data-id1="<?php echo $row['owner_id']; ?>" id="deletequotation"
-                                                class="btn btn-link btn-danger"><i class="fa fa-trash"></i></button>
-
-                                        </div>
+                                    <td>
+                                        <?php
+                                         if ($row['is_quotation'] == '0') {
+                                            echo '<a href="#?leadid='. $row['leadid'] .'"> <span class="badge badge-success">Waiting for site visit</span></a>';
+                                         } elseif ($row['is_quotation'] == '1') {
+                                             echo '<a href="#?leadid='. $row['leadid'] .'"> <span class="badge badge-warning">Awaiting Quotation</span></a>';
+                                        }
+                                        ?>
                                     </td>
+
+
                                 </tr>
                                 <?php     
             } 

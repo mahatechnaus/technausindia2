@@ -257,19 +257,19 @@ $type ="Quotation";
     }
 
     .pageborder {
-            border: 1px solid #000; /* Set border properties */
-            padding: 20px; /* Add padding to create space between content and border */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
+        border: 1px solid #000;
+        /* Set border properties */
+        padding: 20px;
+        /* Add padding to create space between content and border */
+        box-sizing: border-box;
+        /* Include padding and border in the element's total width and height */
+    }
 
-    .contactbg{
+    .contactbg {
         background-color: #088AC2;
         color: white;
 
     }
-
-
-
     </style>
 
 
@@ -284,10 +284,10 @@ $type ="Quotation";
     <!-- Page Wrapper -->
     <div id="wrapper" style="margin:50px 30px 20px 40px;">
         <div class="container-fluid ">
-            
 
-        <!-- start 1st page  -->
-        <!-- <div class="pageborder"> -->
+
+            <!-- start 1st page  -->
+            <!-- <div class="pageborder"> -->
             <div class="row">
                 <div class="col-6">
                     <div class="logo">
@@ -379,7 +379,8 @@ $type ="Quotation";
 
 
                 <tr>
-                    <td colspan="3">Distributor Name: <strong><?php echo $rowf['distributor'] ?></strong></td>
+                    <td>Sanction load: <strong><?php echo $rowf['sanctionload'] ?></strong></td>
+                    <td colspan="2">Distributor Name: <strong><?php echo $rowf['distributor'] ?></strong></td>
 
                 </tr>
 
@@ -391,7 +392,7 @@ $type ="Quotation";
             <hr align="center">
 
 
-       
+
             <strong style='font-size: 16px; text-decoration: underline;'>Property Details:-</strong>
 
             <table class="">
@@ -408,7 +409,7 @@ $type ="Quotation";
             <!-- Start of specification -->
             <strong style='font-size: 16px; text-decoration: underline;'>System Details:-</strong>
 
-         
+
             <p class="mt-4"></p>
             <table border="1" cellpadding="10">
 
@@ -457,7 +458,8 @@ echo ($rowf['batterycount'] !== null && $rowf['batterycount'] !== "0") ? $rowf['
                             <li style="font-size:14px;">AC wire - 2.5-6 Sqmm 50Mtr</li>
                             <li style="font-size:14px;">Earthing Wire - 6Sqm Copper / 10Sqmm Aluminium 20Mtr</li>
                             <li style="font-size:14px;">Earthing Rod - 1Mtr - 1No</li>
-                            <li style="font-size:14px;">Lightning Arrestor - Single/Multi Spike 1Mtr & Aluminium conductor (50Sqmm) 20 Mtr</li>
+                            <li style="font-size:14px;">Lightning Arrestor - Single/Multi Spike 1Mtr & Aluminium
+                                conductor (50Sqmm) 20 Mtr</li>
                             <li style="font-size:14px;">DCDB & ACDB - MCB, SPD, Fuse</li>
                         </ol>
 
@@ -504,7 +506,7 @@ setlocale(LC_NUMERIC, 'en_IN');
             <div class="row pt-1">
                 <div class="col-6">
 
-                <!-- <div class="mx-3" style="margin-top: 10px;">
+                    <!-- <div class="mx-3" style="margin-top: 10px;">
     <p style="font-weight: bold; margin-bottom: 0px;">System Details:</p>
     <p class="mx-5" style="margin-bottom: 0px;">Solar Inverter Product Warranty: <strong>7 Years</strong></p>
     <p class="mx-5" style="margin-bottom: 0px;">Solar Panels Product Warranty:<strong> 12 Years</strong></p>
@@ -546,7 +548,7 @@ setlocale(LC_NUMERIC, 'en_IN');
             <!-- end Warranty  -->
 
             <!-- footer address  -->
-    
+
             <hr style="border-top: 2px solid #088AC2;">
 
 
@@ -575,67 +577,67 @@ setlocale(LC_NUMERIC, 'en_IN');
                     </div>
                 </div>
             </div>
-   
+
             <!-- end footer address  -->
 
             <div class="pagebreak"> </div>
-        </div> 
+        </div>
         <!-- div pageborder -->
-        
-            <div class="pt-5" style="margin-top:50px;"></div>
-            <strong style='font-size: 16px; text-decoration: underline;'>Estimated Time Frame for Deliver:-</strong>
-            <!-- <h4 class="m-3">Estimated Time Frame for Delivery:</h4> -->
-            <ul class="pt-3" style="list-style-type: none;">
-                <li style="font-size: 16px;">
-                    <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
-                        All time Frames are subjected to stock availability. Please allow approx.
-                        15-20 Business days.
-                    </i>
-                </li>
-                <li style="font-size: 16px;">
-                    <i class="fa fa-square-o " style="font-size:20px;  padding-right: 10px;">
-                        Client Understands by Default that EB delays are not the responsibility of
-                        the Contractor.
-                    </i>
-                </li>
-                <li style="font-size: 16px;">
-                    <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
-                        EB Approval charges are Client scope. (Process will be supported till Net
-                        metering if needed).
-                    </i>
-                </li>
-            </ul>
+
+        <div class="pt-5" style="margin-top:50px;"></div>
+        <strong style='font-size: 16px; text-decoration: underline;'>Estimated Time Frame for Deliver:-</strong>
+        <!-- <h4 class="m-3">Estimated Time Frame for Delivery:</h4> -->
+        <ul class="pt-3" style="list-style-type: none;">
+            <li style="font-size: 16px;">
+                <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
+                    All time Frames are subjected to stock availability. Please allow approx.
+                    15-20 Business days.
+                </i>
+            </li>
+            <li style="font-size: 16px;">
+                <i class="fa fa-square-o " style="font-size:20px;  padding-right: 10px;">
+                    Client Understands by Default that EB delays are not the responsibility of
+                    the Contractor.
+                </i>
+            </li>
+            <li style="font-size: 16px;">
+                <i class="fa fa-square-o" style="font-size:20px;  padding-right: 10px;">
+                    EB Approval charges are Client scope. (Process will be supported till Net
+                    metering if needed).
+                </i>
+            </li>
+        </ul>
 
 
-            <div class="row mx-5">
-                <div class="col-5">
+        <div class="row mx-5">
+            <div class="col-5">
                 <strong style='font-size: 16px; text-decoration: underline;'>Payment Details:-</strong>
-                    <!-- <h4>Payment Details:</h4> -->
-                    <p class="pt-3">All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
-                    <p><strong>Bank:</strong> ICICI Bank</p>
-                    <p><strong>Account No:</strong> 611905056418</p>
-                    <p><strong>IFSC:</strong> ICIC0006119</p>
-                    <!-- <p><strong>Bank:</strong> State Bank of India</p>
+                <!-- <h4>Payment Details:</h4> -->
+                <p class="pt-3">All payments should be made by Cheque CC / NEFT / UPI transfer.</p>
+                <p><strong>Bank:</strong> ICICI Bank</p>
+                <p><strong>Account No:</strong> 611905056418</p>
+                <p><strong>IFSC:</strong> ICIC0006119</p>
+                <!-- <p><strong>Bank:</strong> State Bank of India</p>
                     <p><strong>Account No:</strong> 42339346512</p>
                     <p><strong>IFSC:</strong> SBIN0010662</p> -->
-                </div>
-                <div class="col-3 text-start  mt-3">
-                    <!-- <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
+            </div>
+            <div class="col-3 text-start  mt-3">
+                <!-- <img src='<?php echo "assets/images/payment_code.jpg"; ?>' style="width: 50%;"
                         alt="Scan to pay"><br>
                     <p class="mx-2">[Scan to pay]</p> -->
-                </div>
-
             </div>
 
-            <hr>
-            <!-- terms and condition  -->
-            <!-- <h4>Terms and Conditions:</h4> -->
-            <strong style='font-size: 16px; text-decoration: underline;'>Terms and Conditions:-</strong>
+        </div>
 
-            <ol>
-                <li><strong>Payment Terms:</strong>
-                    <ol type="1">
-                                    <!-- <?php 
+        <hr>
+        <!-- terms and condition  -->
+        <!-- <h4>Terms and Conditions:</h4> -->
+        <strong style='font-size: 16px; text-decoration: underline;'>Terms and Conditions:-</strong>
+
+        <ol>
+            <li><strong>Payment Terms:</strong>
+                <ol type="1">
+                    <!-- <?php 
                                     $per60 =  ($amount * 60)/100;
                                     $per60num = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $per60);
                                     $per30 =  ($amount * 30)/100;
@@ -643,188 +645,188 @@ setlocale(LC_NUMERIC, 'en_IN');
                                     $per10 =  ($amount * 10)/100;
                                     $per10num = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $per10);
                                     ?> -->
-                        <li>1st Payment on Advance with Agreement - 60% </li>
-                        <li>2nd Payment on Material Delivery - 30% </li>
-                        <li>3rd Payment on Installation - 10% </li>
-                        <!-- <li>1st Payment on Advance with Agreement - 60%  - (Rs.<?php  echo $per60num; ?>/-)</li>
+                    <li>1st Payment on Advance with Agreement - 60% </li>
+                    <li>2nd Payment on Material Delivery - 30% </li>
+                    <li>3rd Payment on Installation - 10% </li>
+                    <!-- <li>1st Payment on Advance with Agreement - 60%  - (Rs.<?php  echo $per60num; ?>/-)</li>
                         <li>2nd Payment on Material Delivery - 30% - (Rs.<?php  echo $per30num; ?>/-)</li>
                         <li>3rd Payment on Installation - 10% - (Rs.<?php  echo $per10num; ?>/-)</li> -->
-                    </ol>
-                </li>
-                <br>
-                <li><strong>Technaus Renewables (SOW)</strong>
-                    <ol type="a">
-                        <li>Complete EPC of Solar Power Plant (Technical evaluation, design, engineering, supply,
-                            erection, and testing of the grid-connected rooftop solar PV projects.</li>
-                        <li>Deployment of Site Execution Team and Supervision of our Technical Service Engineers /
-                            Technicians in the client’s premises.</li>
-                        <li>To take care of the transportation, accommodation, food, and other incidental expenses of
-                            our team members.</li>
-                        <li>Technical team shall be equipped with all the necessary tools including drilling/cutting
-                            tools and lifting equipment as required for carryingout timely Installation & Commissioning.
-                        </li>
-                        <li>Shall supply Skilled/unskilled manpower as required for the execution of the work and
-                            supervision of the work carried out.</li>
-                        <li>Project Manager to periodically update the daily plan and progress to the client.</li>
-                        <li>Any type of inspection by Government/third-party/client is excluded from this offer, it
-                            shall be mutually agreed if required.</li>
-                        <li>Net metering documentation support (If required). • ACDB to customer MV panel MCCB up to 30
-                            meters Technaus Renewables.</li>
-
-                    </ol>
-                </li>
-                <br>
-                <li><strong>Customer (SOW) - ON Grid Only</strong>
-                    <ol type="a">
-                        <li>All financial cost for the Net Metering and related process is in the scope of the customer.
-                        </li>
-                        <li>To provide the required space and security for the materials used in the project site.</li>
-
-                        <li>To provide any clarification, support or approvals during the phase of execution of the
-                            Project.</li>
-                        <li>To extend and fulfill any other reasonable requirement from Technaus Renewables.</li>
-                        <li>To provide the Civil Foundation Construction for PV panel mounting structure as per the
-                            Technaus Renewables Layout drawing.</li>
-                        <li>To provide a Single Point of Contact (Client-side Project Manager) for
-                            coordination/approval.</li>
-                        <li>EB NOC Clearance and Net-Meter / On-Grid Connection Certificate shall be arranged by Client
-                            / Customer, Technaus Renewables shall coordinate for necessary documents support.</li>
-
-                    </ol>
-                </li>
-                <br>
-                <li><strong>Product and Performance Warranty</strong>
-                    <ol type="a">
-                        <li>Solar Grid tie inverter shall be warranted for a period of 84 months from the date of supply
-                            for any manufacturing defects (As per company warranty terms)</li>
-                        <li>SPV module performance warranty for 25 years 80% power output, for the first 12 years 90%
-                            output 12 years product warranty.</li>
-
-                        <li>The Owner shall make available, prior to coming into force, full “right of access”,
-                            “possession” and “right of easement” of the Site to theContractor and all its assigned
-                            sub-contractors during the complete tenure of the Contract</li>
-                        <li>Standard Force Majeure Conditions apply for this offer and resultant Order. Technaus
-                            Renewables has no responsibility for delay & damage of Goods due to transportation.</li>
-                        <li>We shall retain the right on equipment, materials, or parts supplied by us under this
-                            quotation until full value thereof as per our invoice has beenfully paid to us.</li>
-                        <li>The offer is valid for your acceptance for a period of 15 days from the date of this offer
-                        </li>
-                        <li>All the information exchanged between the Parties, either oral or written, in connection
-                            with this Offer/ Contract, shall be maintainedstrictly confidential, except to the extent
-                            necessary to carry out obligations under it or to comply with applicable Laws.</li>
-                        <li>We will provide 5 years of free service support for 3 visits/year and on-call basis.</li>
-
-                    </ol>
-                </li>
-
-            </ol>
+                </ol>
+            </li>
             <br>
-            <!-- footer address  -->
-            <br> <br> <br>
-            <hr style="border-top: 2px solid #088AC2;">
-            <div class=" contactbg pt-3 ">
-                <div class="container">
-                    <div class="row mx-3">
-                        <div class="col-4">
-                            <strong>Sales Office</strong>
-                            <p style="font-size: 14px;">
-                                #27, Puducherry - Tindivanam <br> Main Road,
-                                V.I.P Nagar,<br> Pattanur - 605 006</p>
-                        </div>
-                        <div class="col-4">
-                            <strong>Corporate Office</strong>
-                            <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
-                                Thirumalai Nagar, Perungudi, <br>
-                                Chennai - 600 096</p>
-                        </div>
-                        <div class="col-4">
-                            <strong>Branch Office</strong>
-                            <p style="font-size: 14px;">
-                                #4 Cauvery Avenue,
-                                Alagapuram, <br>
-                                Salem - 636 004</p>
-                        </div>
+            <li><strong>Technaus Renewables (SOW)</strong>
+                <ol type="a">
+                    <li>Complete EPC of Solar Power Plant (Technical evaluation, design, engineering, supply,
+                        erection, and testing of the grid-connected rooftop solar PV projects.</li>
+                    <li>Deployment of Site Execution Team and Supervision of our Technical Service Engineers /
+                        Technicians in the client’s premises.</li>
+                    <li>To take care of the transportation, accommodation, food, and other incidental expenses of
+                        our team members.</li>
+                    <li>Technical team shall be equipped with all the necessary tools including drilling/cutting
+                        tools and lifting equipment as required for carryingout timely Installation & Commissioning.
+                    </li>
+                    <li>Shall supply Skilled/unskilled manpower as required for the execution of the work and
+                        supervision of the work carried out.</li>
+                    <li>Project Manager to periodically update the daily plan and progress to the client.</li>
+                    <li>Any type of inspection by Government/third-party/client is excluded from this offer, it
+                        shall be mutually agreed if required.</li>
+                    <li>Net metering documentation support (If required). • ACDB to customer MV panel MCCB up to 30
+                        meters Technaus Renewables.</li>
+
+                </ol>
+            </li>
+            <br>
+            <li><strong>Customer (SOW) - ON Grid Only</strong>
+                <ol type="a">
+                    <li>All financial cost for the Net Metering and related process is in the scope of the customer.
+                    </li>
+                    <li>To provide the required space and security for the materials used in the project site.</li>
+
+                    <li>To provide any clarification, support or approvals during the phase of execution of the
+                        Project.</li>
+                    <li>To extend and fulfill any other reasonable requirement from Technaus Renewables.</li>
+                    <li>To provide the Civil Foundation Construction for PV panel mounting structure as per the
+                        Technaus Renewables Layout drawing.</li>
+                    <li>To provide a Single Point of Contact (Client-side Project Manager) for
+                        coordination/approval.</li>
+                    <li>EB NOC Clearance and Net-Meter / On-Grid Connection Certificate shall be arranged by Client
+                        / Customer, Technaus Renewables shall coordinate for necessary documents support.</li>
+
+                </ol>
+            </li>
+            <br>
+            <li><strong>Product and Performance Warranty</strong>
+                <ol type="a">
+                    <li>Solar Grid tie inverter shall be warranted for a period of 84 months from the date of supply
+                        for any manufacturing defects (As per company warranty terms)</li>
+                    <li>SPV module performance warranty for 25 years 80% power output, for the first 12 years 90%
+                        output 12 years product warranty.</li>
+
+                    <li>The Owner shall make available, prior to coming into force, full “right of access”,
+                        “possession” and “right of easement” of the Site to theContractor and all its assigned
+                        sub-contractors during the complete tenure of the Contract</li>
+                    <li>Standard Force Majeure Conditions apply for this offer and resultant Order. Technaus
+                        Renewables has no responsibility for delay & damage of Goods due to transportation.</li>
+                    <li>We shall retain the right on equipment, materials, or parts supplied by us under this
+                        quotation until full value thereof as per our invoice has beenfully paid to us.</li>
+                    <li>The offer is valid for your acceptance for a period of 15 days from the date of this offer
+                    </li>
+                    <li>All the information exchanged between the Parties, either oral or written, in connection
+                        with this Offer/ Contract, shall be maintainedstrictly confidential, except to the extent
+                        necessary to carry out obligations under it or to comply with applicable Laws.</li>
+                    <li>We will provide 5 years of free service support for 3 visits/year and on-call basis.</li>
+
+                </ol>
+            </li>
+
+        </ol>
+        <br>
+        <!-- footer address  -->
+        <br> <br> <br>
+        <hr style="border-top: 2px solid #088AC2;">
+        <div class=" contactbg pt-3 ">
+            <div class="container">
+                <div class="row mx-3">
+                    <div class="col-4">
+                        <strong>Sales Office</strong>
+                        <p style="font-size: 14px;">
+                            #27, Puducherry - Tindivanam <br> Main Road,
+                            V.I.P Nagar,<br> Pattanur - 605 006</p>
+                    </div>
+                    <div class="col-4">
+                        <strong>Corporate Office</strong>
+                        <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
+                            Thirumalai Nagar, Perungudi, <br>
+                            Chennai - 600 096</p>
+                    </div>
+                    <div class="col-4">
+                        <strong>Branch Office</strong>
+                        <p style="font-size: 14px;">
+                            #4 Cauvery Avenue,
+                            Alagapuram, <br>
+                            Salem - 636 004</p>
                     </div>
                 </div>
             </div>
-            <!-- end footer address  -->
-            <div class="pagebreak"> </div>
-            <br>
-            <br>
-            <!-- page 3  -->
-            <div class="pt-5"></div>
-            <strong style='font-size: 16px; text-decoration: underline;'>Site layout:-</strong>
-          
-                    <br>
-                    <br>
-                    <div id="rectangle"></div>
-                    <br>
-                    <br>
-
-             
-                <strong style='font-size: 16px; text-decoration: underline;'>Workout Details:-</strong>
-              
-                    <br>
-                    <br>
-                    <div id="rectangle"></div>
-                    <br>
-                    <br>
-               
-
-            <p><strong>Proposal/Quotation acceptance by:</strong></p>
-            <div class="row">
-                <div class="col-6">
-                    <p><strong>Consultant Signature:................................</strong></p>
-                </div>
-                <div class="col-6">
-                    <p><strong>Owner Signature:................................</strong></p>
-                </div>
-            </div>
-
-
-
-            <p><strong>Signed Date:.......................</strong></p>
-
-            <!-- footer address  -->
-            <br> <br> <br>
-            <hr style="border-top: 2px solid #088AC2;">
-            <div class="contactbg pt-3 ">
-                <div class="container">
-                    <div class="row mx-3">
-                        <div class="col-4">
-                            <strong>Sales Office</strong>
-                            <p style="font-size: 14px;">
-                                #27, Puducherry - Tindivanam <br> Main Road,
-                                V.I.P Nagar,<br> Pattanur - 605 006</p>
-                        </div>
-                        <div class="col-4">
-                            <strong>Corporate Office</strong>
-                            <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
-                                Thirumalai Nagar, Perungudi, <br>
-                                Chennai - 600 096</p>
-                        </div>
-                        <div class="col-4">
-                            <strong>Branch Office</strong>
-                            <p style="font-size: 14px;">
-                                #4 Cauvery Avenue,
-                                Alagapuram, <br>
-                                Salem - 636 004</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end footer address  -->
-            <!-- <div class="pagebreak"> </div> -->
-
-            <div class="row">
-                <div class="col-12 text-center"><img src='<?php echo "upload/ourproject.jpg"; ?>' style="width:100%">
-                </div>
-            </div>
-
-
-
-
         </div>
+        <!-- end footer address  -->
+        <div class="pagebreak"> </div>
+        <br>
+        <br>
+        <!-- page 3  -->
+        <div class="pt-5"></div>
+        <strong style='font-size: 16px; text-decoration: underline;'>Site layout:-</strong>
+
+        <br>
+        <br>
+        <div id="rectangle"></div>
+        <br>
+        <br>
+
+
+        <strong style='font-size: 16px; text-decoration: underline;'>Workout Details:-</strong>
+
+        <br>
+        <br>
+        <div id="rectangle"></div>
+        <br>
+        <br>
+
+
+        <p><strong>Proposal/Quotation acceptance by:</strong></p>
+        <div class="row">
+            <div class="col-6">
+                <p><strong>Consultant Signature:................................</strong></p>
+            </div>
+            <div class="col-6">
+                <p><strong>Owner Signature:................................</strong></p>
+            </div>
+        </div>
+
+
+
+        <p><strong>Signed Date:.......................</strong></p>
+
+        <!-- footer address  -->
+        <br> <br> <br>
+        <hr style="border-top: 2px solid #088AC2;">
+        <div class="contactbg pt-3 ">
+            <div class="container">
+                <div class="row mx-3">
+                    <div class="col-4">
+                        <strong>Sales Office</strong>
+                        <p style="font-size: 14px;">
+                            #27, Puducherry - Tindivanam <br> Main Road,
+                            V.I.P Nagar,<br> Pattanur - 605 006</p>
+                    </div>
+                    <div class="col-4">
+                        <strong>Corporate Office</strong>
+                        <p style="font-size: 14px;"> #87, 1st Floor, 4th Cross St,<br>
+                            Thirumalai Nagar, Perungudi, <br>
+                            Chennai - 600 096</p>
+                    </div>
+                    <div class="col-4">
+                        <strong>Branch Office</strong>
+                        <p style="font-size: 14px;">
+                            #4 Cauvery Avenue,
+                            Alagapuram, <br>
+                            Salem - 636 004</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end footer address  -->
+        <!-- <div class="pagebreak"> </div> -->
+
+        <div class="row">
+            <div class="col-12 text-center"><img src='<?php echo "upload/ourproject.jpg"; ?>' style="width:100%">
+            </div>
+        </div>
+
+
+
+
+    </div>
 
 
 

@@ -198,6 +198,16 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
+                                                <label>Sanction load </label><span style="color:red;">
+                                                    *</span><br>
+                                                <input type="text" id="sanction_load" name="sanction_load"
+                                                    class="form-control" placeholder="Sanction load" required>
+                                                <label style="font-size:12px;">If you don't know the Sanction load,
+                                                    please enter 'NA'</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
                                                 <label>Distributor Name </label><span style="color:red;"> *</span><br>
                                                 <select name="distributor_name" id="distributor_name"
                                                     class="form-control" required>

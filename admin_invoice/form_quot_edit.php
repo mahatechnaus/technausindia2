@@ -179,6 +179,18 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
+                                                <label>Sanction load </label><span style="color:red;">
+                                                    *</span><br>
+                                                <input type="text" id="sanction_load" name="sanction_load"
+                                                    class="form-control" placeholder="Sanction load" 
+                                                    value="<?php echo $row_all['sanctionload']; ?>" required>
+                                                <label style="font-size:12px;">If you don't know the Sanction load,
+                                                    please enter 'NA'</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <div class="form-group">
                                                 <label>Distributor Name </label><span style="color:red;"> *</span><br>
                                                 <select name="distributor_name" id="distributor_name"
                                                     class="form-control" required>
@@ -212,7 +224,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     class="form-control" required>
                                                     <option value="" hidden>Choose roof type</option>
                                                     <?php
-                                                      $rooftypearr = array("RCC","Flat Roof","Others");
+                                                      $rooftypearr = array("RCC","Sheets","Flat Roof","Others");
                                                      foreach ($rooftypearr as $rooftypeOption) {
                                                        $selected = ($rooftypeOption == $row_all['rooftype']) ? 'selected' : '';
                                                        echo "<option value=\"$rooftypeOption\" $selected>$rooftypeOption</option>";

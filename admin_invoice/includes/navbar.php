@@ -69,17 +69,17 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="leads_conversion_list.php">
                                     <i class="metismenu-icon"></i>
-                                    Site visit
+                                  Lead conversion
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="leads_quot_await_.php">
                                     <i class="metismenu-icon"></i>
                                    Quotation awaiting
                                 </a>
-                            </li>
+                            </li> -->
                             <!-- Add more submenu items as needed -->
                         </ul>
                     </li>

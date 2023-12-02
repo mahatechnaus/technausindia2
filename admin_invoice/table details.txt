@@ -1,8 +1,13 @@
 ALTER TABLE `quotation` ADD `leadid` INT(20) NOT NULL AFTER `emp_id`, ADD `leadno` VARCHAR(20) NOT NULL AFTER `leadid`;
 ALTER TABLE leads ADD COLUMN is_quotation int(4) DEFAULT 0;
 
+quot_status
+ALTER TABLE `quotation` ADD `quot_status` int(4) NOT NULL DEFAULT 0 AFTER `meterno`;
 
 
+
+
+.........................
 
 ALTER TABLE `quotation` ADD `emp_id` INT(10) NOT NULL AFTER `owner_id`;
 INSERT INTO `employees` (`emp_id`, `name`, `age`, `address`, `contact_number`, `position`, `accountno`) VALUES ('2', 'Muthaiyan', '25', 'Kathirkamam', '9150381102', 'Admin', '0');
