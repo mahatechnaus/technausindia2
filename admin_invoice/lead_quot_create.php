@@ -3,19 +3,14 @@ include 'includes/db.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
 
-$sql= "SELECT * FROM users WHERE email = '$username'";
-        $sql_run = mysqli_query($con, $sql);
-        $row_a = mysqli_fetch_assoc($sql_run);
-        $user_id= $row_a['id'];        
 
-// Display success message
-$message = "";
-if (isset($_GET['success']) && $_GET['success'] == 1) {
-   $message = "Quotation saved successfully";
-}
-// Display error message
-if (isset($_GET['error']) && $_GET['error'] == 1) {
-    $message = "Failed to save quotation";
+
+if(isset( $_GET['leadid'])){
+    $lead_id_quot = $_GET['leadid'];
+    $sqlquot= "SELECT * FROM quotation WHERE leadid = '$lead_id_quot'";
+    $sql_result = mysqli_query($con, $sqlquot);
+    $row_all = mysqli_fetch_assoc($sql_result);
+
 }
 ?>
 <style type="text/css">
@@ -55,7 +50,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                         <i class="pe-7s-global">
                         </i>
                     </div>
-                    <div>Quotation
+                    <div>Lead ---> Quotation
                         <div class="page-title-subheading">Create, Edit, Delete invoices here
                         </div>
                     </div>
@@ -67,114 +62,100 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                <div class="successmsg p-3"
-                    style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
-                    <?php echo $message; ?>
-                </div>
 
-                <div class="main-card mb-3 card ">
+
+                <div class="main-card mb-3 card">
                     <div class="card-body">
-                        <form action="quotation_save.php" method="POST">
+                        <form action="quotation_edit_save.php" method="POST">
                             <div id="spinner" class="spinner"></div>
-                            <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>">
+                            <!-- <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>"> -->
                             <div class="card text-dark bg-light mb-1">
-
-                                <div class="row mx-3">
-                                    <div class="col-4">
-                                        <div class="form-group">
-                                            <label>Employee Name </label> <span style="color:red;"> *</span><br>
-                                            <select name="emp_id" id="emp_id" class="form-control" required>
-                                                <option value="" hidden>Choose Employee</option>
-                                                <?php
-                                          $sqlemp = "SELECT * FROM employees";
-                                          $sql_emprun = mysqli_query($con, $sqlemp);
-
-                                             while ($row_emp = mysqli_fetch_assoc($sql_emprun)) {
-                                          echo '<option value="' . $row_emp['emp_id'] . '">' . $row_emp['name'] . '</option>';
-                }
-                ?>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-
                                 <h5 class="card-header">Customer Details</h5>
                                 <div class="card-body">
 
                                     <div class="row">
-                                        <div class="col-2">
-                                            <div class="form-group">
-                                                <label>Title </label> <span style="color:red;"> *</span><br>
-                                                <select name="cust_title" id="cust_title" class="form-control" required>
-                                                    <option value="" hidden>Choose Title</option>
-                                                    <option value="Mr.">Mr.</option>
-                                                    <option value="Mrs.">Mrs.</option>
-                                                    <option value="M/s.">M/s.</option>
-                                                    <option value="Miss.">Miss.</option>
-                                                    <option value="Miss./Mrs.">Miss./Mrs.</option>
-                                                    <option value="Others">Others</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <div class="form-group">
                                                 <label>Customer name </label> <span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_name" name="cust_name" class="form-control"
-                                                    placeholder="Customer name" required>
+                                                    placeholder="Customer name" value="<?php echo $row_all['owner']  ?? 'NA'; ?>"
+                                                    required>
                                             </div>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-4">
                                             <div class="form-group">
                                                 <label>Mobile </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_mobile" name="cust_mobile"
-                                                    class="form-control" placeholder="Mobile" required>
+                                                    class="form-control" placeholder="Mobile"
+                                                    value="<?php echo $row_all['mobile']  ?? 'NA'; ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label>Email</label><br>
                                                 <input type="text" id="cust_email" name="cust_email"
-                                                    class="form-control" placeholder="Email">
+                                                    class="form-control" placeholder="Email"
+                                                    value="<?php echo $row_all['email'] !== '' ? $row_all['email'] : 'NA'; ?>">
                                             </div>
                                         </div>
                                     </div>
-
+              
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-6">
                                             <div class="form-group">
                                                 <label>Street </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_st" name="cust_st" class="form-control"
-                                                    placeholder="Street" required>
+                                                    placeholder="Street" value="<?php echo $row_all['address'] !== '' ? $row_all['address'] : 'NA'; ?>"
+                                                    required>
                                             </div>
                                         </div>
-                                        <div class="col-3">
+                                        <!-- <div class="col-3">
                                             <div class="form-group">
                                                 <label>Area </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_area" name="cust_area" class="form-control"
                                                     placeholder="Area" required>
                                             </div>
-                                        </div>
+                                        </div> -->
+
+                                        <?php
+// Assuming $row_all['state'] contains "Puducherry - 605001"
+$stateAndZip = $row_all['State'];
+
+// Split the string into an array using the hyphen as a delimiter
+$parts = explode(' - ', $stateAndZip);
+
+// Now, $parts[0] will contain the state and $parts[1] will contain the zipcode
+
+// Output the state and zipcode separately in your form
+$state = isset($parts[0]) ? $parts[0] : '';
+$zipcode = isset($parts[1]) ? $parts[1] : '';
+?>
+
+
+
                                         <div class="col-3">
+
                                             <div class="form-group">
                                                 <label>State </label><span style="color:red;"> *</span><br>
                                                 <select name="cust_state" id="cust_state" class="form-control" required>
                                                     <option value="" hidden>Choose State</option>
-                                                    <option value="Puducherry">Puducherry</option>
-                                                    <option value="Tamilnadu">Tamilnadu</option>
-                                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                    <option value="Kerala">Kerala</option>
-                                                    <option value="Karnataka">Karnataka</option>
-                                                    <option value="Others">Others</option>
+                                                    <?php
+                                                     $states = array("Puducherry", "Tamilnadu", "Andhra Pradesh", "Kerala", "Karnataka", "Others");
+                                                     foreach ($states as $stateOption) {
+                                                     $selected = ($stateOption == $state) ? 'selected' : '';
+                                                     echo "<option value=\"$stateOption\" $selected>$stateOption</option>";
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
+
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label>Pincode </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_pincode" name="cust_pincode"
-                                                    class="form-control" placeholder="Pincode" required>
+                                                    class="form-control" placeholder="Pincode"
+                                                    value="<?php echo $zipcode !== '' ? $zipcode : 'NA'; ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +172,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Consumer / Meter No. </label><span style="color:red;">
                                                     *</span><br>
                                                 <input type="text" id="cust_meter" name="cust_meter"
-                                                    class="form-control" placeholder="Consumer / Meter No." required>
+                                                    class="form-control" placeholder="Consumer / Meter No."
+                                                    value="<?php echo $row_all['meterno'] ?? 'NA';?>" required>
                                                 <label style="font-size:12px;">If you don't know the consumer number,
                                                     please enter 'NA'</label>
                                             </div>
@@ -201,22 +183,29 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Sanction load </label><span style="color:red;">
                                                     *</span><br>
                                                 <input type="text" id="sanction_load" name="sanction_load"
-                                                    class="form-control" placeholder="Sanction load" required>
+                                                    class="form-control" placeholder="Sanction load"
+                                                    value="<?php echo $row_all['sanctionload'] !== '' ? $row_all['sanctionload'] : 'NA'; ?>" required>
                                                 <label style="font-size:12px;">If you don't know the Sanction load,
                                                     please enter 'NA'</label>
                                             </div>
                                         </div>
+
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label>Distributor Name </label><span style="color:red;"> *</span><br>
                                                 <select name="distributor_name" id="distributor_name"
                                                     class="form-control" required>
                                                     <option value="" hidden>Choose distributor</option>
-                                                    <option value="Electricity Department - Puducherry">Electricity
-                                                        Department - Puducherry</option>
-                                                    <option value="Tamil nadu Electricity Board - TN">Tamilnadu
-                                                        Electricity Board - TN</option>
-                                                    <option value="Others">Others</option>
+                                                    <?php
+                                                      $distributors = array(
+                                                     "Electricity Department - Puducherry",
+                                                     "Tamil nadu Electricity Board - TN",
+                                                     "Others");
+                                                     foreach ($distributors as $distributorOption) {
+                                                       $selected = ($distributorOption == $row_all['distributor']) ? 'selected' : '';
+                                                       echo "<option value=\"$distributorOption\" $selected>$distributorOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -234,12 +223,15 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Roof type </label> <span style="color:red;"> *</span><br>
                                                 <select name="roof_type" id="roof_type" class="form-control" required>
                                                     <option value="" hidden>Choose roof type</option>
-                                                    <option value="RCC">RCC</option>
-                                                    <option value="Flat Roof">Flat Roof</option>
-                                                    <option value="Sheets">Sheets</option>
-                                                    <option value="N/A">N/A</option>
-                                                    <option value="Others">Others</option>
+                                                    <?php
+                                                      $rooftypearr = array("RCC","Sheets","Flat Roof","N/A","Others");
+                                                     foreach ($rooftypearr as $rooftypeOption) {
+                                                       $selected = ($rooftypeOption == $row_all['rooftype']) ? 'selected' : '';
+                                                       echo "<option value=\"$rooftypeOption\" $selected>$rooftypeOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="col-4">
@@ -247,26 +239,33 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Roof level </label> <span style="color:red;"> *</span><br>
                                                 <select name="roof_level" id="roof_level" class="form-control" required>
                                                     <option value="" hidden>Choose roof level</option>
-                                                    <option value="Ground Floor">Ground Floor only</option>
-                                                    <option value="Three storey">Three storey</option>
-                                                    <option value="Two storey">Two storey</option>
-                                                    <option value="One storey">One storey</option>
-                                                    <option value="N/A">N/A</option>
-                                                    <option value="Others">Others</option>
+                                                    <?php
+                                                      $rooflevelarr = array("Ground Floor","Three storey","Two storey","One storey","N/A","Others");
+                                                     foreach ($rooflevelarr as $rooflevelOption) {
+                                                       $selected = ($rooflevelOption == $row_all['rooflevel']) ? 'selected' : '';
+                                                       echo "<option value=\"$rooflevelOption\" $selected>$rooflevelOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label>Phase </label> <span style="color:red;"> *</span><br>
+
                                                 <select name="phase_select" id="phase_select" class="form-control"
                                                     required>
                                                     <option value="" hidden>Choose phase</option>
-                                                    <option value="Single phase">Single phase</option>                                            
-                                                    <option value="Three phase">Three phase</option>
-                                                    <option value="N/A">N/A</option>
-                                                    <option value="Others">Others</option>
+                                                    <?php
+                                                      $phasearr = array("Single phase","Three phase","N/A","Others");
+                                                     foreach ($phasearr as $phaseOption) {
+                                                       $selected = ($phaseOption == $row_all['phase']) ? 'selected' : '';
+                                                       echo "<option value=\"$phaseOption\" $selected>$phaseOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                     </div>
@@ -284,41 +283,51 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Panel Brand </label> <span style="color:#ffffff;"> *</span><br>
                                                 <select name="panel_brand" id="panel_brand" class="form-control"
                                                     required>
-                                                    <option value="" hidden>Choose Brand</option>
-                                                    <option value="Waaree / Renewsys / Saatvik / Rayzon">Waaree /
-                                                        Renewsys / Saatvik / Rayzon</option>
-                                                    <option value="Waaree">Waaree</option>
-                                                    <option value="Renewsys">Renewsys</option>
-                                                    <option value="Saatvik">Saatvik</option>
-                                                    <option value="Rayzon">Rayzon</option>
-                                                    <option value="others">others</option>
+                                                    <option value="" hidden>Choose brand</option>
+                                                    <?php
+                                                      $panelBrandarr = array("Waaree / Renewsys / Saatvik / Rayzon",
+                                                      "Waaree","Renewsys","Saatvik","Rayzon","Others");
+                                                     foreach ($panelBrandarr as $panelBrandOption) {
+                                                       $selected = ($panelBrandOption == $row_all['panelbrand']) ? 'selected' : '';
+                                                       echo "<option value=\"$panelBrandOption\" $selected>$panelBrandOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
+
                                             </div>
                                         </div>
                                         <div class="col-2">
+
                                             <div class="form-group">
                                                 <label>Panel Watts </label> <span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="panel_watts" name="panel_watts"
                                                     class="form-control" placeholder="Example: '540'"
-                                                    onkeypress="return isNumeric(event)" required>
-                                                <!-- <select name="panel_watts" id="panel_watts" class="form-control"
-                                                    required onchange="calculateTotalAmount()">
-                                                    <option value="" hidden>Choose watts</option>
-                                                    <option value="540"> 540W / 545W</option>
-                                                    <option value="540">535W / 540W / 545W</option>
-                                                    <option value="535">535W</option>
-                                                    <option value="540">540W</option>
-                                                    <option value="545">545W</option>
-                                                    <option value="others">others</option>
+                                                    onkeypress="return isNumeric(event)"
+                                                    value="<?php echo $row_all['panelwatts']; ?>" required>
+
+                                                <!-- <select name="panel_watts" id="panel_watts"
+                                                    class="form-control" required>
+                                                    <option value="" hidden>Choose panel watts</option>
+                                                    <?php
+                                                      $panelwattsarr = array("540","545","535","Others");
+                                                     foreach ($panelwattsarr as $panelWattsOption) {
+                                                       $selected = ($panelWattsOption == $row_all['panelwatts']) ? 'selected' : '';
+                                                       echo "<option value=\"$panelWattsOption\" $selected>$panelWattsOption W</option>";
+                                                    }
+                                                   ?>
                                                 </select> -->
+
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>No. of Panel </label> <span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_panel" name="no_panel" class="form-control"
-                                                    placeholder="Panel count" onkeypress="return isNumeric(event)"
-                                                    required onchange="calculateTotalAmount()">
+                                                    placeholder="Panel count"
+                                                    value="<?php echo $row_all['panelcount']; ?>"
+                                                    onkeypress="return isNumeric(event)" required
+                                                    onchange="calculateTotalAmount()">
                                             </div>
                                         </div>
                                         <div class="col-4"></div>
@@ -331,16 +340,17 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     *</span><br>
                                                 <select name="inverter_brand" id="inverter_brand" class="form-control"
                                                     required>
-                                                    <option value="" hidden>Choose Inverter</option>
-                                                    <option value="Growatt/ EVVO/ UTL/ Deye/ K-Solar">Growatt/ EVVO/
-                                                        UTL/ Deye/ K-Solar</option>
-                                                    <option value="Growatt">Growatt</option>
-                                                    <option value="EVVO">EVVO</option>
-                                                    <option value="UTL">UTL</option>
-                                                    <option value="Deye">Deye</option>
-                                                    <option value="K-Solar">K-Solar</option>
-                                                    <option value="others">others</option>
+                                                    <option value="" hidden>Choose Inverter brand</option>
+                                                    <?php
+                                                      $panelInvBrandarr = array("Growatt/ EVVO/ UTL/ Deye/ K-Solar",
+                                                      "Growatt","EVVO","UTL","Deye","K-Solar","Others");
+                                                     foreach ($panelInvBrandarr as $panelInvBrandOption) {
+                                                       $selected = ($panelInvBrandOption == $row_all['inverterbrand']) ? 'selected' : '';
+                                                       echo "<option value=\"$panelInvBrandOption\" $selected>$panelInvBrandOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="col-2">
@@ -348,19 +358,25 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Inverter Type </label> <span style="color:#ffffff;"> *</span><br>
                                                 <select name="inverter_type" id="inverter_type" class="form-control"
                                                     required>
-                                                    <option value="" hidden>Choose watts</option>
-                                                    <option value="On-Grid Inverter">On-Grid Inverter</option>
-                                                    <option value="Off-Grid Inverter">Off-Grid Inverter</option>
-                                                    <option value="Hybrid Inverter">Hybrid Inverter</option>
-                                                    <option value="others">others</option>
+                                                    <option value="" hidden>Choose Inverter type</option>
+                                                    <?php
+                                                      $panelInvTypearr = array("On-Grid Inverter",
+                                                      "Off-Grid Inverter","Hybrid Inverter","Others");
+                                                     foreach ($panelInvTypearr as $panelInvTypeOption) {
+                                                       $selected = ($panelInvTypeOption == $row_all['invertertype']) ? 'selected' : '';
+                                                       echo "<option value=\"$panelInvTypeOption\" $selected>$panelInvTypeOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Inverter KW </label> <span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_inverter_kw" name="no_inverter_kw"
-                                                    class="form-control" placeholder="Example: '6KW'" required>
+                                                    class="form-control" placeholder="Example: '6KW'"
+                                                    value="<?php echo $row_all['inverterkw']; ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-2">
@@ -369,6 +385,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     *</span><br>
                                                 <input type="text" id="no_inverter" name="no_inverter"
                                                     class="form-control" placeholder="Inverter count"
+                                                    value="<?php echo $row_all['invertercount']; ?>"
                                                     onkeypress="return isNumeric(event)" required>
                                             </div>
                                         </div>
@@ -382,7 +399,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>Battery Capacity </label><span style="color:#ffffff;">
                                                     *</span><br>
                                                 <input type="text" id="battery_capacity" name="battery_capacity"
-                                                    class="form-control" placeholder="Example: '60Ah'" required>
+                                                    class="form-control" placeholder="Example: '60Ah'"
+                                                    value="<?php echo $row_all['batterycapacity']; ?>" required>
 
                                             </div>
                                         </div>
@@ -391,6 +409,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <label>No. of Battery</label><span style="color:#ffffff;"> *</span><br>
                                                 <input type="text" id="no_battery" name="no_battery"
                                                     class="form-control" placeholder="No of Battery"
+                                                    value="<?php echo $row_all['batterycount']; ?>"
                                                     onkeypress="return isNumeric(event)" required>
 
                                             </div>
@@ -404,30 +423,40 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label>Included</label><br>
-                                                <select name="included_select" id="included_select"
-                                                    class="form-control">
-                                                    <option value="" hidden>Choose here</option>
-                                                    <option value="All Mountings, Electricals and Installation">
-                                                        All Mountings, Electricals and Installation</option>
-                                                    <option value="All Mountings">All Mountings</option>
-                                                    <option value="Electricals">Electricals</option>
-                                                    <option value="Installation">Installation</option>
-                                                    <option value="others">others</option>
+                                                <select name="included_select" id="included_select" class="form-control"
+                                                    required>
+                                                    <option value="" hidden>Choose Included</option>
+                                                    <?php
+                                                      $Includedarr = array("All Mountings, Electricals and Installation",
+                                                      "All Mountings","Electricals","Installation","Others");
+                                                     foreach ($Includedarr as $IncludedeOption) {
+                                                       $selected = ($IncludedeOption == $row_all['included']) ? 'selected' : '';
+                                                       echo "<option value=\"$IncludedeOption\" $selected>$IncludedeOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label> Payment Plan Option Chosen </label> <span
                                                     style="color:#ffffff;"> *</span><br>
+
                                                 <select name="payment_type" id="payment_type" class="form-control"
                                                     required>
-                                                    <option value="" hidden>Choose type</option>
-                                                    <option value="Cash / Finance">Cash / Finance</option>
-                                                    <option value="Cash">Cash</option>
-                                                    <option value="Finance">Finance</option>
-                                                    <option value="others">others</option>
+                                                    <option value="" hidden>Choose Included</option>
+                                                    <?php
+                                                      $Paytypearr = array("Cash / Finance",
+                                                      "Cash","Finance","Others");
+                                                     foreach ($Paytypearr as $PaytypeOption) {
+                                                       $selected = ($PaytypeOption == $row_all['paymenttype']) ? 'selected' : '';
+                                                       echo "<option value=\"$PaytypeOption\" $selected>$PaytypeOption</option>";
+                                                    }
+                                                   ?>
                                                 </select>
+
+
                                             </div>
                                         </div>
                                         <div class="col-4"></div>
@@ -441,6 +470,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     style="color:#ffffff;"> *</span>
                                                 <input type="text" id="actual_amt" name="actual_amt"
                                                     class="form-control" placeholder="Actual Total Outlay"
+                                                    value="<?php echo $row_all['totoutlay']; ?>"
                                                     onkeypress="return isNumeric(event)" required>
                                                 <p> (Inclusive of Tax)</p>
                                             </div>
@@ -465,7 +495,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
                             <div id="clicks" hidden>1</div>
                             <button type="reset" class="btn btn-danger" id="reset" disabled>Reset</button>
-                            <input type="submit" class="btn btn-success" id="submitBtn" name="submit" value="Save">
+                            <input type="hidden" name="quot_edit_id" value="<?php echo $row_all['owner_id']; ?>">
+                            <input type="submit" class="btn btn-success" id="updatequotBtn" name="submit" value="Save">
                             <!-- <input type="submit" class="btn btn-success" id="save" name="submit" value="Save"> -->
 
                         </form>
@@ -540,6 +571,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
         });
     });
     </script>
+
+
 
     <script>
     function isNumeric(event) {

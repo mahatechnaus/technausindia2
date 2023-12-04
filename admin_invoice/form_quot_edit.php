@@ -224,7 +224,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     class="form-control" required>
                                                     <option value="" hidden>Choose roof type</option>
                                                     <?php
-                                                      $rooftypearr = array("RCC","Sheets","Flat Roof","Others");
+                                                      $rooftypearr = array("RCC","Sheets","Flat Roof","N/A","Others");
                                                      foreach ($rooftypearr as $rooftypeOption) {
                                                        $selected = ($rooftypeOption == $row_all['rooftype']) ? 'selected' : '';
                                                        echo "<option value=\"$rooftypeOption\" $selected>$rooftypeOption</option>";
@@ -241,7 +241,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     class="form-control" required>
                                                     <option value="" hidden>Choose roof level</option>
                                                     <?php
-                                                      $rooflevelarr = array("Ground Floor","Three storey","Two storey","One storey","Others");
+                                                      $rooflevelarr = array("Ground Floor","Three storey","Two storey","One storey","N/A","Others");
                                                      foreach ($rooflevelarr as $rooflevelOption) {
                                                        $selected = ($rooflevelOption == $row_all['rooflevel']) ? 'selected' : '';
                                                        echo "<option value=\"$rooflevelOption\" $selected>$rooflevelOption</option>";
@@ -259,7 +259,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     class="form-control" required>
                                                     <option value="" hidden>Choose phase</option>
                                                     <?php
-                                                      $phasearr = array("Single phase","Double phase","Three phase","Others");
+                                                      $phasearr = array("Single phase","Three phase","N/A","Others");
                                                      foreach ($phasearr as $phaseOption) {
                                                        $selected = ($phaseOption == $row_all['phase']) ? 'selected' : '';
                                                        echo "<option value=\"$phaseOption\" $selected>$phaseOption</option>";

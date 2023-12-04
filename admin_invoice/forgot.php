@@ -39,11 +39,8 @@ session_start();
                                                 <div class="position-relative form-group">
                                                     <input id="email" type="email" name="email" placeholder="Email here..." class="form-control" required>
                                                 </div>
-                                            </div>
-                                            
-                                                    
-                                                </div>
-                                           
+                                            </div>                                           
+                                        </div>                                           
                                   </div>
                                 <div class="modal-footer clearfix">
                                 <div class="float-left">

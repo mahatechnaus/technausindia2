@@ -115,9 +115,9 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
                                     <td>
                                         <?php
                                          if ($row['is_quotation'] == '0') {
-                                            echo '<a href="#?leadid='. $row['leadid'] .'"> <span class="badge badge-success">Waiting for site visit</span></a>';
+                                            echo '<a href="lead_sitevisit.php?leadid='. $row['leadid'] .'"> <span class="badge badge-success">Waiting for site visit</span></a>';
                                          } elseif ($row['is_quotation'] == '1') {
-                                             echo '<a href="#?leadid='. $row['leadid'] .'"> <span class="badge badge-warning">Awaiting Quotation</span></a>';
+                                             echo '<a href="lead_quot_create.php?leadid='. $row['leadid'] .'"> <span class="badge badge-warning">Awaiting Quotation</span></a>';
                                         }
                                         ?>
                                     </td>
