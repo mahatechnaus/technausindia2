@@ -16,7 +16,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
     $message = "Failed to save Lead";
 }
 ?>
-
+<link href="assets/css/step_form.css" rel="stylesheet">
 <div class="app-main__outer">
     <div class="app-main__inner">
         <!-- ..................start title info ..  -->
@@ -47,11 +47,27 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+
+                      <!-- .... step form .........  -->
+                      <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="leadpg"><strong>Lead</strong></li>
+                                <li id="sitevisit"><strong>Site visit</strong></li>
+                                <li id="quotation"><strong>Quotation</strong></li>
+                                <li id="invoice"><strong>Invoice</strong></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+                <!-- ....... end step form .........  -->
+
                 <div class="successmsg p-3"
                     style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
                     <?php echo $message; ?>
                 </div>
-
                 <div class="main-card mb-3 card ">
                     <div class="card-body">
                         <form action="lead_db_save.php" method="POST">
@@ -142,15 +158,14 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             <div class="form-group">
                                                 <label>EB bill amount</label><br>
                                                 <input type="text" id="eb_amt" name="eb_amt" class="form-control"
-                                                    placeholder="EB amount">
+                                                    placeholder="EB amount" value="0">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Phase </label> <br>
                                                 <select name="phase_select" id="phase_select" class="form-control">
                                                     <option value="" hidden>Choose phase</option>
-                                                    <option value="Single phase">Single phase</option>
-                                                    <option value="Double phase">Double phase</option>
+                                                    <option value="Single phase">Single phase</option>                                       
                                                     <option value="Three phase">Three phase</option>
                                                     <option value="Others">Others</option>
                                                 </select>
@@ -208,6 +223,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                             </div>
 
                             <!-- --------- end of html form design ---  -->
+                  
 
                             <div id="clicks" hidden>1</div>
                             <button type="reset" class="btn btn-danger" id="reset" disabled>Reset</button>

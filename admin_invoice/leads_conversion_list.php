@@ -8,34 +8,8 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
         $row_a = mysqli_fetch_assoc($sql_run);
         $user_id= $row_a['id'];
 
-
         $query = "SELECT * FROM leads where is_deleted='0' ORDER BY `leadid` DESC ";
         $query_run = mysqli_query($con, $query);
-
-
-        $sql1= mysqli_query($con, "SELECT * FROM permanent_details WHERE user_id = '$user_id'");
-        $num1=mysqli_num_rows($sql1);
-
-
-        $sql2= mysqli_query($con, "SELECT * FROM bank_details WHERE user_id = '$user_id'");
-        $num2=mysqli_num_rows($sql2);
-
-
-        $sql3= mysqli_query($con, "SELECT * FROM buyer_details WHERE user_id = '$user_id'");
-        $num3=mysqli_num_rows($sql3);
-
-
-        $sql4= mysqli_query($con, "SELECT * FROM product WHERE user_id = '$user_id'");
-        $num4=mysqli_num_rows($sql4);
-
-
-        $sql5= mysqli_query($con, "SELECT * FROM logo WHERE user_id = '$user_id'");
-        $num5=mysqli_num_rows($sql5);
-
-
-        $sql6= mysqli_query($con, "SELECT * FROM sign WHERE user_id = '$user_id'");
-        $num6=mysqli_num_rows($sql6);   
-
 ?>
 
 
@@ -114,10 +88,10 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
                                     <td>
                                         <?php
-                                         if ($row['is_quotation'] == '0') {
-                                            echo '<a href="lead_sitevisit.php?leadid='. $row['leadid'] .'"> <span class="badge badge-success">Waiting for site visit</span></a>';
+                                         if ($row['is_quotation'] == '0') { 
+                                            echo ' <a href="lead_sitevisit.php?leadid='. $row['leadid'] .'"> <i class="fa fa-history" style="color:#000000"></i> <span class="badge badge-success">Waiting for site visit</span></a>';
                                          } elseif ($row['is_quotation'] == '1') {
-                                             echo '<a href="lead_quot_create.php?leadid='. $row['leadid'] .'"> <span class="badge badge-warning">Awaiting Quotation</span></a>';
+                                             echo '<a href="lead_quot_create.php?leadid='. $row['leadid'] .'"> <i class="fa fa-hand-point-right" style="color:#000000"></i> <span class="badge badge-warning">Awaiting Quotation</span></a>';
                                         }
                                         ?>
                                     </td>

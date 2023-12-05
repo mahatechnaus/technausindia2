@@ -28,6 +28,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 }
 ?>
 
+
+<link href="assets/css/step_form.css" rel="stylesheet">
 <div class="app-main__outer">
     <div class="app-main__inner">
         <!-- ..................start title info ..  -->
@@ -44,7 +46,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                     </div>
                 </div>
                 <div class="page-title-actions">
-                    <a class="btn mr-3 mb-3 btn-primary" href="leads_list.php" style="font-size:14px;"><i
+                    <a class="btn mr-3 mb-3 btn-primary" href="leads_conversion_list.php" style="font-size:14px;"><i
                             class="fa fa-arrow-left"></i>&nbsp;
                         Back
                     </a>
@@ -58,15 +60,28 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                <div class="successmsg p-3"
-                    style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
-                    <?php echo $message; ?>
+                <!-- .... step form .........  -->
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="leadpg"><strong>Lead</strong></li>
+                                <li class="active" id="sitevisit"><strong>Site visit</strong></li>
+                                <li id="quotation"><strong>Quotation</strong></li>
+                                <li id="invoice"><strong>Invoice</strong></li>
+                            </ul>
+                        </form>
+                    </div>
                 </div>
+                <!-- ....... end step form .........  -->
+
 
                 <div class="main-card mb-3 card ">
                     <div class="card-body">
                         <form action="lead_db_save.php" method="POST">
                             <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>">
+
 
                             <!-- ---- start html design form ---  -->
                             <div class="row mt-3">
@@ -78,15 +93,17 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <label>Lead Name</label>  <br>
+                                                <label>Lead Name</label> <br>
                                                 <input type="text" id="lead_name" name="lead_name" class="form-control"
-                                                    placeholder="Lead Name" value="<?php echo $row_data['leadname']; ?>" readonly>
+                                                    placeholder="Lead Name" value="<?php echo $row_data['leadname']; ?>"
+                                                    readonly>
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Mobile</label>  <br>
+                                                <label>Mobile</label> <br>
                                                 <input type="text" id="mobile" name="mobile" class="form-control"
-                                                    placeholder="Mobile" value="<?php echo $row_data['mobile']; ?>" readonly>
+                                                    placeholder="Mobile" value="<?php echo $row_data['mobile']; ?>"
+                                                    readonly>
                                             </div>
 
                                         </div>
@@ -110,7 +127,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <!-- value="<?php echo date('Y-m-d'); ?>" 
                                                      value="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" -->
                                             </div>
-
+<!-- 
                                             <div class="form-group">
                                                 <label>Status by Site visit</label> <span style="color:red;">*</span>
                                                 <br>
@@ -121,7 +138,31 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     <option value="Cold">Cold</option>
                                                     <option value="Others">Others</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
+
+                                            <div class="form-group">
+    <label>Status by Site visit</label> <span style="color:red;">*</span>
+    <br><strong>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" style="background-color:red;" type="radio" name="tc_status" id="hotStatus" value="Hot" required>
+        <label class="form-check-label" for="hotStatus" style="color:red;" >Hot</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tc_status" id="warmStatus" value="Warm" required>
+        <label class="form-check-label" for="warmStatus"  style="color:orange;">Warm</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tc_status" id="coldStatus" value="Cold" required>
+        <label class="form-check-label" for="coldStatus"  style="color:green;">Cold</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tc_status" id="otherStatus" value="Others" required>
+        <label class="form-check-label" for="otherStatus">Others</label>
+    </div></strong>
+</div>
+
+
+
 
                                         </div>
                                     </div>
@@ -145,6 +186,10 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
                             <!-- --------- end of html form design ---  -->
 
+                            <div class="successmsg p-3"
+                                style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
+                                <?php echo $message; ?>
+                            </div>
                             <div id="clicks" hidden>1</div>
                             <button type="reset" class="btn btn-danger" id="reset" disabled>Reset</button>
                             <input type="submit" class="btn btn-success" id="submitBtn" name="submit" value="Save">

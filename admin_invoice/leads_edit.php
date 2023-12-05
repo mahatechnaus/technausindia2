@@ -25,7 +25,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
     $message = "Failed to update lead";
 }
 ?>
-
+<link href="assets/css/step_form.css" rel="stylesheet">
 <div class="app-main__outer">
     <div class="app-main__inner">
         <!-- ..................start title info ..  -->
@@ -42,10 +42,10 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                     </div>
                 </div>
                 <div class="page-title-actions">
-                <a class="btn mr-3 mb-3 btn-primary" href="leads_list.php" style="font-size:14px;"><i
-                                class="fa fa-arrow-left"></i>&nbsp;
-                            Back
-                        </a>
+                    <a class="btn mr-3 mb-3 btn-primary" href="leads_list.php" style="font-size:14px;"><i
+                            class="fa fa-arrow-left"></i>&nbsp;
+                        Back
+                    </a>
                 </div>
             </div>
         </div>
@@ -53,10 +53,23 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                <div class="successmsg p-3"
-                    style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
-                    <?php echo $message; ?>
+
+                <!-- .... step form .........  -->
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="leadpg"><strong>Lead</strong></li>
+                                <li id="sitevisit"><strong>Site visit</strong></li>
+                                <li id="quotation"><strong>Quotation</strong></li>
+                                <li id="invoice"><strong>Invoice</strong></li>
+                            </ul>
+                        </form>
+                    </div>
                 </div>
+                <!-- ....... end step form .........  -->
+
 
                 <div class="main-card mb-3 card ">
                     <div class="card-body">
@@ -75,13 +88,15 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             <div class="form-group">
                                                 <label>Lead Name</label> <span style="color:red;"> *</span> <br>
                                                 <input type="text" id="lead_name" name="lead_name" class="form-control"
-                                                    placeholder="Lead Name"  value="<?php echo $row_all['leadname']; ?>" required>
+                                                    placeholder="Lead Name" value="<?php echo $row_all['leadname']; ?>"
+                                                    required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Mobile</label> <span style="color:red;"> *</span> <br>
                                                 <input type="text" id="mobile" name="mobile" class="form-control"
-                                                    placeholder="Mobile" value="<?php echo $row_all['mobile']; ?>" required>
+                                                    placeholder="Mobile" value="<?php echo $row_all['mobile']; ?>"
+                                                    required>
                                             </div>
 
                                             <div class="form-group">
@@ -142,7 +157,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             <div class="form-group">
                                                 <label>Lead Source</label> <br>
 
-                                                <select name="lead_source" id="lead_source" class="form-control" required>
+                                                <select name="lead_source" id="lead_source" class="form-control"
+                                                    required>
                                                     <option value="" hidden>Choose source</option>
                                                     <?php
                                                      $ldsource = array("External Source","Website","Staff referral","Facebook",
@@ -166,8 +182,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             <div class="form-group">
                                                 <label>Phase </label> <br>
 
-                                                <select name="phase_select" id="phase_select"
-                                                    class="form-control" required>
+                                                <select name="phase_select" id="phase_select" class="form-control"
+                                                    required>
                                                     <option value="" hidden>Choose phase</option>
                                                     <?php
                                                       $phasearr = array("Single phase","Double phase","Three phase","Others");
@@ -215,7 +231,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                         }
                                                     ?>
                                                 </select>
-                                      
+
                                             </div>
                                             <div class="form-group">
                                                 <label>Telecaller Notes</label><br>
@@ -239,10 +255,15 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
                             <!-- --------- end of html form design ---  -->
 
+                            <div class="successmsg p-3"
+                                style="background-color: <?php echo isset($_GET['success']) && $_GET['success'] == 1 ? '#4CAF50' : (isset($_GET['error']) && $_GET['error'] == 1 ? '#f44336' : ''); ?>; color: white;">
+                                <?php echo $message; ?>
+                            </div>
+
                             <div id="clicks" hidden>1</div>
                             <button type="reset" class="btn btn-danger" id="reset" disabled>Reset</button>
-              
-                      
+
+
                             <input type="hidden" name="lead_edit_id" value="<?php echo $row_all['leadid']; ?>">
                             <input type="submit" class="btn btn-success" id="updateleadBtn" name="submit" value="Save">
 

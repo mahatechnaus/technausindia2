@@ -40,7 +40,9 @@ if(isset( $_GET['leadid'])){
 }
 </style>
 
-<div id="spinner" class="spinner"></div>
+
+<link href="assets/css/step_form.css" rel="stylesheet">
+
 <div class="app-main__outer">
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -50,12 +52,16 @@ if(isset( $_GET['leadid'])){
                         <i class="pe-7s-global">
                         </i>
                     </div>
-                    <div>Lead ---> Quotation
+                    <div>Lead -> Quotation
                         <div class="page-title-subheading">Create, Edit, Delete invoices here
                         </div>
                     </div>
                 </div>
                 <div class="page-title-actions">
+                    <a class="btn mr-3 mb-3 btn-primary" href="leads_conversion_list.php" style="font-size:14px;"><i
+                            class="fa fa-arrow-left"></i>&nbsp;
+                        Back
+                    </a>
                 </div>
             </div>
         </div>
@@ -63,77 +69,82 @@ if(isset( $_GET['leadid'])){
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
 
+                <!-- .... step form .........  -->
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="leadpg"><strong>Lead</strong></li>
+                                <li class="active" id="sitevisit"><strong>Site visit</strong></li>
+                                <li class="active" id="quotation"><strong>Quotation</strong></li>
+                                <li id="invoice"><strong>Invoice</strong></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+                <!-- ....... end step form .........  -->
+
 
                 <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Lead Information 
+                     
+                    </div>
                     <div class="card-body">
                         <form action="quotation_edit_save.php" method="POST">
-                            <div id="spinner" class="spinner"></div>
-                            <!-- <input type="hidden" name="user_id" id="imp" value="<?php echo $user_id; ?>"> -->
-                            <div class="card text-dark bg-light mb-1">
-                                <h5 class="card-header">Customer Details</h5>
-                                <div class="card-body">
-
-                                    <div class="row">
-                                        <div class="col-4">
+                            <?php
+$stateAndZip = $row_all['State'];
+$parts = explode(' - ', $stateAndZip);
+$state = isset($parts[0]) ? $parts[0] : '';
+$zipcode = isset($parts[1]) ? $parts[1] : '';
+?>
+       <label style="font-size:12px;">If you don't know the value, please enter 'NA'</label>
+                            <div class="row mb-3">
+                     
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="card-body">
                                             <div class="form-group">
                                                 <label>Customer name </label> <span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_name" name="cust_name" class="form-control"
-                                                    placeholder="Customer name" value="<?php echo $row_all['owner']  ?? 'NA'; ?>"
-                                                    required>
+                                                    placeholder="Customer name"
+                                                    value="<?php echo $row_all['owner']  ?? 'NA'; ?>" required>
                                             </div>
-                                        </div>
-                                        <div class="col-4">
+
                                             <div class="form-group">
                                                 <label>Mobile </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_mobile" name="cust_mobile"
                                                     class="form-control" placeholder="Mobile"
                                                     value="<?php echo $row_all['mobile']  ?? 'NA'; ?>" required>
                                             </div>
-                                        </div>
-                                        <div class="col-4">
+
                                             <div class="form-group">
                                                 <label>Email</label><br>
                                                 <input type="text" id="cust_email" name="cust_email"
                                                     class="form-control" placeholder="Email"
                                                     value="<?php echo $row_all['email'] !== '' ? $row_all['email'] : 'NA'; ?>">
                                             </div>
-                                        </div>
-                                    </div>
-              
-                                    <div class="row">
-                                        <div class="col-6">
+
                                             <div class="form-group">
                                                 <label>Street </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_st" name="cust_st" class="form-control"
-                                                    placeholder="Street" value="<?php echo $row_all['address'] !== '' ? $row_all['address'] : 'NA'; ?>"
+                                                    placeholder="Street"
+                                                    value="<?php echo $row_all['address'] !== '' ? $row_all['address'] : 'NA'; ?>"
                                                     required>
                                             </div>
+
+
                                         </div>
-                                        <!-- <div class="col-3">
-                                            <div class="form-group">
-                                                <label>Area </label><span style="color:red;"> *</span><br>
-                                                <input type="text" id="cust_area" name="cust_area" class="form-control"
-                                                    placeholder="Area" required>
-                                            </div>
-                                        </div> -->
-
-                                        <?php
-// Assuming $row_all['state'] contains "Puducherry - 605001"
-$stateAndZip = $row_all['State'];
-
-// Split the string into an array using the hyphen as a delimiter
-$parts = explode(' - ', $stateAndZip);
-
-// Now, $parts[0] will contain the state and $parts[1] will contain the zipcode
-
-// Output the state and zipcode separately in your form
-$state = isset($parts[0]) ? $parts[0] : '';
-$zipcode = isset($parts[1]) ? $parts[1] : '';
-?>
+                                    </div>
+                                </div>
 
 
+                                <!-- end of cust details  -->
 
-                                        <div class="col-3">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="card-body">
 
                                             <div class="form-group">
                                                 <label>State </label><span style="color:red;"> *</span><br>
@@ -149,48 +160,44 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                 </select>
                                             </div>
 
-                                        </div>
-                                        <div class="col-3">
                                             <div class="form-group">
                                                 <label>Pincode </label><span style="color:red;"> *</span><br>
                                                 <input type="text" id="cust_pincode" name="cust_pincode"
                                                     class="form-control" placeholder="Pincode"
                                                     value="<?php echo $zipcode !== '' ? $zipcode : 'NA'; ?>" required>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end of cust details  -->
 
-                            <div class="card text-dark bg-light mb-1">
-                                <!-- <h5 class="card-header">EB Details</h5> -->
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-4">
                                             <div class="form-group">
                                                 <label>Consumer / Meter No. </label><span style="color:red;">
                                                     *</span><br>
                                                 <input type="text" id="cust_meter" name="cust_meter"
                                                     class="form-control" placeholder="Consumer / Meter No."
                                                     value="<?php echo $row_all['meterno'] ?? 'NA';?>" required>
-                                                <label style="font-size:12px;">If you don't know the consumer number,
-                                                    please enter 'NA'</label>
+                                                <!-- <label style="font-size:12px;">If you don't know the consumer number,
+                                                    please enter 'NA'</label> -->
                                             </div>
-                                        </div>
-                                        <div class="col-4">
+
                                             <div class="form-group">
                                                 <label>Sanction load </label><span style="color:red;">
                                                     *</span><br>
                                                 <input type="text" id="sanction_load" name="sanction_load"
                                                     class="form-control" placeholder="Sanction load"
-                                                    value="<?php echo $row_all['sanctionload'] !== '' ? $row_all['sanctionload'] : 'NA'; ?>" required>
-                                                <label style="font-size:12px;">If you don't know the Sanction load,
-                                                    please enter 'NA'</label>
+                                                    value="<?php echo $row_all['sanctionload'] !== '' ? $row_all['sanctionload'] : 'NA'; ?>"
+                                                    required>
+                                                <!-- <label style="font-size:12px;">If you don't know the Sanction load,
+                                                    please enter 'NA'</label> -->
                                             </div>
-                                        </div>
 
-                                        <div class="col-4">
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end of building details  -->
+
+
+
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="card-body">
                                             <div class="form-group">
                                                 <label>Distributor Name </label><span style="color:red;"> *</span><br>
                                                 <select name="distributor_name" id="distributor_name"
@@ -208,17 +215,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                    ?>
                                                 </select>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end of eb details  -->
 
-                            <div class="card text-dark bg-light  mb-1">
-                                <h5 class="card-header">Building Details</h5>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-4">
                                             <div class="form-group">
                                                 <label>Roof type </label> <span style="color:red;"> *</span><br>
                                                 <select name="roof_type" id="roof_type" class="form-control" required>
@@ -231,10 +228,8 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     }
                                                    ?>
                                                 </select>
-
                                             </div>
-                                        </div>
-                                        <div class="col-4">
+
                                             <div class="form-group">
                                                 <label>Roof level </label> <span style="color:red;"> *</span><br>
                                                 <select name="roof_level" id="roof_level" class="form-control" required>
@@ -247,13 +242,10 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     }
                                                    ?>
                                                 </select>
-
                                             </div>
-                                        </div>
-                                        <div class="col-4">
+
                                             <div class="form-group">
                                                 <label>Phase </label> <span style="color:red;"> *</span><br>
-
                                                 <select name="phase_select" id="phase_select" class="form-control"
                                                     required>
                                                     <option value="" hidden>Choose phase</option>
@@ -265,13 +257,14 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     }
                                                    ?>
                                                 </select>
-
                                             </div>
+
+
                                         </div>
                                     </div>
-                                </div>
+                                </div> <!-- end of eb details  -->
                             </div>
-                            <!-- end of building details  -->
+
 
 
                             <div class="card text-white bg-secondary  mb-1">
@@ -441,7 +434,8 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label> Payment Plan Option Chosen </label> <span
-                                                    style="color:#ffffff;"> *</span><br>
+                                                    style="color:#ffffff;">
+                                                    *</span><br>
 
                                                 <select name="payment_type" id="payment_type" class="form-control"
                                                     required>

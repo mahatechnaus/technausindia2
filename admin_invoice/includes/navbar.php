@@ -42,14 +42,27 @@
                             Dashboard
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="leads_list.php">
-                            <i class="metismenu-icon pe-7s-file"></i>
-                            Leads
+                    <li>
+                        <a href="leads_create.php">
+                            <i class="metismenu-icon pe-7s-users"></i>
+                            Create Leads
                         </a>
-                    </li> -->
+                    </li>
 
                     <li>
+                        <a href="leads_list.php">
+                            <i class="metismenu-icon  pe-7s-id"></i>
+                            Leads List
+                        </a>
+                    </li>
+                    <li>
+                        <a href="leads_conversion_list.php">
+                            <i class="metismenu-icon pe-7s-tools"></i>
+                            Lead conversion
+                        </a>
+                    </li>
+
+                    <!-- <li>
                         <a href="#">
                             <i class="metismenu-icon  pe-7s-users"></i>
                             Leads
@@ -71,18 +84,12 @@
                             <li>
                                 <a href="leads_conversion_list.php">
                                     <i class="metismenu-icon"></i>
-                                  Lead conversion
+                                    Lead conversion
                                 </a>
                             </li>
-                            <!-- <li>
-                                <a href="leads_quot_await_.php">
-                                    <i class="metismenu-icon"></i>
-                                   Quotation awaiting
-                                </a>
-                            </li> -->
-                            <!-- Add more submenu items as needed -->
+
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a href="quotation.php">
@@ -97,20 +104,20 @@
                                        Employee
                                     </a>
                                 </li> -->
+<!-- 
+                    <li>
+                        <a href="client_display.php">
+                            <i class="metismenu-icon pe-7s-users"></i>
+                            Clients
+                        </a>
+                    </li>
 
-                    <!-- <li>
-                                    <a href="client_display.php">
-                                        <i class="metismenu-icon pe-7s-users"></i>
-                                       Clients
-                                    </a>
-                                </li>                                  
-                                                             
-                                <li>
-                                    <a href="product_display.php">
-                                        <i class="metismenu-icon pe-7s-folder"></i>
-                                       Products/Services
-                                    </a>
-                                </li> -->
+                    <li>
+                        <a href="product_display.php">
+                            <i class="metismenu-icon pe-7s-folder"></i>
+                            Products/Services
+                        </a>
+                    </li> -->
 
 
                     <!-- <li class="app-sidebar__heading">Profile</li> -->

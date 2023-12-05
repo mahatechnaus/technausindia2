@@ -13,28 +13,7 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
         $query_run = mysqli_query($con, $query);
 
 
-        $sql1= mysqli_query($con, "SELECT * FROM permanent_details WHERE user_id = '$user_id'");
-        $num1=mysqli_num_rows($sql1);
-
-
-        $sql2= mysqli_query($con, "SELECT * FROM bank_details WHERE user_id = '$user_id'");
-        $num2=mysqli_num_rows($sql2);
-
-
-        $sql3= mysqli_query($con, "SELECT * FROM buyer_details WHERE user_id = '$user_id'");
-        $num3=mysqli_num_rows($sql3);
-
-
-        $sql4= mysqli_query($con, "SELECT * FROM product WHERE user_id = '$user_id'");
-        $num4=mysqli_num_rows($sql4);
-
-
-        $sql5= mysqli_query($con, "SELECT * FROM logo WHERE user_id = '$user_id'");
-        $num5=mysqli_num_rows($sql5);
-
-
-        $sql6= mysqli_query($con, "SELECT * FROM sign WHERE user_id = '$user_id'");
-        $num6=mysqli_num_rows($sql6);   
+ 
 
 ?>
 
@@ -58,22 +37,18 @@ $sql= "SELECT * FROM users WHERE email = '$username'";
 
 
                 <div class="page-title-actions">
-                    <?php
-            if(($num1==0) OR ($num2==0) OR ($num3==0) OR ($num4==0) OR ($num5==0) OR ($num6==0)){
-               echo '<p class="text-danger">Enter all details to start creating invoices</p>';
-            } else {
-            ?>
+      
                     <a class="btn mr-3 mb-3 btn-primary" href="form_quotation.php" style="font-size:14px;"><i
                             class="fa fa-plus"></i>&nbsp;
                         Create Quotation</a>
-                    <?php } ?>
+   
                 </div>
             </div>
         </div>
 
 <!-- start search .  -->
 
-<?php include('includes/quotsearchhead.php'); ?>
+
 
 <!-- end search ...........  -->
 

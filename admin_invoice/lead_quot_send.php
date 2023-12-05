@@ -40,7 +40,7 @@ $insert_query="INSERT INTO `quotation`
 
 
 
-print_r($insert_query);
+// print_r($insert_query);
 
 $result = mysqli_query($con, $insert_query);
 $query_ld_update = "UPDATE `leads` SET `is_quotation` = '1' WHERE `leadid` = '$lead_quot_id'";

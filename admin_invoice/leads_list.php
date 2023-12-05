@@ -33,7 +33,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 }
   
 ?>
-
+<link href="assets/css/step_form.css" rel="stylesheet">
 <style>
 .card-body p {
     margin-bottom: 5px;
@@ -88,6 +88,24 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 
             <div class="tab-content">
                 <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+
+                
+                      <!-- .... step form .........  -->
+                      <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="leadpg"><strong>Lead</strong></li>
+                                <li id="sitevisit"><strong>Site visit</strong></li>
+                                <li id="quotation"><strong>Quotation</strong></li>
+                                <li id="invoice"><strong>Invoice</strong></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+                <!-- ....... end step form .........  -->
+
                     <?php           
 
         if(isset($_SESSION['SUCCESS']) && $_SESSION['SUCCESS'] !=''){
