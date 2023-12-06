@@ -266,8 +266,8 @@ $type ="Quotation";
     }
 
     .contactbg {
-        background-color: #088AC2;
-        color: white;
+        background-color: #b6dbf0;
+        color: #000;
 
     }
     </style>
