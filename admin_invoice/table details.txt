@@ -1,3 +1,19 @@
+ALTER TABLE `quotation` ADD `panelmodel` VARCHAR(50) NULL DEFAULT NULL AFTER `panelcount`;
+
+
+
+INSERT INTO `employees` (`emp_id`, `name`, `age`, `address`, `contact_number`, `position`, `accountno`) VALUES ('1', 'Ranjith', '28', 'Chennai', '91503 81109', '', '');
+
+
+
+
+
+
+
+
+
+.......................
+
 ALTER TABLE `quotation` ADD `leadid` INT(20) NOT NULL AFTER `emp_id`, ADD `leadno` VARCHAR(20) NOT NULL AFTER `leadid`;
 ALTER TABLE leads ADD COLUMN is_quotation int(4) DEFAULT 0;
 

@@ -144,16 +144,16 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                     <div class="row">
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label>Street </label><span style="color:red;"> *</span><br>
+                                                <label>Street </label><br>
                                                 <input type="text" id="cust_st" name="cust_st" class="form-control"
-                                                    placeholder="Street" required>
+                                                    placeholder="Street">
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label>Area </label><span style="color:red;"> *</span><br>
+                                                <label>Area </label><br>
                                                 <input type="text" id="cust_area" name="cust_area" class="form-control"
-                                                    placeholder="Area" required>
+                                                    placeholder="Area">
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -172,9 +172,9 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label>Pincode </label><span style="color:red;"> *</span><br>
+                                                <label>Pincode </label><br>
                                                 <input type="text" id="cust_pincode" name="cust_pincode"
-                                                    class="form-control" placeholder="Pincode" required>
+                                                    class="form-control" placeholder="Pincode">
                                             </div>
                                         </div>
                                     </div>
@@ -262,7 +262,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <select name="phase_select" id="phase_select" class="form-control"
                                                     required>
                                                     <option value="" hidden>Choose phase</option>
-                                                    <option value="Single phase">Single phase</option>                                            
+                                                    <option value="Single phase">Single phase</option>
                                                     <option value="Three phase">Three phase</option>
                                                     <option value="N/A">N/A</option>
                                                     <option value="Others">Others</option>
@@ -321,7 +321,25 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                     required onchange="calculateTotalAmount()">
                                             </div>
                                         </div>
-                                        <div class="col-4"></div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                <label>Panel Model</label> <span style="color:#ffffff;">*</span>
+                                                <br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" style="background-color:red;"
+                                                        type="radio" name="p_model" id="mcStatus"
+                                                        value="Monocrystalline" checked required>
+                                                    <label class="form-check-label"
+                                                        for="mcStatus">Monocrystalline</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="p_model"
+                                                        id="pcStatus" value="Polycrystalline" required>
+                                                    <label class="form-check-label"
+                                                        for="pcStatus">Polycrystalline</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <hr style=" border: 1px dotted  #fff; margin:0px;">
                                     <div class="row ">

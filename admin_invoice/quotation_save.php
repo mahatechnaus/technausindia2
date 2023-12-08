@@ -39,6 +39,7 @@ $phase_select=$_POST['phase_select'];
 $panel_brand=$_POST['panel_brand'];
 $panel_watts=$_POST['panel_watts'];
 $no_panel=$_POST['no_panel'];
+$p_model=$_POST['p_model'];
 
 $inverter_brand=$_POST['inverter_brand'];
 $inverter_type=$_POST['inverter_type'];
@@ -56,14 +57,14 @@ $date1 = date("Y-m-d H:i:s");
 $sqla="INSERT INTO `quotation` 
 (`emp_id`,`quotdate`,`owner`, `quotation_no`, `mobile`, `email`, `address`, `State`, `meterno`, `sanctionload`, `distributor`,
  `rooftype`, `rooflevel`, `phase`,
-  `panelbrand`, `panelwatts`, `panelcount`,
+  `panelbrand`, `panelwatts`, `panelcount`,`panelmodel`,
   `inverterbrand`, `invertertype`, `inverterkw`, `invertercount`,
  `included`, `batterycapacity`, `batterycount`, 
  `paymenttype`, `totoutlay`, `grandtotal`,`quot_status`,`is_deleted`) 
  VALUES ('$emp_id','$date1','$cust_name','$quotation_no', '$cust_mobile', '$cust_email', '$cust_address', '$cust_state', '$cust_meter',
  '$sanction_load', '$distributor_name',
   '$roof_type', '$roof_level', '$phase_select', 
-  '$panel_brand', '$panel_watts', '$no_panel', '$inverter_brand', '$inverter_type', '$no_inverter_kw', '$no_inverter',
+  '$panel_brand', '$panel_watts', '$no_panel','$p_model', '$inverter_brand', '$inverter_type', '$no_inverter_kw', '$no_inverter',
   '$included_select', '$battery_capacity', '$no_battery', '$payment_type', '$actual_amt', '$actual_amt','1','0')";
 
 $result = mysqli_query($con, $sqla);

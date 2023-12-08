@@ -428,7 +428,7 @@ $type ="Quotation";
                 </tr>
                 <tr>
                     <td><strong>Panel Model:</strong></td>
-                    <td><?php echo  $rowf['panelcount'] . " X " . $rowf['panelwatts'] . " W"; ?></td>
+                    <td><?php echo  $rowf['panelcount'] . " X " . $rowf['panelwatts'] . " W" . " (" . $rowf['panelmodel'] . ")"; ?></td>
                 </tr>
                 <tr>
                     <td><strong>Inverter Brand:</strong></td>

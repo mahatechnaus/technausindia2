@@ -30,6 +30,8 @@ $phase_select=$_POST['phase_select'];
 $panel_brand=$_POST['panel_brand'];
 $panel_watts=$_POST['panel_watts'];
 $no_panel=$_POST['no_panel'];
+$p_model=$_POST['p_model'];
+
 $inverter_brand=$_POST['inverter_brand'];
 $inverter_type=$_POST['inverter_type'];
 $no_inverter_kw=$_POST['no_inverter_kw'];
@@ -60,6 +62,8 @@ $query = "UPDATE `quotation`
     `panelbrand` = '$panel_brand',
     `panelwatts` = '$panel_watts',
     `panelcount` = '$no_panel',
+    `panelmodel` = '$p_model',
+
     `inverterbrand` = '$inverter_brand',
     `invertertype` = '$inverter_type',
     `inverterkw` = '$no_inverter_kw',

@@ -127,7 +127,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <!-- value="<?php echo date('Y-m-d'); ?>" 
                                                      value="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" -->
                                             </div>
-<!-- 
+                                            <!-- 
                                             <div class="form-group">
                                                 <label>Status by Site visit</label> <span style="color:red;">*</span>
                                                 <br>
@@ -141,25 +141,34 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                             </div> -->
 
                                             <div class="form-group">
-    <label>Status by Site visit</label> <span style="color:red;">*</span>
-    <br><strong>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" style="background-color:red;" type="radio" name="tc_status" id="hotStatus" value="Hot" required>
-        <label class="form-check-label" for="hotStatus" style="color:red;" >Hot</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="tc_status" id="warmStatus" value="Warm" required>
-        <label class="form-check-label" for="warmStatus"  style="color:orange;">Warm</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="tc_status" id="coldStatus" value="Cold" required>
-        <label class="form-check-label" for="coldStatus"  style="color:green;">Cold</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="tc_status" id="otherStatus" value="Others" required>
-        <label class="form-check-label" for="otherStatus">Others</label>
-    </div></strong>
-</div>
+                                                <label>Status by Site visit</label> <span style="color:red;">*</span>
+                                                <br><strong>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" style="background-color:red;"
+                                                            type="radio" name="tc_status" id="hotStatus" value="Hot"
+                                                            required>
+                                                        <label class="form-check-label" for="hotStatus"
+                                                            style="color:red;">Hot</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="tc_status"
+                                                            id="warmStatus" value="Warm" required>
+                                                        <label class="form-check-label" for="warmStatus"
+                                                            style="color:orange;">Warm</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="tc_status"
+                                                            id="coldStatus" value="Cold" required>
+                                                        <label class="form-check-label" for="coldStatus"
+                                                            style="color:green;">Cold</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="tc_status"
+                                                            id="otherStatus" value="Others" required>
+                                                        <label class="form-check-label" for="otherStatus">Others</label>
+                                                    </div>
+                                                </strong>
+                                            </div>
 
 
 
