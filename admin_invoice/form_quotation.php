@@ -285,8 +285,8 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                                                 <select name="panel_brand" id="panel_brand" class="form-control"
                                                     required>
                                                     <option value="" hidden>Choose Brand</option>
-                                                    <option value="Waaree / Renewsys / Saatvik / Rayzon">Waaree /
-                                                        Renewsys / Saatvik / Rayzon</option>
+                                                    <option value="Renewsys / Saatvik / Rayzon"> Renewsys / Saatvik / Rayzon</option>
+                                                    <option value="Waaree / Renewsys / Saatvik / Rayzon">Waaree / Renewsys / Saatvik / Rayzon</option>
                                                     <option value="Waaree">Waaree</option>
                                                     <option value="Renewsys">Renewsys</option>
                                                     <option value="Saatvik">Saatvik</option>

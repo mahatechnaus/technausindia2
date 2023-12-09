@@ -411,11 +411,11 @@ $type ="Quotation";
 
 
             <p class="mt-4"></p>
-            <table border="1" cellpadding="10">
+            <table border="1" cellpadding="1">
 
                 <tr>
-                    <td><strong>System Size:</strong></td>
-                    <td>
+                    <td style="width:250px;"><strong>System Size:</strong></td>
+                    <td colspan="3">
                         <?php $systemsize= ($rowf['panelwatts'] *  $rowf['panelcount'])/ 1000;
         echo $systemsize . ' KW';
         ?>
@@ -424,24 +424,40 @@ $type ="Quotation";
                 </tr>
                 <tr>
                     <td><strong>Panel Brand:</strong></td>
-                    <td><?php echo $rowf['panelbrand']; ?></td>
+                    <td colspan="3"><?php echo $rowf['panelbrand']; ?></td>
+
                 </tr>
                 <tr>
-                    <td><strong>Panel Model:</strong></td>
-                    <td><?php echo  $rowf['panelcount'] . " X " . $rowf['panelwatts'] . " W" . " (" . $rowf['panelmodel'] . ")"; ?></td>
+                    <td><strong>Number of panel:</strong></td>
+                    <td style="width: 100px;">
+                        <?php  echo $rowf['panelcount'] . " ";
+                         echo ($rowf['panelcount'] == 1) ? "No." : "Nos.";
+                        ?>
+                    </td>
+
+                    <td style="width:150px;"><strong>Panel Model:</strong></td>
+                    <td style="width:300px;">
+                        <?php echo   $rowf['panelwatts'] . "W - " . " (" . $rowf['panelmodel'] . ")"; ?></td>
                 </tr>
                 <tr>
                     <td><strong>Inverter Brand:</strong></td>
-                    <td><?php echo $rowf['inverterbrand']; ?></td>
+                    <td colspan="3"><?php echo $rowf['inverterbrand']; ?></td>
                 </tr>
                 <tr>
+                    <td><strong>Number of Inverter:</strong></td>
+                    <!-- <td><?php echo $rowf['invertercount'] . " No."; ?></td> -->
+                    <td style="width: 100px;">
+                        <?php  echo $rowf['invertercount'] . " ";
+                         echo ($rowf['invertercount'] == 1) ? "No." : "Nos.";
+                        ?>
+                    </td>
                     <td><strong>Inverter Model:</strong></td>
-                    <td><?php echo  $rowf['invertercount'] . " X " . $rowf['inverterkw'] . " ". $rowf['invertertype']; ?>
+                    <td><?php echo $rowf['invertertype']  . " - ". $rowf['inverterkw'] ; ?>
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Battery:</strong></td>
-                    <td>
+                    <td colspan="3">
                         <?php
 echo ($rowf['batterycount'] !== null && $rowf['batterycount'] !== "0") ? $rowf['batterycount'] . " X " . $rowf['batterycapacity'] : "NA";
 ?>
@@ -451,7 +467,7 @@ echo ($rowf['batterycount'] !== null && $rowf['batterycount'] !== "0") ? $rowf['
                 <tr>
                     <td><strong>Included:</strong></td>
                     <!-- <td><?php echo $rowf['included']; ?></td> -->
-                    <td>
+                    <td colspan="3">
                         <ol>
                             <li style="font-size:14px;">Structure - 4*3 GI structure (7*9 Ft Extra @ 3000 per kw)</li>
                             <li style="font-size:14px;">DC wire - Polycab 4Sqmm 50Mtr</li>
@@ -472,7 +488,7 @@ setlocale(LC_NUMERIC, 'en_IN');
 ?>
 
 
-                    <td>
+                    <td colspan="3">
                         <i class="fa fa-inr" aria-hidden="true"></i> INR
                         <?php                        
                         $amount = $rowf['totoutlay'];
@@ -486,11 +502,12 @@ setlocale(LC_NUMERIC, 'en_IN');
                 </tr>
                 <tr>
                     <td><strong>Payment Plan Option Chosen:</strong></td>
-                    <td><?php echo $rowf['paymenttype']; ?></td>
+                    <td colspan="3"> <?php echo $rowf['paymenttype']; ?></td>
                 </tr>
                 <tr>
                     <td><strong>Grand Total:</strong></td>
-                    <td> <i class="fa fa-inr" aria-hidden="true"></i> <?php echo "INR " . $num . " /-"; ?> (Inclusive of
+                    <td colspan="3"> <i class="fa fa-inr" aria-hidden="true"></i> <?php echo "INR " . $num . " /-"; ?>
+                        (Inclusive of
                         Tax)</td>
                 </tr>
             </table>

@@ -284,7 +284,7 @@ $zipcode = isset($parts[1]) ? $parts[1] : '';
                                                     required>
                                                     <option value="" hidden>Choose brand</option>
                                                     <?php
-                                                      $panelBrandarr = array("Waaree / Renewsys / Saatvik / Rayzon",
+                                                      $panelBrandarr = array("Renewsys / Saatvik / Rayzon", "Waaree / Renewsys / Saatvik / Rayzon",
                                                       "Waaree","Renewsys","Saatvik","Rayzon","Others");
                                                      foreach ($panelBrandarr as $panelBrandOption) {
                                                        $selected = ($panelBrandOption == $row_all['panelbrand']) ? 'selected' : '';
