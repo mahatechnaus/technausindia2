@@ -1,7 +1,7 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "Commercial Solar Solutions - Technaus Solar in India";
-$page_description = "Elevate your business with our commercial solar solutions in India.
+$page_title = "Commercial Solar Solutions - Solar in Puducherry";
+$page_description = "Elevate your business with our commercial solar solutions in Puducherry.
  Learn about our tailored solar systems, energy efficiency, and cost-saving strategies.";
 
 require_once 'includes/header.php';
@@ -40,25 +40,25 @@ require_once 'includes/navbar.php';
             <div class="technaus-single-slider store-single-slider">
                 <div id="sync1" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product/industry1.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry1.png" alt="solar industry puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/industry2.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry2.png" alt="solar industry in puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/industry3.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry3.png" alt="solar technaus puducherry" class="w-100">
                     </div>
 
                 </div>
                 <div id="sync2" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product/industry1.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry1.png" alt="solar industry puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/industry2.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry2.png" alt="solar industry in puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/industry3.png" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/industry3.png" alt="solar technaus puducherry" class="w-100">
                     </div>
 
                 </div>

@@ -1,8 +1,8 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "Battery Storage Solutions - Technaus Solar in India";
+$page_title = "Battery Storage Solutions - Solar in Puducherry";
 $page_description = "Learn about our battery storage solutions for renewable energy. Enhance energy efficiency, reliability, 
-and sustainability with our cutting-edge battery technologies in India.";
+and sustainability with our cutting-edge battery technologies in Puducherry.";
 
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
@@ -55,7 +55,7 @@ require_once 'includes/navbar.php';
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/battery.png" alt="technaus"
+                                <img src="assets/custom/images/site/product/battery.png" alt="solar battery in Puducherry"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                     
@@ -63,7 +63,7 @@ require_once 'includes/navbar.php';
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/battery2.png" alt="technaus"
+                                <img src="assets/custom/images/site/product/battery2.png" alt="solar charging in Puducherry"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                      
@@ -72,7 +72,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-12 col-md-6 mt-5 mt-lg-0">
                 <div class="position-relative image-container zoomIn-effect">
-                    <img src="assets/custom/images/site/product/solar-battery.jpeg" alt="" class="img-fluid" style="height:550px;">
+                    <img src="assets/custom/images/site/product/solar-battery.jpeg" alt="solar charging station in Puducherry" class="img-fluid" style="height:550px;">
                     <!-- <div class="demo-gallery-poster technaus-main-gradient">
                         <a data-fancybox href="https://www.youtube.com/watch?v=meBbDqAXago">
                             <img src="assets/custom/images/play-button.png" alt="play button" class="img-fluid">

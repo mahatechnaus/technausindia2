@@ -1,0 +1,32 @@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Add common meta tags here -->
+    <title><?php echo $page_title; ?></title>
+    <meta name="description" content="<?php echo $page_description; ?>">
+    <!-- Add any other common meta tags as needed -->   
+    <meta name="keywords" content="solar, Puducherry, renewable energy, solar power, sustainable energy">
+    <meta name="author" content="Technaus Solar - Solar Power and Renewable Energy Solutions Specialists">
+............................ 
+
+
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Add common meta tags here -->
+    <title><?php echo $page_title; ?></title>
+    <meta name="description" content="<?php echo $page_description; ?>">
+    <!-- Add any other common meta tags as needed -->
+    <meta name="keywords" content="solar, Puducherry, renewable energy, solar power, sustainable energy">
+    <meta name="author" content="Technaus Solar - Solar Power and Renewable Energy Solutions Specialists">
+    <link rel="canonical" href="https://technaus.co.in">
+    <meta name="language" content="en">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="<?php echo $page_title; ?>">
+    <meta property="og:description" content="<?php echo $page_description; ?>">
+    <meta property="og:image" content="https://technaus.co.in/assets/custom/images/site/Technaus-India-LogoR.png">
+    <meta property="og:url" content="https://technaus.co.in">
+    <meta name="twitter:card" content="https://technaus.co.in/assets/custom/images/site/index-background.jpg">
+    <meta name="twitter:title" content="<?php echo $page_title; ?>">
+    <meta name="twitter:description" content="<?php echo $page_description; ?>">
+    <meta name="twitter:image" content="https://technaus.co.in/assets/custom/images/site/Technaus-India-LogoR.png">
+

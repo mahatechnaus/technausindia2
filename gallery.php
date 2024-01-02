@@ -1,6 +1,6 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "Gallery - Technaus Solar - Solar Power and Renewable Energy Solutions Specialists";
+$page_title = "Gallery - Technaus Solar - Solar in Puducherry";
 $page_description = "Explore our solar installations and projects through our gallery. View the beauty and functionality of 
 solar power in action.";
 
@@ -51,7 +51,7 @@ require_once 'includes/navbar.php';
         <div class="portfolioContainer row filter-masonry">
             <div class="drawings places col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/stage1.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/stage1.jpg" alt="solar expo in puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -63,7 +63,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="drawings places col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/stage2.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/stage2.jpg" alt="solar expo puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -76,7 +76,7 @@ require_once 'includes/navbar.php';
 
             <div class="ResSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/residential1.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/residential1.jpg" alt="solar residential puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -88,7 +88,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="BatteryStorage col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/battery1.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/battery1.jpg" alt="solar battery puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -100,7 +100,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="ResSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/residential2.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/residential2.jpg" alt="solar residential in puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -113,7 +113,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="ComSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/industry1.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/industry1.jpg" alt="solar industry puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -126,7 +126,7 @@ require_once 'includes/navbar.php';
 
             <div class="ResSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/residential3.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/residential3.jpg" alt="solar residential puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -138,7 +138,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="ResSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/residential4.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/residential4.jpg" alt="solar residential in puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
@@ -151,7 +151,7 @@ require_once 'includes/navbar.php';
 
             <div class="ComSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/industry2.jpg" alt="image" class="w-100">
+                    <img src="assets/custom/images/site/industry2.jpg" alt="solar industry in puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->

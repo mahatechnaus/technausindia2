@@ -1,6 +1,6 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "About Technaus Solar - Our Story and Commitment to Renewable Energy";
+$page_title = "About Solar in Puducherry - Our Story and Commitment to Renewable Energy";
 $page_description = "Learn about Technaus Solar Company - a trusted leader in sustainable energy solutions. 
 Discover our journey, commitment to environmental excellence, and dedication to powering a greener future through solar innovation.";
 

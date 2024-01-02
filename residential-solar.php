@@ -1,6 +1,6 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "Residential Solar Solutions - Technaus Solar in India";
+$page_title = "Residential Solar Solutions - Solar in Puducherry";
 $page_description = "Discover our residential solar solutions to power your home sustainably with clean energy. 
 Explore our installation, maintenance, and financing options.";
 
@@ -40,25 +40,25 @@ require_once 'includes/navbar.php';
             <div class="technaus-single-slider store-single-slider">
                 <div id="sync1" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential1.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential1.jpg" alt="solar residential in puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential2.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential2.jpg" alt="technaus residential puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential3.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential3.jpg" alt="solar technaus puducherry" class="w-100">
                     </div>
 
                 </div>
                 <div id="sync2" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential1.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential1.jpg" alt="solar residential in puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential2.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential2.jpg" alt="technaus residential puducherry" class="w-100">
                     </div>
                     <div class="item">
-                        <img src="assets/custom/images/site/product/residential3.jpg" alt="" class="w-100">
+                        <img src="assets/custom/images/site/product/residential3.jpg" alt="solar technaus puducherry" class="w-100">
                     </div>
 
                 </div>

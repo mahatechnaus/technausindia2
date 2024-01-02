@@ -1,7 +1,7 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "Contact Us - Technaus Solar in India- Get in Touch for Solar Solutions";
-$page_description = "Contact Technaus Solar for inquiries, consultations, and assistance with your solar projects. 
+$page_title = "Contact Us - Solar in Puducherry - Get in Touch for Solar Solutions";
+$page_description = "Contact Technaus Solar in Puducherry for inquiries, consultations, and assistance with your solar projects. 
 We're here to help you harness the power of the sun.";
 
 require_once 'includes/header.php';

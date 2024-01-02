@@ -1,8 +1,8 @@
 <?php
 // Define unique page-specific SEO information
-$page_title = "EV Charging Solutions - Technaus Solar in India";
+$page_title = "EV Charging Solutions - Solar in Puducherry";
 $page_description = "Explore our EV charging solutions for homes and businesses. Embrace the future of transportation with our 
-reliable and eco-friendly electric vehicle charging services.";
+reliable and eco-friendly electric vehicle charging services in Puducherry.";
 
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
@@ -52,7 +52,7 @@ HOME OR OFFICE</h2>
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/evcharging2.jpg" alt="technaus Template"
+                                <img src="assets/custom/images/site/product/evcharging2.jpg" alt="solar battery puducherry"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                     
@@ -60,7 +60,7 @@ HOME OR OFFICE</h2>
                     <div class="text-center">
                         <div>
                             <div class="image-container shine-effect d-inline-block rounded-circle">
-                                <img src="assets/custom/images/site/product/evcharging3.jpg" alt="technaus Template"
+                                <img src="assets/custom/images/site/product/evcharging3.jpg" alt="solar battery in puducherry"
                                     class="technaus-prod-carousel-img my-0 mx-auto rounded-circle">
                             </div>
                         </div>                      
@@ -69,7 +69,7 @@ HOME OR OFFICE</h2>
             </div>
             <div class="col-12 col-md-6 mt-5 mt-lg-0">
                 <div class="position-relative image-container zoomIn-effect">
-                    <img src="assets/custom/images/site/product/evcharging.jpg" alt="" class="img-fluid" style="height:550px;">
+                    <img src="assets/custom/images/site/product/evcharging.jpg" alt="solar ev battery puducherry" class="img-fluid" style="height:550px;">
                     <!-- <div class="demo-gallery-poster technaus-main-gradient">
                         <a data-fancybox href="https://www.youtube.com/watch?v=meBbDqAXago">
                             <img src="assets/custom/images/play-button.png" alt="play button" class="img-fluid">
