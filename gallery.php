@@ -113,11 +113,11 @@ require_once 'includes/navbar.php';
             </div>
             <div class="ComSolar col-sm-6 col-md-3 mb-2">
                 <div class="filter-img-block position-relative image-container translate-effect-right">
-                    <img src="assets/custom/images/site/industry1.jpg" alt="solar industry puducherry" class="w-100">
+                    <img src="assets/custom/images/site/industry1.webp" alt="solar industry puducherry" class="w-100">
                     <div class="img-filter-overlay technaus-main-color-transparent row m-0">
                         <!-- <a href="#" class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconlink"></span></a> -->
-                        <a data-fancybox="gallery" href="assets/custom/images/site/industry1.jpg"
+                        <a data-fancybox="gallery" href="assets/custom/images/site/industry1.webp"
                             class="gallery-filter-icon white-color technaus-second-hover-color"><span
                                 class="technaus-iconsearch-icon"></span></a>
                     </div>

@@ -1,6 +1,6 @@
     <!-- Start Header -->
     <div class="technaus-header technaus-after-overlay overlay-lighter index-traingle bg-rules"
-        style="background-image: url(assets/custom/images/site/index-background.jpg);">
+        style="background-image: url(assets/custom/images/site/index-background.webp);">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-7 mr-auto index-carousel">

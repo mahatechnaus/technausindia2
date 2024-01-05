@@ -1,4 +1,13 @@
 RewriteEngine On
+
+
+# Rewrite rule to add .php extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Custom 404 page
+ErrorDocument 404 http://localhost/technausindia2/404
+
+
+# ErrorDocument 404 https://technaus.co.in/404
