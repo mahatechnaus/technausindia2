@@ -85,7 +85,7 @@
 </div>
 <div class="copyright technaus-main-background-color mt-0 border-0 white-color">
 
-    <p class="mb-0">Copyright © Technaus Solar Renewables 2023. Designed by Technaus Creative.</p>
+    <p class="mb-0">Copyright © Technaus Solar Renewables 2024. Designed by Technaus Creative.</p>
 
 
 </div>
